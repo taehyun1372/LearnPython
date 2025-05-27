@@ -13,7 +13,7 @@ def stream_output(process, command, display_live):
         if len(last_lines) < 15:
             last_lines.append((line))
         else:
-            last_lines.pop()
+            last_lines.pop(0)
             last_lines.append(line)
 
     find_statistics(last_lines, command)
@@ -50,8 +50,8 @@ def ping_device(ip_addresses, display_live):
         #     print("Failed to send SIGINT to subprocess:", e)
 
         print("Waiting for the result")
-        for thread in threads:
-            thread.join()
+        # for thread in threads:
+        #     thread.join()
 
         print("The programme ended")
 
@@ -67,20 +67,21 @@ def find_statistics(last_lines, command):
     sentIndex = lines.index("Sent", packetIndex)
     sentText = "Sent = "
     sentPacketIndex = sentIndex + len(sentText)
+    sentPacketLength = lines.index(",", sentPacketIndex) - sentPacketIndex
     sentPacket = lines[sentPacketIndex]
 
     receiveIndex = lines.index("Received", sentIndex)
     receiveText = "Received = "
     receivePacketIndex = receiveIndex + len(receiveText)
+    receivePacketLength = lines.index(",", receivePacketIndex) - receivePacketIndex
     receivePacket = lines[receivePacketIndex]
 
-    print(f"##Statistics : {command} sent : {sentPacket} and Received {receivePacket}##")
+    print(f"## Statistics : {command} sent : {sentPacket} and Received {receivePacket} ##")
 
 if __name__ =="__main__":
     # ip = input("Enter IP address to ping: ")
     IPs = []
-    IPs.append("192.168.3.210")
-    IPs.append("192.168.3.190")
+    IPs.append("192.168.1.101")
     ping_device(IPs, False)
 
 
