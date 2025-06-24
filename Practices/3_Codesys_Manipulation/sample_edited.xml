@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:project xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ns0="http://www.plcopen.org/xml/tc6_0200">
+  <ns0:pous>
+    <ns0:pou name="MAIN" pouType="program">
+      <ns0:interface>
+        <ns0:inputVars>
+          <ns0:variable name="start"><ns0:type><ns0:BOOL /></ns0:type></ns0:variable>
+        </ns0:inputVars>
+      </ns0:interface>
+      <ns0:body>
+        <ns0:ST>
+          
+          start := TRUE;
+          
+        </ns0:ST>
+          <ns0:documentation>
+              <html:xhtml />
+          </ns0:documentation>
+      </ns0:body>
+    </ns0:pou>
+  </ns0:pous>
+</ns0:project>

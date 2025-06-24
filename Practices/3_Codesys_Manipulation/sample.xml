@@ -1,0 +1,21 @@
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <pous>
+    <pou name="MAIN" pouType="program">
+      <interface>
+        <inputVars>
+          <variable name="start"><type><BOOL/></type></variable>
+        </inputVars>
+      </interface>
+      <body>
+        <ST>
+          <![CDATA[
+          start := TRUE;
+          ]]>
+        </ST>
+          <documentation>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+          </documentation>
+      </body>
+    </pou>
+  </pous>
+</project>
