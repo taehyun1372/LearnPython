@@ -1,0 +1,5 @@
+cd "C:\Program Files (x86)\CODESYS 3.5.20.50\CODESYS\Common"
+CODESYS.exe ^
+    --project="C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Basic.project" ^
+    --profile="CODESYS V3.5 SP20 Patch 5" ^
+    --runscript="C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Hello_World.py"
