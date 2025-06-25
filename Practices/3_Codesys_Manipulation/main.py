@@ -208,7 +208,7 @@ class DeviceIdentification:
 if __name__ == "__main__":
     print("Hello World")
     # Open a xml file
-    project = Project("Modbus_Test_Project_Original.xml")
+    project = Project("Modbus_Test_Project.xml")
 
     # Change Device
     project.remove_device_connector_by_interface("GPIOSysfs")
@@ -234,6 +234,6 @@ if __name__ == "__main__":
     project.display_libraries()
 
     # save xml file
-    project.save_xml_file("Modbus_Test_Project_Output3.xml")
+    project.save_xml_file("Modbus_Test_Project_Edited.xml")
 
 

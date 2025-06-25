@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 5" creationDateTime="2025-06-24T15:29:19.5729072" />
-  <contentHeader name="Modbus_Test_Project.project" modificationDateTime="2025-06-24T14:31:08.9879129">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 5" creationDateTime="2025-06-25T17:22:59.3617509" />
+  <contentHeader name="Modbus_Test_Project.project" modificationDateTime="2025-06-25T17:03:43.3271085">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -40,7 +40,7 @@
                 </TaskSettings>
               </data>
               <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
-                <ObjectId>cdcc5521-d852-489b-bb9b-18ed614bd53e</ObjectId>
+                <ObjectId>68451eb2-4d68-42cf-989b-42be22b075d6</ObjectId>
               </data>
             </addData>
           </task>
@@ -472,9 +472,9 @@ serverSerial(xEnable:=TRUE);
             </data>
             <data name="http://www.3s-software.com/plcopenxml/libraries" handleUnknown="implementation">
               <Libraries>
-                <Library Name="#BreakpointLogging" Namespace="BPLog" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="Breakpoint Logging Functions, * (3S - Smart Software Solutions GmbH)" />
                 <Library Name="#IoStandard" Namespace="IoStandard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="true" DefaultResolution="IoStandard, 3.5.16.0 (System)" />
                 <Library Name="#3SLicense" Namespace="_3S_LICENSE" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="3SLicense, 0.0.0.0 (3S - Smart Software Solutions GmbH)" ResolverGuid="97c3b452-d9fa-4ac2-9d0c-3d420aa6d95b" />
+                <Library Name="#BreakpointLogging" Namespace="BPLog" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="Breakpoint Logging Functions, * (3S - Smart Software Solutions GmbH)" />
                 <PlaceholderRedirections>
                   <PlaceholderRedirection Placeholder="CmpEventMgr Implementation" Redirection="CmpEventMgr Implementation, 3.5.16.0 (System)" />
                   <PlaceholderRedirection Placeholder="Standard" Redirection="Standard, 3.5.18.0 (System)" />
@@ -482,13 +482,13 @@ serverSerial(xEnable:=TRUE);
                 </PlaceholderRedirections>
                 <addData>
                   <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
-                    <ObjectId>4b72e5ed-8344-458b-9907-0a78ca5b772c</ObjectId>
+                    <ObjectId>7319690d-2305-40a0-ae94-e510f78af5dd</ObjectId>
                   </data>
                 </addData>
               </Libraries>
             </data>
             <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
-              <ObjectId>a740809d-6506-4b02-9147-c865ccb563b6</ObjectId>
+              <ObjectId>883daac1-4b7f-45fc-8d20-7285e9fbc293</ObjectId>
             </data>
           </addData>
         </resource>
@@ -512,7 +512,7 @@ serverSerial(xEnable:=TRUE);
             <configurations />
           </data>
           <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
-            <ObjectId>e7b63774-834d-4457-9cfb-fdeb3910a545</ObjectId>
+            <ObjectId>8cb9c348-f122-4a14-bb39-7d6aff7a7004</ObjectId>
           </data>
         </addData>
       </configuration>
@@ -521,11 +521,11 @@ serverSerial(xEnable:=TRUE);
   <addData>
     <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
       <ProjectStructure>
-        <Object Name="CODESYS_Control_Win_V3" ObjectId="e7b63774-834d-4457-9cfb-fdeb3910a545">
-          <Object Name="Application" ObjectId="a740809d-6506-4b02-9147-c865ccb563b6">
-            <Object Name="Library Manager" ObjectId="4b72e5ed-8344-458b-9907-0a78ca5b772c" />
+        <Object Name="CODESYS_Control_Win_V3" ObjectId="8cb9c348-f122-4a14-bb39-7d6aff7a7004">
+          <Object Name="Application" ObjectId="883daac1-4b7f-45fc-8d20-7285e9fbc293">
+            <Object Name="Library Manager" ObjectId="7319690d-2305-40a0-ae94-e510f78af5dd" />
+            <Object Name="Task" ObjectId="68451eb2-4d68-42cf-989b-42be22b075d6" />
             <Object Name="Main" ObjectId="ee24ae0a-a60a-456d-a240-a4f3253573e9" />
-            <Object Name="Task" ObjectId="cdcc5521-d852-489b-bb9b-18ed614bd53e" />
             <Object Name="FB_ModbusSlave" ObjectId="e7e566f2-522b-45c4-b780-186d510bc113" />
           </Object>
         </Object>
