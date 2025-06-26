@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 5" creationDateTime="2025-06-26T11:30:07.6095762" />
-  <contentHeader name="Modbus_Test_Project.project" modificationDateTime="2025-06-25T17:03:43.3271085">
+<?xml version='1.0' encoding='utf-8'?>
+<project>
+  <fileHeader companyName="" creationDateTime="2025-06-26T11:30:07.6095762" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 5" />
+  <contentHeader modificationDateTime="2025-06-25T17:03:43.3271085" name="Modbus_Test_Project.project">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -14,7 +14,7 @@
       </sfc>
     </coordinateInfo>
     <addData>
-      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+      <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/projectinformation">
         <ProjectInformation />
       </data>
     </addData>
@@ -27,25 +27,25 @@
     <configurations>
       <configuration name="CODESYS_Control_Win_V3">
         <resource name="Application">
-          <task name="Task" interval="PT0.02S" priority="1">
+          <task interval="PT0.02S" name="Task" priority="1">
             <pouInstance name="Main" typeName="">
               <documentation>
-                <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                <xhtml />
               </documentation>
             </pouInstance>
             <addData>
-              <data name="http://www.3s-software.com/plcopenxml/tasksettings" handleUnknown="implementation">
-                <TaskSettings KindOfTask="Cyclic" Interval="t#20ms" IntervalUnit="ms" WithinSPSTimeSlicing="true">
-                  <Watchdog Enabled="false" TimeUnit="ms" Sensitivity="1" />
+              <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/tasksettings">
+                <TaskSettings Interval="t#20ms" IntervalUnit="ms" KindOfTask="Cyclic" WithinSPSTimeSlicing="true">
+                  <Watchdog Enabled="false" Sensitivity="1" TimeUnit="ms" />
                 </TaskSettings>
               </data>
-              <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+              <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
                 <ObjectId>68451eb2-4d68-42cf-989b-42be22b075d6</ObjectId>
               </data>
             </addData>
           </task>
           <addData>
-            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/pou">
               <pou name="Main" pouType="program">
                 <interface>
                   <localVars>
@@ -58,17 +58,17 @@
                 </interface>
                 <body>
                   <ST>
-                    <xhtml xmlns="http://www.w3.org/1999/xhtml">modbusSlave();</xhtml>
+                    <xhtml>modbusSlave();</xhtml>
                   </ST>
                 </body>
                 <addData>
-                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
                     <ObjectId>ee24ae0a-a60a-456d-a240-a4f3253573e9</ObjectId>
                   </data>
                 </addData>
               </pou>
             </data>
-            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/pou">
               <pou name="FB_ModbusSlave" pouType="functionBlock">
                 <interface>
                   <localVars>
@@ -161,7 +161,7 @@
                         </structValue>
                       </initialValue>
                       <documentation>
-                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> custom defined fcsSupported </xhtml>
+                        <xhtml> custom defined fcsSupported </xhtml>
                       </documentation>
                     </variable>
                     <variable name="aDiscreteInputsSections">
@@ -194,7 +194,7 @@
                         </arrayValue>
                       </initialValue>
                       <documentation>
-                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> Simple multi-section "data model".
+                        <xhtml> Simple multi-section "data model".
  This "data model" is completely memory mapped (all "data items" mapped to memory).
  It contains non-consecutive "data items" and non-consecutive data item memory to demonstrate how to setup such a configuration.
  "plain vanilla" setup can be done also, see "discrete inputs".
@@ -247,7 +247,7 @@
                         </arrayValue>
                       </initialValue>
                       <documentation>
-                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> "coils" - consecutive "data items" and non-consecutive data item memory</xhtml>
+                        <xhtml> "coils" - consecutive "data items" and non-consecutive data item memory</xhtml>
                       </documentation>
                     </variable>
                     <variable name="aInputRegistersSections">
@@ -312,7 +312,7 @@
                         </arrayValue>
                       </initialValue>
                       <documentation>
-                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> "input registers" - non-consecutive "data items" and non-consecutive data item memory</xhtml>
+                        <xhtml> "input registers" - non-consecutive "data items" and non-consecutive data item memory</xhtml>
                       </documentation>
                     </variable>
                     <variable name="aHoldingRegistersSections">
@@ -361,7 +361,7 @@
                         </arrayValue>
                       </initialValue>
                       <documentation>
-                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> "holding registers" - consecutive "data items" and consecutive data item memory
+                        <xhtml> "holding registers" - consecutive "data items" and consecutive data item memory
  "holding registers" 7..9 overlap with "input registers" 10..12</xhtml>
                       </documentation>
                     </variable>
@@ -414,7 +414,7 @@
                         </structValue>
                       </initialValue>
                       <documentation>
-                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> the "data model" tables</xhtml>
+                        <xhtml> the "data model" tables</xhtml>
                       </documentation>
                     </variable>
                   </localVars>
@@ -424,7 +424,7 @@
                         <derived name="ModbusFB.ServerTCP" />
                       </type>
                       <documentation>
-                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> our MODBUS TCP server (slave)</xhtml>
+                        <xhtml> our MODBUS TCP server (slave)</xhtml>
                       </documentation>
                     </variable>
                     <variable name="serverSerial">
@@ -432,7 +432,7 @@
                         <derived name="ModbusFB.ServerSerial" />
                       </type>
                       <documentation>
-                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> our MODBUS RTU server (slave)</xhtml>
+                        <xhtml> our MODBUS RTU server (slave)</xhtml>
                       </documentation>
                     </variable>
                     <variable name="initDone">
@@ -447,7 +447,7 @@
                 </interface>
                 <body>
                   <ST>
-                    <xhtml xmlns="http://www.w3.org/1999/xhtml">IF NOT initDone THEN
+                    <xhtml>IF NOT initDone THEN
 	initDone := TRUE;
 	// configure tcpServer 
 	serverTCP(fcsSupported:=fcsSupported, dataModel:=tableDefs, wsInterfaceName:="", uiPort:=1100);
@@ -464,54 +464,49 @@ serverSerial(xEnable:=TRUE);
                   </ST>
                 </body>
                 <addData>
-                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
                     <ObjectId>e7e566f2-522b-45c4-b780-186d510bc113</ObjectId>
                   </data>
                 </addData>
               </pou>
             </data>
-            <data name="http://www.3s-software.com/plcopenxml/libraries" handleUnknown="implementation">
+            <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/libraries">
               <Libraries>
-                <Library Name="#IoStandard" Namespace="IoStandard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="true" DefaultResolution="IoStandard, 3.5.16.0 (System)" />
-                <Library Name="#3SLicense" Namespace="_3S_LICENSE" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="3SLicense, 0.0.0.0 (3S - Smart Software Solutions GmbH)" ResolverGuid="97c3b452-d9fa-4ac2-9d0c-3d420aa6d95b" />
-                <Library Name="#BreakpointLogging" Namespace="BPLog" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="Breakpoint Logging Functions, * (3S - Smart Software Solutions GmbH)" />
+                <Library DefaultResolution="IoStandard, 3.5.16.0 (System)" HideWhenReferencedAsDependency="false" LinkAllContent="true" Name="#IoStandard" Namespace="IoStandard" PublishSymbolsInContainer="false" SystemLibrary="true" />
+                <Library DefaultResolution="3SLicense, 0.0.0.0 (3S - Smart Software Solutions GmbH)" HideWhenReferencedAsDependency="false" LinkAllContent="false" Name="#3SLicense" Namespace="_3S_LICENSE" PublishSymbolsInContainer="false" ResolverGuid="97c3b452-d9fa-4ac2-9d0c-3d420aa6d95b" SystemLibrary="true" />
+                <Library DefaultResolution="Breakpoint Logging Functions, * (3S - Smart Software Solutions GmbH)" HideWhenReferencedAsDependency="false" LinkAllContent="false" Name="#BreakpointLogging" Namespace="BPLog" PublishSymbolsInContainer="false" SystemLibrary="true" />
                 <PlaceholderRedirections>
                   <PlaceholderRedirection Placeholder="CmpEventMgr Implementation" Redirection="CmpEventMgr Implementation, 3.5.16.0 (System)" />
                   <PlaceholderRedirection Placeholder="Standard" Redirection="Standard, 3.5.18.0 (System)" />
                   <PlaceholderRedirection Placeholder="StringUtils" Redirection="StringUtils, 3.5.20.0 (System)" />
-                </PlaceholderRedirections>
+                <PlaceholderRedirection Placeholder="ModbusFB" Redirection="ModbusFB, 4.4.0.0 (CODESYS)" /></PlaceholderRedirections>
                 <addData>
-                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
                     <ObjectId>7319690d-2305-40a0-ae94-e510f78af5dd</ObjectId>
                   </data>
                 </addData>
-              </Libraries>
+              <Library DefaultResolution="ModbusFB, * (CODESYS)" HideWhenReferencedAsDependency="false" LinkAllContent="false" Name="#ModbusFB" Namespace="ModbusFB" PublishSymbolsInContainer="false" SystemLibrary="false" /></Libraries>
             </data>
-            <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
               <ObjectId>883daac1-4b7f-45fc-8d20-7285e9fbc293</ObjectId>
             </data>
           </addData>
         </resource>
         <addData>
-          <data name="Device" handleUnknown="discard">
-            <Device xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="">
+          <data handleUnknown="discard" name="Device">
+            <Device>
               <DeviceType>
-                <DeviceIdentification>
-                  <Type>4096</Type>
-                  <Id>175c 0001</Id>
-                  <Version>3.5.16.0</Version>
-                </DeviceIdentification>
-                <Connector moduleType="256" interface="Common.PCI" connectorId="0">
+                <Connector connectorId="0" interface="Common.PCI" moduleType="256">
                   <HostParameterSet />
                 </Connector>
                 <DeviceParameterSet />
-              </DeviceType>
+              <DeviceIdentification><Type>4096</Type><Id>0000 1007</Id><Version>4.16.0.0</Version></DeviceIdentification></DeviceType>
             </Device>
           </data>
-          <data name="configurations" handleUnknown="discard">
+          <data handleUnknown="discard" name="configurations">
             <configurations />
           </data>
-          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+          <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
             <ObjectId>8cb9c348-f122-4a14-bb39-7d6aff7a7004</ObjectId>
           </data>
         </addData>
@@ -519,7 +514,7 @@ serverSerial(xEnable:=TRUE);
     </configurations>
   </instances>
   <addData>
-    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+    <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/projectstructure">
       <ProjectStructure>
         <Object Name="CODESYS_Control_Win_V3" ObjectId="8cb9c348-f122-4a14-bb39-7d6aff7a7004">
           <Object Name="Application" ObjectId="883daac1-4b7f-45fc-8d20-7285e9fbc293">
