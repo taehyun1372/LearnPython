@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 # Load the XML file
-tree = ET.parse("Modbus_Test_Project.xml")
+tree = ET.parse("../Modbus_Test_Project.xml")
 ET.register_namespace('',)
 root = tree.getroot()
 

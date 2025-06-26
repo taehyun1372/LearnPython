@@ -1,6 +1,4 @@
 import xml.etree.ElementTree as ET
-from os import device_encoding
-from re import search
 
 VIRTUAL_CONTROL_ID = "0000 1007"
 VIRTUAL_CONTROL_VERSION = "4.16.0.0"
@@ -10,6 +8,9 @@ ABINGDON_CONTROLLER_VERSION = "3.5.16.0"
 ABINGDON_CONTROLLER_TYPE = "4096"
 MODBUSFB_PLACEHOLDER = "ModbusFB"
 MODBUSFB_REDIRECTION = "ModbusFB, 4.4.0.0 (CODESYS)"
+
+EXPORT_FILE_PATH = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project.xml"
+EDITED_FILE_PATH = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project_Edited.xml"
 
 class Project:
     def __init__(self, path):
@@ -208,7 +209,7 @@ class DeviceIdentification:
 if __name__ == "__main__":
     print("Hello World")
     # Open a xml file
-    project = Project("Modbus_Test_Project.xml")
+    project = Project(EXPORT_FILE_PATH)
 
     # Change Device
     project.remove_device_connector_by_interface("GPIOSysfs")
@@ -234,6 +235,6 @@ if __name__ == "__main__":
     project.display_libraries()
 
     # save xml file
-    project.save_xml_file("Modbus_Test_Project_Edited.xml")
+    project.save_xml_file(EDITED_FILE_PATH)
 
 

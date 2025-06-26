@@ -1,0 +1,16 @@
+{
+  "name" : "Alice",
+  "projects" : {
+    "project1" :
+  {
+    "name" : "Automation",
+    "date" : "2025-06-26"
+  },
+  "project2" :
+  {
+    "name" : "Process",
+    "date" : "2025-06-27"
+  }
+}
+
+}
