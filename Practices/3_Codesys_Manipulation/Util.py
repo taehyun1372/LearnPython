@@ -17,4 +17,4 @@ def get_arguments_instance(name = None):
             return arguments
 
     except Exception as e:
-        print(f"Invalid JSON: {e}")
+        print("Invalid JSON: {}".format(e))

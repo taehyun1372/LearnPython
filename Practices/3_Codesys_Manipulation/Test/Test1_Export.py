@@ -4,7 +4,7 @@ import os
 DEVICE_NAME = "Codesys_Control_Win_V3"
 
 # Define the path where the exported objects should be stored
-TARGET_PATH = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project.xml"
+TARGET_PATH = r"/Practices/3_Codesys_Manipulation/Modbus_Test_Project.xml"
 
 # Create the export reporter
 class Reporter(ExportReporter):

@@ -31,32 +31,25 @@ class XMLHandler:
             el.attrib = {k.split('}', 1)[-1] if '}' in k else k: v for k, v in el.attrib.items()}
 
     def process(self):
-        # Check remove device
-        if self.deviceDescription.removeDevice is not None:
-            print("A remove device is detected..")
-            self.remove_device(self.deviceDescription.removeDevice)
-
         # Check add device
         if self.deviceDescription.addDevice is not None:
             print("An add device is detected..")
             self.add_device(self.deviceDescription.addDevice)
-
-        # Check remove connector
-        if self.deviceDescription.removeConnector is not None:
-            print("A remove connector is detected..")
-            self.remove_connector(self.deviceDescription.removeConnector)
 
         # Check add connector
         if self.deviceDescription.addConnector is not None:
             print("An add connector is detected..")
             self.add_connector(self.deviceDescription.addConnector)
 
-        # Check remove libraries
-        if self.library.removeLibraries is not None:
-            print("A remove library is detected..")
-            for name, removeLibrary in self.library.removeLibraries.items():
-                print(f"Removing library {name}..")
-                self.remove_library(removeLibrary)
+        # Check remove device
+        if self.deviceDescription.removeDevice is not None:
+            print("A remove device is detected..")
+            self.remove_device(self.deviceDescription.removeDevice)
+
+        # Check remove connector
+        if self.deviceDescription.removeConnector is not None:
+            print("A remove connector is detected..")
+            self.remove_connector(self.deviceDescription.removeConnector)
 
         # Check add libraries
         if self.library.addLibraries is not None:
@@ -65,13 +58,6 @@ class XMLHandler:
                 print(f"Adding library {name}..")
                 self.add_library(addLibrary)
 
-        # Check remove placeholders
-        if self.library.removePlaceholders is not None:
-            print("A remove placeholder is detected..")
-            for name, removePlaceholder in self.library.removePlaceholders.items():
-                print(f"Removing placeholder {name}..")
-                self.remove_placeholder(removePlaceholder)
-
         # Check add placeholders
         if self.library.addPlaceholders is not None:
             print("An add placeholder is detected..")
@@ -79,18 +65,36 @@ class XMLHandler:
                 print(f"Adding placeholder {name}..")
                 self.add_placeholder(addPlaceholder)
 
-    def remove_connector(self, removeConnector: RemoveConnector):
-        print("Searching the parent element to remove a connector")
+        # Check remove libraries
+        if self.library.removeLibraries is not None:
+            print("A remove library is detected..")
+            for name, removeLibrary in self.library.removeLibraries.items():
+                print(f"Removing library {name}..")
+                self.remove_library(removeLibrary)
+
+        # Check remove placeholders
+        if self.library.removePlaceholders is not None:
+            print("A remove placeholder is detected..")
+            for name, removePlaceholder in self.library.removePlaceholders.items():
+                print(f"Removing placeholder {name}..")
+                self.remove_placeholder(removePlaceholder)
+
+    def add_device(self, addDevice: AddDevice):
+        print("Searching the parent element to add a device")
         device_type = self.root.find(".//DeviceType")
         if device_type is not None:
-            print("Found the device type element")
-            connectors = device_type.findall(".//Connector")
-            for connector in connectors:
-                if connector.attrib["interface"] == removeConnector.interface:
-                    device_type.remove(connector)
-                    print(f"Removed a connector successfully : {removeConnector.interface}")
-        else:
-            print("Could not find the device type element")
+            identification = ET.SubElement(device_type, "DeviceIdentification")
+
+            type = ET.SubElement(identification, "Type")
+            type.text = addDevice.type
+
+            id = ET.SubElement(identification, "Id")
+            id.text = addDevice.id
+
+            version = ET.SubElement(identification, "Version")
+            version.text = addDevice.version
+
+            print(f"Added a device successfully : {addDevice.id}")
 
     def add_connector(self, addConnector: AddConnector):
         print("Searching the parent element to add a connector")
@@ -121,54 +125,18 @@ class XMLHandler:
         else:
             print("Could not find the device type element")
 
-    def add_device(self, addDevice: AddDevice):
-        print("Searching the parent element to add a device")
+    def remove_connector(self, removeConnector: RemoveConnector):
+        print("Searching the parent element to remove a connector")
         device_type = self.root.find(".//DeviceType")
         if device_type is not None:
-            identification = ET.SubElement(device_type, "DeviceIdentification")
-
-            type = ET.SubElement(identification, "Type")
-            type.text = addDevice.type
-
-            id = ET.SubElement(identification, "Id")
-            id.text = addDevice.id
-
-            version = ET.SubElement(identification, "Version")
-            version.text = addDevice.version
-
-            print(f"Added a device successfully : {addDevice.id}")
-
-    def add_placeholder(self, addPlaceholder: AddPlaceholder):
-        print("Searching the parent element to add a placeholder")
-        libraries = self.root.find(".//Libraries")
-        if libraries is not None:
-            redirections = libraries.find(".//PlaceholderRedirections")
-            if redirections is not None:
-                placeholder = ET.SubElement(redirections, "PlaceholderRedirection", {
-                    "Placeholder" : addPlaceholder.placeholder,
-                    "Redirection" : addPlaceholder.redirection
-                })
-                print(f"Added a placeholder successfully : {addPlaceholder.placeholder}")
-            else:
-                print("Could not find the PlaceholderRedirections element")
+            print("Found the device type element")
+            connectors = device_type.findall(".//Connector")
+            for connector in connectors:
+                if connector.attrib["interface"] == removeConnector.interface:
+                    device_type.remove(connector)
+                    print(f"Removed a connector successfully : {removeConnector.interface}")
         else:
-            print("Could not find the Libraries element")
-
-    def remove_placeholder(self, removePlaceholder: RemovePlaceholder):
-        print("Searching the parent element to remove a placeholder")
-        libraries = self.root.find(".//Libraries")
-        if libraries is not None:
-            redirections = libraries.find(".//PlaceholderRedirections")
-            if redirections is not None:
-                placeholders = redirections.findall(".//PlaceholderRedirection")
-                for placeholder in placeholders:
-                    if placeholder.attrib["Placeholder"] == removePlaceholder.placeholder:
-                        redirections.remove(placeholder)
-                        print(f"Removed a placeholder successfully : {removePlaceholder.placeholder}")
-            else:
-                print("Could not find the PlaceholderRedirections element")
-        else:
-            print("Could not find the Libraries element")
+            print("Could not find the device type element")
 
     def add_library(self, addLibrary: AddLibrary):
         print("Searching the parent element to add a library")
@@ -187,6 +155,22 @@ class XMLHandler:
         else:
             print("Could not find the Libraries element")
 
+    def add_placeholder(self, addPlaceholder: AddPlaceholder):
+        print("Searching the parent element to add a placeholder")
+        libraries = self.root.find(".//Libraries")
+        if libraries is not None:
+            redirections = libraries.find(".//PlaceholderRedirections")
+            if redirections is not None:
+                placeholder = ET.SubElement(redirections, "PlaceholderRedirection", {
+                    "Placeholder" : addPlaceholder.placeholder,
+                    "Redirection" : addPlaceholder.redirection
+                })
+                print(f"Added a placeholder successfully : {addPlaceholder.placeholder}")
+            else:
+                print("Could not find the PlaceholderRedirections element")
+        else:
+            print("Could not find the Libraries element")
+
     def remove_library(self, removeLibrary: RemoveLibrary):
         print("Searching the parent element to remove a library")
         libraries_element = self.root.find(".//Libraries")
@@ -196,6 +180,22 @@ class XMLHandler:
                 if library.attrib["Namespace"] == removeLibrary.namespace:
                     libraries_element.remove(library)
                     print(f"Removed a library successfully : {removeLibrary.namespace}")
+        else:
+            print("Could not find the Libraries element")
+
+    def remove_placeholder(self, removePlaceholder: RemovePlaceholder):
+        print("Searching the parent element to remove a placeholder")
+        libraries = self.root.find(".//Libraries")
+        if libraries is not None:
+            redirections = libraries.find(".//PlaceholderRedirections")
+            if redirections is not None:
+                placeholders = redirections.findall(".//PlaceholderRedirection")
+                for placeholder in placeholders:
+                    if placeholder.attrib["Placeholder"] == removePlaceholder.placeholder:
+                        redirections.remove(placeholder)
+                        print(f"Removed a placeholder successfully : {removePlaceholder.placeholder}")
+            else:
+                print("Could not find the PlaceholderRedirections element")
         else:
             print("Could not find the Libraries element")
 

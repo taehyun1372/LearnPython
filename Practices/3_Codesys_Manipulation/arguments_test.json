@@ -1,29 +1,29 @@
 {
     "projectFile": {
-        "projectFilePath": "r\"C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation",
-        "projectFileName": "Modbus_Test_Project.project",
+        "path": "r\"C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation",
+        "name": "Modbus_Test_Project.project",
         "backupXMLName": "backup",
         "editedXMLName": "edited"
     },
     "deviceDescription": {
-        "removeDevice": {
-            "id": "175c 0001"
-        },
-        "removeConnector": {
-            "interface": "GPIOSysfs"
-        },
         "addDevice": {
             "id": "0000 1007",
             "version": "4.16.0.0",
             "type": "4096"
         },
-        "addConnector": null
+        "addConnector": null,
+        "removeDevice": {
+            "id": "175c 0001"
+        },
+        "removeConnector": {
+            "interface": "GPIOSysfs"
+        }
     },
     "library": {
         "addLibraries": {
             "modbusFB": {
                 "name": "#ModbusFB",
-                "nameSpace": "ModbusFB",
+                "namespace": "ModbusFB",
                 "hideWhenReferencedAsDependency": "false",
                 "publishSymbolsInContainer": "false",
                 "systemLibrary": "false",

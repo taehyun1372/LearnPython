@@ -10,14 +10,6 @@ class ProjectFile:
     editedXMLName: Optional[str] = "edited"
 
 @dataclass
-class RemoveDevice:
-    id: str
-
-@dataclass
-class RemoveConnector:
-    interface: str
-
-@dataclass
 class AddDevice:
     id: str
     version: str
@@ -30,11 +22,19 @@ class AddConnector:
     connectorId: str
 
 @dataclass
+class RemoveDevice:
+    id: str
+
+@dataclass
+class RemoveConnector:
+    interface: str
+
+@dataclass
 class DeviceDescription:
-    removeDevice: Optional[RemoveDevice] = None
-    removeConnector: Optional[RemoveConnector] = None
     addDevice: Optional[AddDevice] = None
     addConnector: Optional[AddConnector] = None
+    removeDevice: Optional[RemoveDevice] = None
+    removeConnector: Optional[RemoveConnector] = None
 
 @dataclass
 class AddLibrary:
@@ -74,7 +74,7 @@ class Instance:
 
 @dataclass
 class Target:
-    deviceName: Optional[str] = None
+    deviceName: str
     applicationName: Optional[str] = "Application"
     gatewayIPAddress: Optional[str] = "192.168.121.132"
     gatewayPort: Optional[int] = 1217
@@ -98,7 +98,7 @@ if __name__ == "__main__":
             arguments = from_dict(data_class=Arguments, data=data, config=Config(cast=[Optional]))
 
             # Generate a json file to check if conversion was successful
-            with open("Arguments_Test.json", "w") as f:
+            with open("arguments_test.json", "w") as f:
                 json.dump(asdict(arguments), f, indent=4)
 
     except Exception as e:

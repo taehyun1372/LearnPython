@@ -4,16 +4,16 @@
     "name": "Modbus_Test_Project.project"
   },
   "deviceDescription": {
+    "addDevice": {
+      "id": "0000 1007",
+      "version": "4.16.0.0",
+      "type": "4096"
+    },
     "removeDevice": {
       "id" : "175c 0001"
     },
     "removeConnector": {
       "interface" : "GPIOSysfs"
-    },
-    "addDevice": {
-      "id": "0000 1007",
-      "version": "4.16.0.0",
-      "type": "4096"
     }
   },
   "library": {
@@ -40,6 +40,7 @@
     }
   },
   "target": {
+    "deviceName": "Codesys_Control_Win_V3",
     "instances": {
       "instance1": {
         "ipAddress": "172.17.0.4",

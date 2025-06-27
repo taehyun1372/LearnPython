@@ -1,12 +1,12 @@
 import os
 
 # Specify the project file name
-PROJECT_PATH = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project_Imported.project"
+PROJECT_PATH = r"/Practices/3_Codesys_Manipulation/Modbus_Test_Project_Imported.project"
 
 # Define the path where the project should be/is storedproject_path = r"C:\Python"
 
 # Define the file where the exported object is stored
-FILE_NAME = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project_Edited.xml"
+FILE_NAME = r"/Practices/3_Codesys_Manipulation/Modbus_Test_Project_Edited.xml"
 
 
 # Create the import reporter
