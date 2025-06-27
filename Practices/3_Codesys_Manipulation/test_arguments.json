@@ -1,0 +1,51 @@
+{
+  "projectFile" : {
+    "path": "r\"C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation" ,
+    "name": "Modbus_Test_Project.project"
+  },
+  "deviceDescription": {
+    "removeDevice": {
+      "id" : "175c 0001"
+    },
+    "removeConnector": {
+      "interface" : "GPIOSysfs"
+    },
+    "addDevice": {
+      "id": "0000 1007",
+      "version": "4.16.0.0",
+      "type": "4096"
+    }
+  },
+  "library": {
+    "addLibraries": {
+      "modbusFB": {
+        "name": "#ModbusFB",
+        "nameSpace": "ModbusFB",
+        "hideWhenReferencedAsDependency": "false",
+        "publishSymbolsInContainer": "false",
+        "systemLibrary": "false",
+        "linkAllContent": "false",
+        "defaultResolution": "ModbusFB, * (CODESYS)"
+      }
+    },
+    "addPlaceholders": {
+      "modbusFB": {
+        "placeholder": "ModbusFB",
+        "redirection": "ModbusFB, 4.4.0.0 (CODESYS)"
+      }
+    },
+    "removeLibraries": {
+    },
+    "removePlaceholders": {
+    }
+  },
+  "target": {
+    "instances": {
+      "instance1": {
+        "ipAddress": "172.17.0.4",
+        "id": "Instance1",
+        "password": "Wonderous7641!"
+      }
+    }
+  }
+}

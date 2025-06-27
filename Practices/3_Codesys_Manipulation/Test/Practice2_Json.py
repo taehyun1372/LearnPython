@@ -27,12 +27,9 @@ class User:
     education: Education
     projects : Dict[str, Project]
 
-
 projects_dict = {k: Project(**v) for k, v in data["projects"].items()}
 
-
 education = Education(**data["education"])
-
 
 data["projects"] = projects_dict
 data["education"] = education
@@ -45,7 +42,6 @@ print(user.education.university)
 user2 = from_dict(data_class=User, data=data, config=Config(cast=[Optional]))
 
 print(user2.education.university)
-
 
 print(f"user name is {user.name}")
 print(f"user age is {user.age}")

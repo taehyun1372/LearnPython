@@ -1,12 +1,11 @@
 import json
 from typing import Optional, Dict
 from dataclasses import dataclass, asdict
-from dacite import from_dict, Config
 
 @dataclass
 class ProjectFile:
-    projectFilePath: str
-    projectFileName: str
+    path: str
+    name: str
     backupXMLName: Optional[str] = "backup"
     editedXMLName: Optional[str] = "edited"
 
@@ -88,23 +87,11 @@ class Arguments:
     library: Library
     target: Target
 
-def get_arguments_instance():
-    try:
-        with open('Arguments.json', 'r') as f:
-            data = json.load(f)
-
-            # Convert a dictionary data into a class instance for better access in the code
-            arguments = from_dict(data_class=Arguments, data=data, config=Config(cast=[Optional]))
-
-            return arguments
-
-    except Exception as e:
-        print(f"Invalid JSON: {e}")
-
-
 if __name__ == "__main__":
+    from dacite import from_dict, Config
+
     try:
-        with open('Arguments.json', 'r') as f:
+        with open('arguments.json', 'r') as f:
             data = json.load(f)
 
             # Convert a dictionary data into a class instance for better access in the code

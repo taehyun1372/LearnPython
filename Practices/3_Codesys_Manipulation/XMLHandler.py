@@ -1,39 +1,26 @@
 import xml.etree.ElementTree as ET
-import ArgsHandler
+from symbol import argument
 
-VIRTUAL_CONTROL_ID = "0000 1007"
-VIRTUAL_CONTROL_VERSION = "4.16.0.0"
-VIRTUAL_CONTROL_TYPE = "4096"
-ABINGDON_CONTROLLER_ID = "175c 0001"
-ABINGDON_CONTROLLER_VERSION = "3.5.16.0"
-ABINGDON_CONTROLLER_TYPE = "4096"
-MODBUSFB_PLACEHOLDER = "ModbusFB"
-MODBUSFB_REDIRECTION = "ModbusFB, 4.4.0.0 (CODESYS)"
+from argsHandler import (ProjectFile, RemoveDevice, RemoveConnector, AddDevice, AddConnector,
+                         DeviceDescription, AddLibrary, AddPlaceholder, RemoveLibrary, RemovePlaceholder,
+                         Library, Instance, Target, Arguments)
+import os
 
-EXPORT_FILE_PATH = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project.xml"
-EDITED_FILE_PATH = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project_Edited.xml"
+class XMLHandler:
+    def __init__(self, path, deviceDescription: DeviceDescription, library: Library):
+        self.path = path
+        self.library= library
+        self.deviceDescription = deviceDescription
+        self.tree = None
+        self.root = None
 
-class Project:
-    def __init__(self, path):
+        self.initialise()
 
-        ET.register_namespace('', "http://www.w3.org/1999/xhtml")
-
-        self.libraries_element = None
-        self.placeholder_element = None
-        self.device_type_element = None
-        self.device_identification = None
-        self.device_connectors = []
-        self.libraries = []
-        self.placeholders = []
-
+    def initialise(self):
         # Load the XML file
-        self.tree = ET.parse(path)
+        self.tree = ET.parse(self.path)
         self.root = self.tree.getroot()
         self.strip_namespaces(self.root)
-
-        self.initialise_devices()
-
-        self.initialize_libraries()
 
     def strip_namespaces(self, root):
         """Recursively remove all namespaces from XML element tags."""
@@ -43,199 +30,194 @@ class Project:
             # Also strip attribute namespaces if needed
             el.attrib = {k.split('}', 1)[-1] if '}' in k else k: v for k, v in el.attrib.items()}
 
-    def convert_abingdon_to_virtual_device(self):
-        project.remove_device_identification_by_id(ABINGDON_CONTROLLER_ID)
+    def process(self):
+        # Check remove device
+        if self.deviceDescription.removeDevice is not None:
+            print("A remove device is detected..")
+            self.remove_device(self.deviceDescription.removeDevice)
 
-        project.add_device_identification(DeviceIdentification(
-            type=VIRTUAL_CONTROL_TYPE,
-            id=VIRTUAL_CONTROL_ID,
-            version=VIRTUAL_CONTROL_VERSION
-        ))
+        # Check add device
+        if self.deviceDescription.addDevice is not None:
+            print("An add device is detected..")
+            self.add_device(self.deviceDescription.addDevice)
 
-    def convert_virtual_to_abingdon_device(self):
-        project.remove_device_identification_by_id(VIRTUAL_CONTROL_ID)
+        # Check remove connector
+        if self.deviceDescription.removeConnector is not None:
+            print("A remove connector is detected..")
+            self.remove_connector(self.deviceDescription.removeConnector)
 
-        project.add_device_identification(DeviceIdentification(
-            type=ABINGDON_CONTROLLER_TYPE,
-            id=ABINGDON_CONTROLLER_ID,
-            version=ABINGDON_CONTROLLER_VERSION
-        ))
+        # Check add connector
+        if self.deviceDescription.addConnector is not None:
+            print("An add connector is detected..")
+            self.add_connector(self.deviceDescription.addConnector)
 
-    def search_device_type_element(self):
-        print("Searching the libraries element")
+        # Check remove libraries
+        if self.library.removeLibraries is not None:
+            print("A remove library is detected..")
+            for name, removeLibrary in self.library.removeLibraries.items():
+                print(f"Removing library {name}..")
+                self.remove_library(removeLibrary)
+
+        # Check add libraries
+        if self.library.addLibraries is not None:
+            print("An add library is detected..")
+            for name, addLibrary in self.library.addLibraries.items():
+                print(f"Adding library {name}..")
+                self.add_library(addLibrary)
+
+        # Check remove placeholders
+        if self.library.removePlaceholders is not None:
+            print("A remove placeholder is detected..")
+            for name, removePlaceholder in self.library.removePlaceholders.items():
+                print(f"Removing placeholder {name}..")
+                self.remove_placeholder(removePlaceholder)
+
+        # Check add placeholders
+        if self.library.addPlaceholders is not None:
+            print("An add placeholder is detected..")
+            for name, addPlaceholder in self.library.addPlaceholders.items():
+                print(f"Adding placeholder {name}..")
+                self.add_placeholder(addPlaceholder)
+
+    def remove_connector(self, removeConnector: RemoveConnector):
+        print("Searching the parent element to remove a connector")
         device_type = self.root.find(".//DeviceType")
         if device_type is not None:
-            self.device_type_element = device_type
+            print("Found the device type element")
+            connectors = device_type.findall(".//Connector")
+            for connector in connectors:
+                if connector.attrib["interface"] == removeConnector.interface:
+                    device_type.remove(connector)
+                    print(f"Removed a connector successfully : {removeConnector.interface}")
+        else:
+            print("Could not find the device type element")
+
+    def add_connector(self, addConnector: AddConnector):
+        print("Searching the parent element to add a connector")
+        device_type = self.root.find(".//DeviceType")
+        if device_type is not None:
             print("Found the device type element")
 
-    def initialise_devices(self):
-        print("Initializing Devices")
+            ET.SubElement(device_type, "Connector", {
+                "moduleType" : addConnector.moduleType,
+                "interface" : addConnector.interface,
+                "connectorId" : addConnector.connectorId
+            })
+            print(f"Added a connector successfully : {addConnector.interface}")
+        else:
+            print("Could not find the device type element")
 
-        self.search_device_type_element()
+    def remove_device(self, removeDevice: RemoveDevice):
+        print("Searching the parent element to remove a device")
+        device_type = self.root.find(".//DeviceType")
+        if device_type is not None:
+            print("Found the device type element")
+            identifications = device_type.findall(".//DeviceIdentification")
+            for identification in identifications:
+                id = identification.find(".//Id")
+                if id is not None and id.text == removeDevice.id:
+                    device_type.remove(identification)
+                    print(f"Removed a device successfully : {removeDevice.id}")
+        else:
+            print("Could not find the device type element")
 
-        if self.device_type_element is not None:
-            connectors = self.device_type_element.findall(".//Connector")
-            for connector in connectors:
-                self.device_connectors.append(connector)
+    def add_device(self, addDevice: AddDevice):
+        print("Searching the parent element to add a device")
+        device_type = self.root.find(".//DeviceType")
+        if device_type is not None:
+            identification = ET.SubElement(device_type, "DeviceIdentification")
 
-            identification = self.device_type_element.find(".//DeviceIdentification")
-            self.device_identification = identification
+            type = ET.SubElement(identification, "Type")
+            type.text = addDevice.type
 
-    def remove_device_connector_by_interface(self, interface):
-        for connector in self.device_connectors:
-            if connector.attrib["interface"] == interface:
-                self.device_type_element.remove(connector)
+            id = ET.SubElement(identification, "Id")
+            id.text = addDevice.id
 
-    def add_device_connector(self, device_connector):
-        ET.SubElement(self.device_type_element, "Connector", {
-            "moduleType" : device_connector.moduleType,
-            "interface" : device_connector.interface,
-            "connectorId" : device_connector.connectorId
-        })
+            version = ET.SubElement(identification, "Version")
+            version.text = addDevice.version
 
-    def remove_device_identification_by_id(self, id):
-        if self.device_type_element is not None:
-            if self.device_identification is not None:
-                id_element = self.device_identification.find(".//Id")
-                if id_element is not None and id_element.text == id:
-                    self.device_type_element.remove(self.device_identification)
+            print(f"Added a device successfully : {addDevice.id}")
 
-    def add_device_identification(self, device_identification):
-        identification_element = ET.SubElement(self.device_type_element, "DeviceIdentification")
+    def add_placeholder(self, addPlaceholder: AddPlaceholder):
+        print("Searching the parent element to add a placeholder")
+        libraries = self.root.find(".//Libraries")
+        if libraries is not None:
+            redirections = libraries.find(".//PlaceholderRedirections")
+            if redirections is not None:
+                placeholder = ET.SubElement(redirections, "PlaceholderRedirection", {
+                    "Placeholder" : addPlaceholder.placeholder,
+                    "Redirection" : addPlaceholder.redirection
+                })
+                print(f"Added a placeholder successfully : {addPlaceholder.placeholder}")
+            else:
+                print("Could not find the PlaceholderRedirections element")
+        else:
+            print("Could not find the Libraries element")
 
-        type = ET.SubElement(identification_element, "Type")
-        type.text = device_identification.type
+    def remove_placeholder(self, removePlaceholder: RemovePlaceholder):
+        print("Searching the parent element to remove a placeholder")
+        libraries = self.root.find(".//Libraries")
+        if libraries is not None:
+            redirections = libraries.find(".//PlaceholderRedirections")
+            if redirections is not None:
+                placeholders = redirections.findall(".//PlaceholderRedirection")
+                for placeholder in placeholders:
+                    if placeholder.attrib["Placeholder"] == removePlaceholder.placeholder:
+                        placeholders.remove(placeholder)
+                        print(f"Removed a placeholder successfully : {removePlaceholder.placeholder}")
+            else:
+                print("Could not find the PlaceholderRedirections element")
+        else:
+            print("Could not find the Libraries element")
 
-        id = ET.SubElement(identification_element, "Id")
-        id.text = device_identification.id
+    def add_library(self, addLibrary: AddLibrary):
+        print("Searching the parent element to add a library")
+        libraries = self.root.find(".//Libraries")
+        if libraries is not None:
+            library = ET.SubElement(libraries, "Library", {
+                "Name": addLibrary.name,
+                "Namespace": addLibrary.nameSpace,
+                "HideWhenReferencedAsDependency": addLibrary.hideWhenReferencedAsDependency,
+                "PublishSymbolsInContainer": addLibrary.publishSymbolsInContainer,
+                "SystemLibrary": addLibrary.systemLibrary,
+                "LinkAllContent": addLibrary.linkAllContent,
+                "DefaultResolution": addLibrary.defaultResolution
+            })
+            print(f"Added a library successfully : {addLibrary.name}")
+        else:
+            print("Could not find the Libraries element")
 
-        version = ET.SubElement(identification_element, "Version")
-        version.text = device_identification.version
-
-    def search_libraries_element(self):
-        print("Searching the libraries element")
+    def remove_library(self, removeLibrary: RemoveLibrary):
+        print("Searching the parent element to remove a library")
         libraries_element = self.root.find(".//Libraries")
         if libraries_element is not None:
-            self.libraries_element = libraries_element
-            print("Found the libraries element")
-
-        placeholder_element = self.root.find(".//PlaceholderRedirections")
-        if placeholder_element is not None:
-            self.placeholder_element = placeholder_element
-            print("Found the placeholder element")
-
-
-    def initialize_libraries(self):
-        print("Initializing Libraries")
-
-        self.search_libraries_element()
-
-        if self.libraries_element is not None:
-            libraries = self.libraries_element.findall(".//Library")
+            libraries = libraries_element.findall(".//Library")
             for library in libraries:
-                self.libraries.append(library)
-
-        if self.placeholder_element is not None:
-            placeholders = self.placeholder_element.findall(".//PlaceholderRedirection")
-            for placeholder in placeholders:
-                self.placeholders.append(placeholder)
-
-    def add_placeholder(self, placeholder):
-        if self.placeholder_element is not None:
-            placeholder = ET.SubElement(self.placeholder_element, "PlaceholderRedirection", {
-                "Placeholder" : placeholder.Placeholder,
-                "Redirection" : placeholder.Redirection
-            })
-            self.placeholders.append(placeholder)
-
-    def remove_placeholder_by_placeholder(self, placeholder):
-        if self.placeholder_element is not None:
-            for placeholder in self.placeholders:
-                if placeholder.attrib["Placeholder"] == placeholder:
-                    self.placeholder_element.remove(placeholder)
-
-    def display_libraries(self):
-        for library in self.libraries:
-            print(library.attrib["Name"])
-
-    def add_library(self, library):
-        if self.libraries_element is not None:
-            library = ET.SubElement(self.libraries_element, "Library", {
-                "Name" : library.Name,
-                "Namespace" : library.NameSpace,
-                "HideWhenReferencedAsDependency" : library.HideWhenReferencedAsDependency,
-                "PublishSymbolsInContainer" : library.PublishSymbolsInContainer,
-                "SystemLibrary" : library.SystemLibrary,
-                "LinkAllContent" : library.LinkAllContent,
-                "DefaultResolution" : library.DefaultResolution
-            })
-            self.libraries.append(library)
-
-    def remove_library_by_namespace(self, namespace):
-        if self.libraries_element is not None:
-            for library in self.libraries:
-                if library.attrib["Namespace"] == namespace:
-                    self.libraries_element.remove(library)
+                if library.attrib["Namespace"] == removeLibrary.nameSpace:
+                    libraries_element.remove(library)
+                    print(f"Removed a library successfully : {removeLibrary.nameSpace}")
+        else:
+            print("Could not find the Libraries element")
 
     def save_xml_file(self, path):
         self.tree.write(path, encoding="utf-8", xml_declaration=True)
 
-class Library:
-    def __init__(self, Name, NameSpace, HideWhenReferencedAsDependency, PublishSymbolsInContainer, SystemLibrary, LinkAllContent, DefaultResolution):
-        self.Name = Name
-        self.NameSpace = NameSpace
-        self.HideWhenReferencedAsDependency = HideWhenReferencedAsDependency
-        self.PublishSymbolsInContainer = PublishSymbolsInContainer
-        self.SystemLibrary = SystemLibrary
-        self.LinkAllContent = LinkAllContent
-        self.DefaultResolution = DefaultResolution
-
-class Placeholder:
-    def __init__(self, Placeholder, Redirection):
-        self.Placeholder = Placeholder
-        self.Redirection = Redirection
-
-class DeviceConnector:
-    def __init__(self, moduleType, interface, connectorId):
-        self.moduleType = moduleType
-        self.interface = interface
-        self.connectorId= connectorId
-
-class DeviceIdentification:
-    def __init__(self, type, id, version):
-        self.type = type
-        self.id = id
-        self.version = version
-
 if __name__ == "__main__":
-    print("Hello World")
-    # Open a xml file
-    project = Project(EXPORT_FILE_PATH)
+    import Util
+    test_argument_path = "test_arguments.json"
+    sample_xml_path = "test_project.xml"
+    output_xml_path = "test_project_output.xml"
 
-    # Change Device
-    project.remove_device_connector_by_interface("GPIOSysfs")
 
-    project.convert_abingdon_to_virtual_device()
+    test_argument = Util.get_arguments_instance(test_argument_path)
 
-    # Add a library
-    project.add_library( Library(
-        Name="#ModbusFB",
-        NameSpace="ModbusFB",
-        HideWhenReferencedAsDependency="false",
-        PublishSymbolsInContainer="false",
-        SystemLibrary="false",
-        LinkAllContent="false",
-        DefaultResolution="ModbusFB, * (CODESYS)"
-    ))
+    # create a xml handler with test arguments
+    handler = XMLHandler(path=sample_xml_path, library=test_argument.library, deviceDescription=test_argument.deviceDescription)
 
-    project.add_placeholder(Placeholder(
-        Placeholder = MODBUSFB_PLACEHOLDER,
-        Redirection = MODBUSFB_REDIRECTION
-    ))
+    # manipulate the xml file according to the arguments
+    handler.process()
 
-    project.display_libraries()
-
-    # save xml file
-    project.save_xml_file(EDITED_FILE_PATH)
+    # save the manipulated xml
+    handler.save_xml_file(output_xml_path)
 
 

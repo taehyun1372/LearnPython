@@ -1,7 +1,7 @@
 {
   "projectFile" : {
-    "projectFilePath": "r\"C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation" ,
-    "projectFileName": "Modbus_Test_Project.project"
+    "path": "r\"C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation" ,
+    "name": "Modbus_Test_Project.project"
   },
   "deviceDescription": {
     "removeDevice": {
