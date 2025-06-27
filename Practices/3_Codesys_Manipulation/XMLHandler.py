@@ -163,7 +163,7 @@ class XMLHandler:
                 placeholders = redirections.findall(".//PlaceholderRedirection")
                 for placeholder in placeholders:
                     if placeholder.attrib["Placeholder"] == removePlaceholder.placeholder:
-                        placeholders.remove(placeholder)
+                        redirections.remove(placeholder)
                         print(f"Removed a placeholder successfully : {removePlaceholder.placeholder}")
             else:
                 print("Could not find the PlaceholderRedirections element")
@@ -176,7 +176,7 @@ class XMLHandler:
         if libraries is not None:
             library = ET.SubElement(libraries, "Library", {
                 "Name": addLibrary.name,
-                "Namespace": addLibrary.nameSpace,
+                "Namespace": addLibrary.namespace,
                 "HideWhenReferencedAsDependency": addLibrary.hideWhenReferencedAsDependency,
                 "PublishSymbolsInContainer": addLibrary.publishSymbolsInContainer,
                 "SystemLibrary": addLibrary.systemLibrary,
@@ -193,9 +193,9 @@ class XMLHandler:
         if libraries_element is not None:
             libraries = libraries_element.findall(".//Library")
             for library in libraries:
-                if library.attrib["Namespace"] == removeLibrary.nameSpace:
+                if library.attrib["Namespace"] == removeLibrary.namespace:
                     libraries_element.remove(library)
-                    print(f"Removed a library successfully : {removeLibrary.nameSpace}")
+                    print(f"Removed a library successfully : {removeLibrary.namespace}")
         else:
             print("Could not find the Libraries element")
 
@@ -207,7 +207,6 @@ if __name__ == "__main__":
     test_argument_path = "test_arguments.json"
     sample_xml_path = "test_project.xml"
     output_xml_path = "test_project_output.xml"
-
 
     test_argument = Util.get_arguments_instance(test_argument_path)
 

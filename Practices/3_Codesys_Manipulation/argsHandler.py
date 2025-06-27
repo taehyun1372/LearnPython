@@ -39,7 +39,7 @@ class DeviceDescription:
 @dataclass
 class AddLibrary:
     name: str
-    nameSpace: str
+    namespace: str
     hideWhenReferencedAsDependency: str
     publishSymbolsInContainer: str
     systemLibrary: str
@@ -53,7 +53,7 @@ class AddPlaceholder:
 
 @dataclass
 class RemoveLibrary:
-    nameSpace: str
+    namespace: str
 
 @dataclass
 class RemovePlaceholder:

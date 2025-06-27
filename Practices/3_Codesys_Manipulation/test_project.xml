@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 5" creationDateTime="2025-06-26T11:30:07.6095762" />
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 5" creationDateTime="2025-06-27T17:28:40.3829401" />
   <contentHeader name="Modbus_Test_Project.project" modificationDateTime="2025-06-25T17:03:43.3271085">
     <coordinateInfo>
       <fbd>
@@ -475,10 +475,16 @@ serverSerial(xEnable:=TRUE);
                 <Library Name="#IoStandard" Namespace="IoStandard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="true" DefaultResolution="IoStandard, 3.5.16.0 (System)" />
                 <Library Name="#3SLicense" Namespace="_3S_LICENSE" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="3SLicense, 0.0.0.0 (3S - Smart Software Solutions GmbH)" ResolverGuid="97c3b452-d9fa-4ac2-9d0c-3d420aa6d95b" />
                 <Library Name="#BreakpointLogging" Namespace="BPLog" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="Breakpoint Logging Functions, * (3S - Smart Software Solutions GmbH)" />
+                <Library Name="#CmpModbusTcpClient" Namespace="CmpModbusTcpClient" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="CmpModbusTcpClient, * (Edwards Vacuum)" />
+                <Library Name="#CmpModbusSerialMaster" Namespace="CmpModbusSerialMaster" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="CmpModbusSerialMaster, * (Edwards Vacuum)" />
                 <PlaceholderRedirections>
                   <PlaceholderRedirection Placeholder="CmpEventMgr Implementation" Redirection="CmpEventMgr Implementation, 3.5.16.0 (System)" />
                   <PlaceholderRedirection Placeholder="Standard" Redirection="Standard, 3.5.18.0 (System)" />
                   <PlaceholderRedirection Placeholder="StringUtils" Redirection="StringUtils, 3.5.20.0 (System)" />
+                  <PlaceholderRedirection Placeholder="CmpModbusTcpClient" Redirection="CmpModbusTcpClient, 1.2.1.0 (Edwards Vacuum)" />
+                  <PlaceholderRedirection Placeholder="CmpModbusSerialMaster" Redirection="CmpModbusSerialMaster, 1.2.0.0 (Edwards Vacuum)" />
+                  <PlaceholderRedirection Placeholder="CmpIoCards" Redirection="CmpIoCards, 1.2.1.0 (Edwards Vacuum)" />
+                  <PlaceholderRedirection Placeholder="SysSem Implementation" Redirection="SysSem Implementation, 3.5.16.0 (System)" />
                 </PlaceholderRedirections>
                 <addData>
                   <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">

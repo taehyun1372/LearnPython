@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project>
-  <fileHeader companyName="" creationDateTime="2025-06-26T11:30:07.6095762" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 5" />
+  <fileHeader companyName="" creationDateTime="2025-06-27T17:28:40.3829401" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 5" />
   <contentHeader modificationDateTime="2025-06-25T17:03:43.3271085" name="Modbus_Test_Project.project">
     <coordinateInfo>
       <fbd>
@@ -479,13 +479,13 @@ serverSerial(xEnable:=TRUE);
                   <PlaceholderRedirection Placeholder="CmpEventMgr Implementation" Redirection="CmpEventMgr Implementation, 3.5.16.0 (System)" />
                   <PlaceholderRedirection Placeholder="Standard" Redirection="Standard, 3.5.18.0 (System)" />
                   <PlaceholderRedirection Placeholder="StringUtils" Redirection="StringUtils, 3.5.20.0 (System)" />
-                <PlaceholderRedirection Placeholder="ModbusFB" Redirection="ModbusFB, 4.4.0.0 (CODESYS)" /></PlaceholderRedirections>
+                  <PlaceholderRedirection Placeholder="ModbusFB" Redirection="ModbusFB, 4.4.0.0 (CODESYS)" /><PlaceholderRedirection Placeholder="Util" Redirection="Util, 3.5.19.0 (System)" /></PlaceholderRedirections>
                 <addData>
                   <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
                     <ObjectId>7319690d-2305-40a0-ae94-e510f78af5dd</ObjectId>
                   </data>
                 </addData>
-              <Library DefaultResolution="ModbusFB, * (CODESYS)" HideWhenReferencedAsDependency="false" LinkAllContent="false" Name="#ModbusFB" Namespace="ModbusFB" PublishSymbolsInContainer="false" SystemLibrary="false" /></Libraries>
+              <Library DefaultResolution="ModbusFB, * (CODESYS)" HideWhenReferencedAsDependency="false" LinkAllContent="false" Name="#ModbusFB" Namespace="ModbusFB" PublishSymbolsInContainer="false" SystemLibrary="false" /><Library DefaultResolution="Util, * (System)" HideWhenReferencedAsDependency="false" LinkAllContent="false" Name="#Util" Namespace="Util" PublishSymbolsInContainer="false" SystemLibrary="false" /></Libraries>
             </data>
             <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
               <ObjectId>883daac1-4b7f-45fc-8d20-7285e9fbc293</ObjectId>

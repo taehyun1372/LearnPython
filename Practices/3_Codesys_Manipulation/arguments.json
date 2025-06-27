@@ -20,7 +20,7 @@
     "addLibraries": {
       "modbusFB": {
         "name": "#ModbusFB",
-        "nameSpace": "ModbusFB",
+        "namespace": "ModbusFB",
         "hideWhenReferencedAsDependency": "false",
         "publishSymbolsInContainer": "false",
         "systemLibrary": "false",

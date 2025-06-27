@@ -20,23 +20,54 @@
     "addLibraries": {
       "modbusFB": {
         "name": "#ModbusFB",
-        "nameSpace": "ModbusFB",
+        "namespace": "ModbusFB",
         "hideWhenReferencedAsDependency": "false",
         "publishSymbolsInContainer": "false",
         "systemLibrary": "false",
         "linkAllContent": "false",
         "defaultResolution": "ModbusFB, * (CODESYS)"
+      },
+      "Util": {
+        "name": "#Util",
+        "namespace": "Util",
+        "hideWhenReferencedAsDependency": "false",
+        "publishSymbolsInContainer": "false",
+        "systemLibrary": "false",
+        "linkAllContent": "false",
+        "defaultResolution": "Util, * (System)"
       }
     },
     "addPlaceholders": {
       "modbusFB": {
         "placeholder": "ModbusFB",
         "redirection": "ModbusFB, 4.4.0.0 (CODESYS)"
+      },
+      "Util": {
+        "placeholder": "Util",
+        "redirection": "Util, 3.5.19.0 (System)"
       }
     },
     "removeLibraries": {
+      "CmpModbusTcpClient": {
+        "namespace": "CmpModbusTcpClient"
+      },
+      "CmpModbusSerialMaster": {
+        "namespace": "CmpModbusSerialMaster"
+      }
     },
     "removePlaceholders": {
+      "CmpModbusTcpClient": {
+        "placeholder": "CmpModbusTcpClient"
+      },
+      "CmpModbusSerialMaster": {
+        "placeholder": "CmpModbusSerialMaster"
+      },
+      "CmpIoCards": {
+        "placeholder": "CmpIoCards"
+      },
+      "SysSemImplementation": {
+        "placeholder": "SysSem Implementation"
+      }
     }
   },
   "target": {
