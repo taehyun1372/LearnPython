@@ -1,17 +1,13 @@
 import json
 from typing import Optional, Dict
 from dataclasses import dataclass
+from dacite import from_dict, Config
 
 try:
     with open('sample.json', 'r') as f:
         data = json.load(f)
 except json.JSONDecodeError as e:
     print(f"Invalid JSON: {e}")
-
-if (data is not None):
-    for key, value in data.items():
-        print(f"Key is  {key}")
-        print(f"Value is  {value}")
 
 @dataclass
 class Project:
@@ -20,14 +16,35 @@ class Project:
     description : Optional[str] = "Default Description"
 
 @dataclass
+class Education:
+    university : str
+    period : int
+
+@dataclass
 class User:
     name: str
+    age: int
+    education: Education
     projects : Dict[str, Project]
-    age : Optional[int] = 30
+
 
 projects_dict = {k: Project(**v) for k, v in data["projects"].items()}
+
+
+education = Education(**data["education"])
+
+
 data["projects"] = projects_dict
+data["education"] = education
+
 user = User(**data)
+
+print(user.age)
+print(user.education.university)
+
+user2 = from_dict(data_class=User, data=data, config=Config(cast=[Optional]))
+
+print(user2.education.university)
 
 
 print(f"user name is {user.name}")

@@ -1,5 +1,10 @@
 {
   "name" : "Alice",
+  "age" : 33,
+  "education": {
+    "university": "Bangor",
+    "period": 3
+  },
   "projects" : {
     "project1" :
   {
