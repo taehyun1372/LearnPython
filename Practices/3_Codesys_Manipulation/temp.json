@@ -1,7 +1,9 @@
 {
-  "projectFile" : {
-    "path": "C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation" ,
-    "name": "Modbus_Test_Project.project"
+  "projectFile": {
+    "path": "C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation",
+    "name": "Modbus_Test_Project.project",
+    "backupXMLName": "backup.xml",
+    "editedXMLName": "edited.xml"
   },
   "deviceDescription": {
     "addDevice": {
@@ -9,11 +11,12 @@
       "version": "4.16.0.0",
       "type": "4096"
     },
+    "addConnector": null,
     "removeDevice": {
-      "id" : "175c 0001"
+      "id": "175c 0001"
     },
     "removeConnector": {
-      "interface" : "GPIOSysfs"
+      "interface": "GPIOSysfs"
     }
   },
   "library": {
@@ -72,6 +75,9 @@
   },
   "target": {
     "deviceName": "Codesys_Control_Win_V3",
+    "applicationName": "Application",
+    "gatewayIPAddress": "192.168.121.132",
+    "gatewayPort": 1217,
     "instances": {
       "instance1": {
         "ipAddress": "172.17.0.4",

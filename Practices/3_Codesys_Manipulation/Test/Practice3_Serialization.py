@@ -1,30 +1,24 @@
-import pickle
+import json
 import base64
 import subprocess
+from typing import Optional, Dict
+from dataclasses import dataclass, asdict
 
-class Address:
-    def __init__(self, city, zipcode):
-        self.city = city
-        self.zipcode = zipcode
+@dataclass
+class AddDevice:
+    id: str
+    version: str
+    type: str
 
-class Person:
-    def __init__(self, name, age, address):
-        self.name = name
-        self.age = age
-        self.address = address
+def to_dict(obj):
+    if hasattr(obj, "__dict__"):
+        return {k: to_dict(v) for k, v in obj.__dict__.items()}
+    elif isinstance(obj, list):
+        return [to_dict(x) for x in obj]
+    else:
+        return obj
 
-if __name__ == "__main__":
-    addr = Address("Seoul", 12345)
-    person = Person("Roy", 22, addr)
 
-    serialized = pickle.dumps(person)
-    encoded = base64.b64encode(serialized).decode("utf-8")  # base64 -> string
-
-    cmd = (
-        r'start "" cmd /k "'
-        r'"C:\Program Files\Python37\python.exe" '
-        r'"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Test\Practice4_Deserialization.py" '
-        rf'{encoded}"'
-    )
-
-    subprocess.run(cmd, shell=True)
+arguments = AddDevice("3110", "3.1.1.0", "analog")
+with open("temp.json", "w") as f:
+    json.dump(to_dict(arguments), f, indent=2)

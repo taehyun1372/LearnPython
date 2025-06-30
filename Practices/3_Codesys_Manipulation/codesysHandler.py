@@ -1,10 +1,7 @@
-# from argsHandler import (ProjectFile, RemoveDevice, RemoveConnector, AddDevice, AddConnector,
-#                          DeviceDescription, AddLibrary, AddPlaceholder, RemoveLibrary, RemovePlaceholder,
-#                          Library, Instance, Target, Arguments)
-import sys
+import json
+import sys, os
 
-# Create the export reporter
-class ExportReporter(ExportReporter):
+class ExReporter(ExportReporter):
     def error(self, message):
         print(message)
     def warning(self, message):
@@ -15,63 +12,58 @@ class ExportReporter(ExportReporter):
     def aborting(self):
         return False
 
-# Create the import reporter
-class ImportReporter(ImportReporter):
-    def error(self, message):
-        system.write_message(Severity.Error, message)
-
-    def warning(self, message):
-        system.write_message(Severity.Warning, message)
-
-    def resolve_conflict(self, obj):
-        return ConflictResolve.Copy
-
-    def added(self, obj):
-        print("added: ", obj)
-
-    def replaced(self, obj):
-        print("replaced: ", obj)
-
-    def skipped(self, obj):
-        print("skipped: ", obj)
-
-    @property
-    def aborting(self):
-        return False
-
 class CodesysHandler:
     def __init__(self):
         pass
 
-    def export_xml(self, deviceName, backupXMLName):
+    def export_xml(self, projectFile, target):
         try:
             project = projects.primary
-            device = project.find(deviceName, True)
+            print("Searching for the target device - {}".format(target.deviceName))
+            device = project.find(target.deviceName, True)
             if device is not None:
                 # Get a reporter instance
-                reporter = ExportReporter()
-
-                project.export_xml(reporter=reporter, objects=device, path=backupXMLName, recursive=True, export_folder_structure=True)
+                print("Found the target device - {}".format(device[0].get_name()))
+                reporter = ExReporter()
+                backup_path = os.path.join(projectFile.path, projectFile.backupXMLName)
+                print("Making a backup file at {}".format(backup_path))
+                project.export_xml(reporter=reporter, objects=device, path=backup_path, recursive=True, export_folder_structure=True)
             else:
-                print("The specified device has not been found..{}".format(deviceName))
+                print("The specified device has not been found..{}".format(target.deviceName))
                 sys.exit(1)
 
         except Exception as e:
-            print("Failed to export xml file")
+            print("Failed to export xml file..{}".format(e))
 
+class DictToObject:
+    def __init__(self, d):
+        for k, v in d.items():
+            if isinstance(v, dict):
+                v = DictToObject(v)
+            elif isinstance(v, list):
+                v = [DictToObject(i) if isinstance(i, dict) else i for i in v]
+            setattr(self, k, v)
 
-if __name__ == "__main__":
-    import json
-    import os
-    test_argument_path = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\test_arguments.json"
-    try:
-        with open(test_argument_path, 'r') as f:
-            data = json.load(f)
+def from_dict(d):
+    if isinstance(d, dict):
+        return DictToObject(d)
+    elif isinstance(d, list):
+        return [from_dict(i) for i in d]
+    else:
+        return d
 
-            deviceName = "CODESYS_Control_Win_V3"
-            backupXMLName = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\backup.xml"
+# Wrong argument
+if len(sys.argv) < 2:
+    sys.exit(1)
 
-            codesysHandler = CodesysHandler()
-            codesysHandler.export_xml(deviceName=deviceName, backupXMLName=backupXMLName)
-    except Exception as e:
-        print("Invalid JSON: {}".format(e))
+print("Hello World")
+full_path = ' '.join(sys.argv[1:])
+
+print(full_path)
+with open(full_path, "r") as f:
+    raw_data = json.load(f)
+    arguments = from_dict(raw_data)
+
+    print(arguments.target.deviceName)
+    codesysHandler = CodesysHandler()
+    codesysHandler.export_xml(projectFile=arguments.projectFile, target=arguments.target)

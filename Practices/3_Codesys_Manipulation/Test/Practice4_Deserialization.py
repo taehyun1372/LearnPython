@@ -1,21 +1,22 @@
-import pickle
-import base64
-import subprocess
-import sys
-from types import SimpleNamespace
-import io
+import json
 
-class SafeUnpickler(pickle.Unpickler):
-    def find_class(self, module, name):
-        # Return a simple container instead of the original class
-        return SimpleNamespace
+class SimpleNamespace(object):
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
 
-if __name__ == "__main__":
-    encoded = sys.argv[1]
-    decoded = base64.b64decode(encoded)
-    obj = SafeUnpickler(io.BytesIO(decoded)).load()
+def to_namespace(obj):
+    if isinstance(obj, dict):
+        return SimpleNamespace(**{k: to_namespace(v) for k, v in obj.items()})
+    elif isinstance(obj, list):
+        return [to_namespace(x) for x in obj]
+    else:
+        return obj
 
-    print(obj.name)  # prints "project1"
-    print(obj.age)  # prints "my_path"
+# Load JSON from file
+with open(r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Test\temp.json", "r") as f:
+    raw_data = json.load(f)
 
+arguments = to_namespace(raw_data)
 
+print(arguments.id)         # "project1"
+print(arguments.version)    # "my_path"
