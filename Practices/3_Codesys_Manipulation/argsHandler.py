@@ -6,8 +6,8 @@ from dataclasses import dataclass, asdict
 class ProjectFile:
     path: str
     name: str
-    backupXMLName: Optional[str] = "backup"
-    editedXMLName: Optional[str] = "edited"
+    backupXMLName: Optional[str] = "backup.xml"
+    editedXMLName: Optional[str] = "edited.xml"
 
 @dataclass
 class AddDevice:

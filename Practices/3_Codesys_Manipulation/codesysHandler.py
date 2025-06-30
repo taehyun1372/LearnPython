@@ -4,7 +4,7 @@
 import sys
 
 # Create the export reporter
-class Reporter(ExportReporter):
+class ExportReporter(ExportReporter):
     def error(self, message):
         print(message)
     def warning(self, message):
@@ -16,7 +16,7 @@ class Reporter(ExportReporter):
         return False
 
 # Create the import reporter
-class Reporter(ImportReporter):
+class ImportReporter(ImportReporter):
     def error(self, message):
         system.write_message(Severity.Error, message)
 
@@ -46,10 +46,10 @@ class CodesysHandler:
     def export_xml(self, deviceName, backupXMLName):
         try:
             project = projects.primary
-            device = project.find(deviceName, True)[0]
+            device = project.find(deviceName, True)
             if device is not None:
                 # Get a reporter instance
-                reporter = Reporter()
+                reporter = ExportReporter()
 
                 project.export_xml(reporter=reporter, objects=device, path=backupXMLName, recursive=True, export_folder_structure=True)
             else:
@@ -62,16 +62,16 @@ class CodesysHandler:
 
 if __name__ == "__main__":
     import json
-    test_argument_path = "test_arguments.json"
+    import os
+    test_argument_path = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\test_arguments.json"
     try:
         with open(test_argument_path, 'r') as f:
             data = json.load(f)
 
-            deviceName = data["target"]["deviceName"]
-            backupXMLName = data["projectFile"][""]
-            
+            deviceName = "CODESYS_Control_Win_V3"
+            backupXMLName = r"C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\backup.xml"
+
             codesysHandler = CodesysHandler()
             codesysHandler.export_xml(deviceName=deviceName, backupXMLName=backupXMLName)
-
     except Exception as e:
-        print("Invalid JSON: {}".format{e})
+        print("Invalid JSON: {}".format(e))
