@@ -24,6 +24,7 @@ try:
     print("Argument parsing started..")
     arguments = Util.get_arguments_instance('test_arguments.json')
 
+
 except Exception as e:
     print(f"Argument parsing failed..{e}")
     sys.exit(1)
@@ -40,6 +41,7 @@ with open(full_path, "w") as f:
 cmd = (
     r'cd "C:\Program Files (x86)\CODESYS 3.5.20.50\CODESYS\Common" && '
     r'CODESYS.exe '
+    r'--enablescripttracing '
     r'--project="C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project.project" '
     r'--profile="CODESYS V3.5 SP20 Patch 5" '
     r'--runscript="C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\codesysHandler.py" '

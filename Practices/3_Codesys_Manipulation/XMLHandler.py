@@ -1,14 +1,14 @@
 import xml.etree.ElementTree as ET
-from symbol import argument
 
-from argsHandler import (ProjectFile, RemoveDevice, RemoveConnector, AddDevice, AddConnector,
-                         DeviceDescription, AddLibrary, AddPlaceholder, RemoveLibrary, RemovePlaceholder,
-                         Library, Instance, Target, Arguments)
+# from argsHandler import (ProjectFile, RemoveDevice, RemoveConnector, AddDevice, AddConnector,
+#                          DeviceDescription, AddLibrary, AddPlaceholder, RemoveLibrary, RemovePlaceholder,
+#                          Library, Instance, Target, Arguments)
 import os
 
 class XMLHandler:
-    def __init__(self, path, deviceDescription: DeviceDescription, library: Library):
-        self.path = path
+    def __init__(self, projectFile, deviceDescription, library):
+        self.path = os.path.join(projectFile.path, projectFile.backupXMLName)
+        self.projectFile = projectFile
         self.library= library
         self.deviceDescription = deviceDescription
         self.tree = None
@@ -54,32 +54,32 @@ class XMLHandler:
         # Check add libraries
         if self.library.addLibraries is not None:
             print("An add library is detected..")
-            for name, addLibrary in self.library.addLibraries.items():
-                print(f"Adding library {name}..")
+            for addLibrary in self.library.addLibraries:
+                print("Adding library {}..".format(addLibrary.name))
                 self.add_library(addLibrary)
 
         # Check add placeholders
         if self.library.addPlaceholders is not None:
             print("An add placeholder is detected..")
-            for name, addPlaceholder in self.library.addPlaceholders.items():
-                print(f"Adding placeholder {name}..")
+            for addPlaceholder in self.library.addPlaceholders:
+                print("Adding placeholder {}..".format(addPlaceholder.placeholder))
                 self.add_placeholder(addPlaceholder)
 
         # Check remove libraries
         if self.library.removeLibraries is not None:
             print("A remove library is detected..")
-            for name, removeLibrary in self.library.removeLibraries.items():
-                print(f"Removing library {name}..")
+            for removeLibrary in self.library.removeLibraries:
+                print("Removing library {}..".format(removeLibrary.namespace))
                 self.remove_library(removeLibrary)
 
         # Check remove placeholders
         if self.library.removePlaceholders is not None:
             print("A remove placeholder is detected..")
-            for name, removePlaceholder in self.library.removePlaceholders.items():
-                print(f"Removing placeholder {name}..")
+            for removePlaceholder in self.library.removePlaceholders:
+                print("Removing placeholder {}..".format(removePlaceholder.placeholder))
                 self.remove_placeholder(removePlaceholder)
 
-    def add_device(self, addDevice: AddDevice):
+    def add_device(self, addDevice):
         print("Searching the parent element to add a device")
         device_type = self.root.find(".//DeviceType")
         if device_type is not None:
@@ -94,9 +94,9 @@ class XMLHandler:
             version = ET.SubElement(identification, "Version")
             version.text = addDevice.version
 
-            print(f"Added a device successfully : {addDevice.id}")
+            print("Added a device successfully : {}".format(addDevice.id))
 
-    def add_connector(self, addConnector: AddConnector):
+    def add_connector(self, addConnector):
         print("Searching the parent element to add a connector")
         device_type = self.root.find(".//DeviceType")
         if device_type is not None:
@@ -107,11 +107,11 @@ class XMLHandler:
                 "interface" : addConnector.interface,
                 "connectorId" : addConnector.connectorId
             })
-            print(f"Added a connector successfully : {addConnector.interface}")
+            print("Added a connector successfully : {}".format(addConnector.interface))
         else:
             print("Could not find the device type element")
 
-    def remove_device(self, removeDevice: RemoveDevice):
+    def remove_device(self, removeDevice):
         print("Searching the parent element to remove a device")
         device_type = self.root.find(".//DeviceType")
         if device_type is not None:
@@ -121,11 +121,11 @@ class XMLHandler:
                 id = identification.find(".//Id")
                 if id is not None and id.text == removeDevice.id:
                     device_type.remove(identification)
-                    print(f"Removed a device successfully : {removeDevice.id}")
+                    print("Removed a device successfully : {}".format(removeDevice.id))
         else:
             print("Could not find the device type element")
 
-    def remove_connector(self, removeConnector: RemoveConnector):
+    def remove_connector(self, removeConnector):
         print("Searching the parent element to remove a connector")
         device_type = self.root.find(".//DeviceType")
         if device_type is not None:
@@ -134,11 +134,11 @@ class XMLHandler:
             for connector in connectors:
                 if connector.attrib["interface"] == removeConnector.interface:
                     device_type.remove(connector)
-                    print(f"Removed a connector successfully : {removeConnector.interface}")
+                    print("Removed a connector successfully : {}".format(removeConnector.interface))
         else:
             print("Could not find the device type element")
 
-    def add_library(self, addLibrary: AddLibrary):
+    def add_library(self, addLibrary):
         print("Searching the parent element to add a library")
         libraries = self.root.find(".//Libraries")
         if libraries is not None:
@@ -151,11 +151,11 @@ class XMLHandler:
                 "LinkAllContent": addLibrary.linkAllContent,
                 "DefaultResolution": addLibrary.defaultResolution
             })
-            print(f"Added a library successfully : {addLibrary.name}")
+            print("Added a library successfully : {}".format(addLibrary.name))
         else:
             print("Could not find the Libraries element")
 
-    def add_placeholder(self, addPlaceholder: AddPlaceholder):
+    def add_placeholder(self, addPlaceholder):
         print("Searching the parent element to add a placeholder")
         libraries = self.root.find(".//Libraries")
         if libraries is not None:
@@ -165,13 +165,13 @@ class XMLHandler:
                     "Placeholder" : addPlaceholder.placeholder,
                     "Redirection" : addPlaceholder.redirection
                 })
-                print(f"Added a placeholder successfully : {addPlaceholder.placeholder}")
+                print("Added a placeholder successfully : {}".format(addPlaceholder.placeholder))
             else:
                 print("Could not find the PlaceholderRedirections element")
         else:
             print("Could not find the Libraries element")
 
-    def remove_library(self, removeLibrary: RemoveLibrary):
+    def remove_library(self, removeLibrary):
         print("Searching the parent element to remove a library")
         libraries_element = self.root.find(".//Libraries")
         if libraries_element is not None:
@@ -179,11 +179,11 @@ class XMLHandler:
             for library in libraries:
                 if library.attrib["Namespace"] == removeLibrary.namespace:
                     libraries_element.remove(library)
-                    print(f"Removed a library successfully : {removeLibrary.namespace}")
+                    print("Removed a library successfully : {}".format(removeLibrary.namespace))
         else:
             print("Could not find the Libraries element")
 
-    def remove_placeholder(self, removePlaceholder: RemovePlaceholder):
+    def remove_placeholder(self, removePlaceholder):
         print("Searching the parent element to remove a placeholder")
         libraries = self.root.find(".//Libraries")
         if libraries is not None:
@@ -193,13 +193,14 @@ class XMLHandler:
                 for placeholder in placeholders:
                     if placeholder.attrib["Placeholder"] == removePlaceholder.placeholder:
                         redirections.remove(placeholder)
-                        print(f"Removed a placeholder successfully : {removePlaceholder.placeholder}")
+                        print("Removed a placeholder successfully : {}".format(removePlaceholder.placeholder))
             else:
                 print("Could not find the PlaceholderRedirections element")
         else:
             print("Could not find the Libraries element")
 
-    def save_xml_file(self, path):
+    def save_xml_file(self):
+        path = os.path.join(self.projectFile.path, self.projectFile.editedXMLName)
         self.tree.write(path, encoding="utf-8", xml_declaration=True)
 
 if __name__ == "__main__":
@@ -211,12 +212,12 @@ if __name__ == "__main__":
     test_argument = Util.get_arguments_instance(test_argument_path)
 
     # create a xml handler with test arguments
-    handler = XMLHandler(path=sample_xml_path, library=test_argument.library, deviceDescription=test_argument.deviceDescription)
+    handler = XMLHandler(projectFile=test_argument.projectFile, library=test_argument.library, deviceDescription=test_argument.deviceDescription)
 
     # manipulate the xml file according to the arguments
     handler.process()
 
     # save the manipulated xml
-    handler.save_xml_file(output_xml_path)
+    handler.save_xml_file()
 
 

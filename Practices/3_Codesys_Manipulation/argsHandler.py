@@ -1,5 +1,5 @@
 import json
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 from dataclasses import dataclass, asdict
 
 @dataclass
@@ -61,10 +61,10 @@ class RemovePlaceholder:
 
 @dataclass
 class Library:
-    addLibraries: Optional[Dict[str, AddLibrary]] = None
-    addPlaceholders: Optional[Dict[str, AddPlaceholder]] = None
-    removeLibraries: Optional[Dict[str, RemoveLibrary]] = None
-    removePlaceholders: Optional[Dict[str, RemovePlaceholder]] = None
+    addLibraries: Optional[List[AddLibrary]] = None
+    addPlaceholders: Optional[List[AddPlaceholder]] = None
+    removeLibraries: Optional[List[RemoveLibrary]] = None
+    removePlaceholders: Optional[List[RemovePlaceholder]] = None
 
 @dataclass
 class Instance:
@@ -77,8 +77,9 @@ class Target:
     deviceName: str
     applicationName: Optional[str] = "Application"
     gatewayIPAddress: Optional[str] = "192.168.121.132"
+    gatewayName : Optional[str] = "Gateway-9"
     gatewayPort: Optional[int] = 1217
-    instances: Optional[Dict[str, Instance]] = None
+    instances: Optional[List[Instance]] = None
 
 @dataclass
 class Arguments:

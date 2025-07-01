@@ -20,8 +20,8 @@
     }
   },
   "library": {
-    "addLibraries": {
-      "modbusFB": {
+    "addLibraries": [
+      {
         "name": "#ModbusFB",
         "namespace": "ModbusFB",
         "hideWhenReferencedAsDependency": "false",
@@ -30,7 +30,7 @@
         "linkAllContent": "false",
         "defaultResolution": "ModbusFB, * (CODESYS)"
       },
-      "Util": {
+      {
         "name": "#Util",
         "namespace": "Util",
         "hideWhenReferencedAsDependency": "false",
@@ -39,51 +39,62 @@
         "linkAllContent": "false",
         "defaultResolution": "Util, * (System)"
       }
-    },
-    "addPlaceholders": {
-      "modbusFB": {
+    ],
+    "addPlaceholders": [
+      {
         "placeholder": "ModbusFB",
         "redirection": "ModbusFB, 4.4.0.0 (CODESYS)"
       },
-      "Util": {
+      {
         "placeholder": "Util",
         "redirection": "Util, 3.5.19.0 (System)"
       }
-    },
-    "removeLibraries": {
-      "CmpModbusTcpClient": {
+    ],
+    "removeLibraries": [
+      {
         "namespace": "CmpModbusTcpClient"
       },
-      "CmpModbusSerialMaster": {
+      {
         "namespace": "CmpModbusSerialMaster"
       }
-    },
-    "removePlaceholders": {
-      "CmpModbusTcpClient": {
+    ],
+    "removePlaceholders": [
+      {
         "placeholder": "CmpModbusTcpClient"
       },
-      "CmpModbusSerialMaster": {
+      {
         "placeholder": "CmpModbusSerialMaster"
       },
-      "CmpIoCards": {
+      {
         "placeholder": "CmpIoCards"
       },
-      "SysSemImplementation": {
+      {
         "placeholder": "SysSem Implementation"
       }
-    }
+    ]
   },
   "target": {
     "deviceName": "Codesys_Control_Win_V3",
     "applicationName": "Application",
     "gatewayIPAddress": "192.168.121.132",
+    "gatewayName": "Gateway-9",
     "gatewayPort": 1217,
-    "instances": {
-      "instance1": {
+    "instances": [
+      {
         "ipAddress": "172.17.0.4",
         "id": "Instance1",
-        "password": "Wonderous7641!"
+        "password": "Splendid1234!"
+      },
+      {
+        "ipAddress": "172.17.0.5",
+        "id": "Instance2",
+        "password": "Splendid1234!"
+      },
+      {
+        "ipAddress": "172.17.0.6",
+        "id": "Instance3",
+        "password": "Splendid1234!"
       }
-    }
+    ]
   }
 }
