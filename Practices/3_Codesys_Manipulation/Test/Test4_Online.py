@@ -28,11 +28,11 @@ else:
             gateway_names = []
             target_gateway_name = GATEWAY_NAME
             for gateway in gateways:
-                gateway_names.append(gateway.name)
+                gateway_names.append(gateway.projectName)
                 if (gateway.config_params[0] == GATEWAY_IP_ADDRESS and  # Check ip address
                         gateway.config_params[1] == GATEWAY_PORT): # Check port
                     matching_gateway = True
-                    target_gateway_name = gateway.name
+                    target_gateway_name = gateway.projectName
 
 
             if not matching_gateway:

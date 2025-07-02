@@ -1,6 +1,5 @@
-import base64
 import subprocess
-import Util
+import util
 import sys
 import json
 import os
@@ -22,9 +21,7 @@ def to_dict(obj):
 # Argument processing
 try:
     print("Argument parsing started..")
-    arguments = Util.get_arguments_instance('test_arguments.json')
-
-
+    arguments = util.get_arguments_instance('arguments.json')
 except Exception as e:
     print(f"Argument parsing failed..{e}")
     sys.exit(1)
@@ -32,21 +29,35 @@ except Exception as e:
 # Serialization
 dict = to_dict(arguments)
 current_path = os.path.dirname(os.path.abspath(__file__))
-temp_file_name = "temp.json"
-full_path = os.path.join(current_path, temp_file_name)
+temp_args_file = "arguments_temp.json"
+temp_args_file_path = os.path.join(current_path, temp_args_file)
 
-with open(full_path, "w") as f:
-    json.dump(dict, f, indent=2)
+
+try:
+    with open(temp_args_file_path, "w") as f:
+        json.dump(dict, f, indent=2)
+except Exception as e:
+    print(f"Failed to save the temporary arguments file..{e}")
+    sys.exit(1)
+
+codesys_path = arguments.files.codesysPath
+project_path = os.path.join(arguments.files.projectPath, arguments.files.projectName)
+codesys_version = arguments.files.codesysVersion
+iron_python_script_path = os.path.join(current_path, arguments.files.ironPythonScript)
 
 cmd = (
-    r'cd "C:\Program Files (x86)\CODESYS 3.5.20.50\CODESYS\Common" && '
+    f'cd {codesys_path} && '
     r'CODESYS.exe '
     r'--enablescripttracing '
-    r'--project="C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\Modbus_Test_Project.project" '
-    r'--profile="CODESYS V3.5 SP20 Patch 5" '
-    r'--runscript="C:\Users\a00533064\OneDrive - ONEVIRTUALOFFICE\Desktop\Code\LearnPython\Practices\3_Codesys_Manipulation\codesysHandler.py" '
+    f'--project="{project_path}" '
+    f'--profile="{codesys_version}" '
+    f'--runscript="{iron_python_script_path}" '
+    f"--scriptargs='{temp_args_file_path}'"
 )
 
-args = f"--scriptargs='{full_path}'"
-
-subprocess.run(cmd + args, shell=True)
+try:
+    # Command Line Execution
+    subprocess.run(cmd, shell=True)
+except Exception as e:
+    print(f"Failed to execute the command line..{e}")
+    sys.exit(1)

@@ -4,6 +4,18 @@ import time
 from XMLHandler import XMLHandler
 from System.Net import IPAddress
 
+def get_backup_xml_path(files):
+    backup_xml_name = files.projectName.split('.')[0] + files.backupXMLName + ".xml"
+    return os.path.join(files.projectPath, backup_xml_name)
+
+def get_edited_xml_path(files):
+    edited_xml_name = files.projectName.split('.')[0] + files.editedXMLName + ".xml"
+    return os.path.join(files.projectPath, edited_xml_name)
+
+def get_new_project_path(files):
+    new_project_name = files.projectName.split('.')[0] + files.newProjectName + ".project"
+    return os.path.join(files.projectPath, new_project_name)
+
 class ExReporter(ExportReporter):
     def error(self, message):
         print(message)
@@ -11,6 +23,7 @@ class ExReporter(ExportReporter):
         print(message)
     def nonexportable(self, message):
         print(message)
+
     @property
     def aborting(self):
         return False
@@ -43,132 +56,153 @@ class CodesysHandler:
     def __init__(self):
         pass
 
-    def export_xml(self, projectFile, target):
+    def export_xml(self, device_name, xml_path):
         try:
             project = projects.primary
-            print("Searching for the target device - {}".format(target.deviceName))
-            device = project.find(target.deviceName, True)
-            if device is not None:
+            print("Searching for the target device - {}".format(device_name))
+            device = project.find(device_name, True)
+            if device is None:
+                print("The specified device has not been found..{}".format(device_name))
+                sys.exit(1)
+            else:
                 # Get a reporter instance
                 print("Found the target device - {}".format(device[0].get_name()))
                 reporter = ExReporter()
-                backup_path = os.path.join(projectFile.path, projectFile.backupXMLName)
-                print("Making a backup file at {}".format(backup_path))
-                project.export_xml(reporter=reporter, objects=device, path=backup_path, recursive=True, export_folder_structure=True)
-            else:
-                print("The specified device has not been found..{}".format(target.deviceName))
-                sys.exit(1)
+                # Export xml file
+                print("Making a backup file at {}".format(xml_path))
+                project.export_xml(reporter=reporter, objects=device, path=xml_path, recursive=True, export_folder_structure=True)
+                print("The target device successfully exported")
 
         except Exception as e:
             print("Failed to export xml file..{}".format(e))
+            sys.exit(1)
 
-    def import_xml(self, projectFile):
+    def import_xml(self, new_project_path, xml_path):
         try:
+            # close the current project
             project = projects.primary
             project.close()
 
             # Create the reporter instance
             reporter = ImReporter()
 
-            target_project = os.path.join(projectFile.path, projectFile.name)
-            print("Creating a new project at - {}".format(target_project))
+            print("Creating a new project at - {}".format(new_project_path))
             # Create the new project
-            new_project = projects.create(target_project, True)
+            new_project = projects.create(new_project_path, True)
 
-            edited_path = os.path.join(projectFile.path, projectFile.editedXMLName)
-            print("Importing xml file at - {}".format(edited_path))
-            # Import the data into the project
-            new_project.import_xml(reporter, edited_path)
+            # Import the edited xml into the project
+            print("Importing xml file at - {}".format(xml_path))
+            new_project.import_xml(reporter, xml_path)
 
             # Save the project to the specified path
             new_project.save()
 
         except Exception as e:
             print("Failed to import xml file..{}".format(e))
+            sys.exit(1)
 
-    def build(self, target):
+    def build(self, application_name):
         try:
             proj = projects.primary
             # Find the first Application object in the project
-            application = proj.find(target.applicationName, recursive=True)[0]
+            application = proj.find(application_name, recursive=True)[0]
             if not application:
-                print("No Application found..{}".format(target.applicationName))
+                print("No Application found..{}".format(application_name))
+                sys.exit(1)
             else:
                 application.clean()
                 application.rebuild()
                 print("Built the application successfully")
         except Exception as e:
             print("Failed to build application..{}".format(e))
+            sys.exit(1)
 
-    def online(self, target):
+    def set_gateway(self, device_name, gateway_name, gateway_ip_address, gateway_port):
         try:
             proj = projects.primary
             # Finds the object in the project, and return the first result
-            device = proj.find(target.deviceName, True)[0]
+            device = proj.find(device_name, True)[0]
             if device is None:
-                print("Failed to find the target device")
+                print("Failed to find the target device".format(device_name))
+                sys.exit(1)
             else:
                 print("Found the target device - {}".format(device.get_name()))
                 matching_gateway = False
                 gateway_names = []
-                target_gateway_name = target.gatewayName
+                target_gateway_name = gateway_name
 
                 gateways = online.gateways
 
                 for gateway in gateways:
                     gateway_names.append(gateway.name)
-                    if (gateway.config_params[0] == target.gatewayIPAddress and  # Check ip address
-                            gateway.config_params[1] == target.gatewayPort):  # Check port
+                    if (gateway.config_params[0] == gateway_ip_address and  # Check ip address
+                            gateway.config_params[1] == gateway_port):  # Check port
                         matching_gateway = True # Found the existing gateway
                         target_gateway_name = gateway.name
                         print('Found the target gateway..{}'.format(target_gateway_name))
                         break
 
                 if not matching_gateway:
-                    print('No matching gateway found..creating a new gateway..{}'.format(target_gateway_name))
-
                     params = {
-                        0: target.gatewayIPAddress,  # or use param.id == 0
-                        1: target.gatewayPort  # or use param.id == 1
+                        0: gateway_ip_address,  # or use param.id == 0
+                        1: gateway_port  # or use param.id == 1
                     }
 
                     while target_gateway_name in gateway_names: #if there is duplicated gateway, use a different gateway name
                         prefix, suffix = target_gateway_name.split('-')
                         target_gateway_name = prefix + '-' + str(int(suffix) + 1)
 
+                    print('No matching gateway found..creating a new gateway..{}'.format(target_gateway_name))
                     gateways.add_new_gateway(target_gateway_name, params)
 
-                for instance in target.instances:
-                    ip = IPAddress.Parse(instance.ipAddress)
-                    print("Connecting to target instance {}, {}".format(instance.id, instance.ipAddress))
-                    device.set_gateway_and_ip_address(target_gateway_name, ip)
+                return target_gateway_name
+        except Exception as e:
+            print("Failed to set the gateway..{}".format(e))
+            sys.exit(1)
 
-                    online_application = online.create_online_application()
-                    online_device = online_application.get_online_device()
+    def online(self, device_name, gateway_name, instance_ip_address, instance_id, instance_password):
+        try:
+            proj = projects.primary
+            # Finds the object in the project, and return the first result
+            device = proj.find(device_name, True)[0]
+            if device is None:
+                print("Failed to find the target device".format(device_name))
+                sys.exit(1)
+            else:
+                ip = IPAddress.Parse(instance_ip_address)
 
-                    online.set_specific_credentials(target=online_device, username=instance.id,
-                                                    password=instance.password)
-                    online_device.connect()
-                    online_application.login(OnlineChangeOption.Try, True)
+                print("Connecting to target instance {} - {}".format(instance_id, instance_ip_address))
+                device.set_gateway_and_ip_address(gateway_name, ip)
 
-                    user_name = online_device.current_logged_on_username
-                    print("Connected to target instance {}".format(user_name))
+                online_application = online.create_online_application()
+                online_device = online_application.get_online_device()
 
-                    time.sleep(3)  # This is small delay before starting the application
+                online.set_specific_credentials(target=online_device, username=instance_id,
+                                                password=instance_password)
+                online_device.connect()
+                online_application.login(OnlineChangeOption.Try, True)
 
-                    state = online_application.application_state
-                    if state == ApplicationState.run:
-                        print("Application already running..")
-                    elif state == ApplicationState.stop:
-                        print("Application stopped.")
-                        online_application.start()
-                        print("Application now started.")
-                    else:
-                        print("Application state: {}".format(state))
+                instance_id = online_device.current_logged_on_username
+                print("Successfully logged in to target instance {}".format(instance_id))
 
-                    online_application.logout()
-                    online_device.forced_disconnect()
+                time.sleep(2)  # This is small delay before starting the application
 
+                # Start the application if it is not started
+                state = online_application.application_state
+                if state == ApplicationState.run:
+                    print("Application is already running..")
+                elif state == ApplicationState.stop:
+                    print("Application is stopped..")
+                    online_application.start()
+                    print("Application is now started..")
+                else:
+                    print("Application state: {}".format(state))
+
+                # Log out from the application
+                online_application.logout()
+                online_device.forced_disconnect()
+
+                return instance_id
 
         except Exception as e:
             print("Failed to download the application..{}".format(e))
@@ -193,23 +227,39 @@ def from_dict(d):
 
 # Wrong argument
 if len(sys.argv) < 2:
+    print("arguments have not been passed correctly")
     sys.exit(1)
 
-print("Hello World")
-full_path = ' '.join(sys.argv[1:])
+temp_args_file_path = ' '.join(sys.argv[1:])
 
-print(full_path)
-with open(full_path, "r") as f:
+print(temp_args_file_path)
+with open(temp_args_file_path, "r") as f:
     raw_data = json.load(f)
     arguments = from_dict(raw_data)
 
     print(arguments.target.deviceName)
     codesysHandler = CodesysHandler()
-    codesysHandler.export_xml(projectFile=arguments.projectFile, target=arguments.target)
+    backup_xml_path = get_backup_xml_path(files=arguments.files)
+    codesysHandler.export_xml(device_name=arguments.target.deviceName, xml_path=backup_xml_path)
 
-    xmlHandler = XMLHandler(projectFile=arguments.projectFile, deviceDescription=arguments.deviceDescription, library=arguments.library)
+    xmlHandler = XMLHandler(xml_path=backup_xml_path, deviceDescription=arguments.deviceDescription, library=arguments.library)
     xmlHandler.process()
-    xmlHandler.save_xml_file()
-    codesysHandler.import_xml(projectFile=arguments.projectFile)
-    codesysHandler.build(target=arguments.target)
-    codesysHandler.online(target=arguments.target)
+    edited_xml_path = get_edited_xml_path(files=arguments.files)
+    xmlHandler.save_xml_file(edited_xml_path)
+
+    new_project_path = get_new_project_path(files=arguments.files)
+    codesysHandler.import_xml(new_project_path=new_project_path, xml_path=edited_xml_path)
+    codesysHandler.build(application_name=arguments.target.applicationName)
+    gateway_name = codesysHandler.set_gateway(device_name=arguments.target.deviceName, gateway_name=arguments.target.gatewayName, gateway_ip_address=arguments.target.gatewayIPAddress, gateway_port=arguments.target.gatewayPort)
+
+    if gateway_name is None:
+        print("gateway setting has not been done correctly..{}".format(gateway_name))
+        sys.exit(1)
+
+    setup_instances = []
+    for instance in arguments.target.instances:
+        setup_instance = codesysHandler.online(device_name=arguments.target.deviceName, gateway_name=gateway_name, instance_ip_address=instance.ipAddress, instance_id=instance.id, instance_password=instance.password)
+        if setup_instance is not None:
+            setup_instances.append(setup_instance)
+
+    print("Successfully setup {} instances - {}".format(len(setup_instances), setup_instances))

@@ -3,11 +3,15 @@ from typing import Optional, Dict, List
 from dataclasses import dataclass, asdict
 
 @dataclass
-class ProjectFile:
-    path: str
-    name: str
-    backupXMLName: Optional[str] = "backup.xml"
-    editedXMLName: Optional[str] = "edited.xml"
+class Files:
+    projectPath: str
+    projectName: str
+    newProjectName : Optional[str] = "_Virtual"
+    backupXMLName: Optional[str] = "_Backup"
+    editedXMLName: Optional[str] = "_Edited"
+    codesysPath : Optional[str] = r"C:\Program Files (x86)\CODESYS 3.5.20.50\CODESYS\Common"
+    codesysVersion : Optional[str] = "CODESYS V3.5 SP20 Patch 5"
+    ironPythonScript : Optional[str] = "codesysHandler.py"
 
 @dataclass
 class AddDevice:
@@ -83,7 +87,7 @@ class Target:
 
 @dataclass
 class Arguments:
-    projectFile: ProjectFile
+    files: Files
     deviceDescription: DeviceDescription
     library: Library
     target: Target

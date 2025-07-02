@@ -1,7 +1,7 @@
 {
-  "projectFile" : {
-    "path": "r\"C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation" ,
-    "name": "Modbus_Test_Project.project"
+  "files": {
+    "projectPath": "C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation" ,
+    "projectName": "Modbus_Test_Project.project"
   },
   "deviceDescription": {
     "addDevice": {
@@ -17,8 +17,8 @@
     }
   },
   "library": {
-    "addLibraries": {
-      "modbusFB": {
+    "addLibraries": [
+      {
         "name": "#ModbusFB",
         "namespace": "ModbusFB",
         "hideWhenReferencedAsDependency": "false",
@@ -26,27 +26,68 @@
         "systemLibrary": "false",
         "linkAllContent": "false",
         "defaultResolution": "ModbusFB, * (CODESYS)"
+      },
+      {
+        "name": "#Util",
+        "namespace": "Util",
+        "hideWhenReferencedAsDependency": "false",
+        "publishSymbolsInContainer": "false",
+        "systemLibrary": "false",
+        "linkAllContent": "false",
+        "defaultResolution": "Util, * (System)"
       }
-    },
-    "addPlaceholders": {
-      "modbusFB": {
+    ],
+    "addPlaceholders": [
+      {
         "placeholder": "ModbusFB",
         "redirection": "ModbusFB, 4.4.0.0 (CODESYS)"
+      },
+      {
+        "placeholder": "Util",
+        "redirection": "Util, 3.5.19.0 (System)"
       }
-    },
-    "removeLibraries": {
-    },
-    "removePlaceholders": {
-    }
+    ],
+    "removeLibraries": [
+      {
+        "namespace": "CmpModbusTcpClient"
+      },
+      {
+        "namespace": "CmpModbusSerialMaster"
+      }
+    ],
+    "removePlaceholders": [
+      {
+        "placeholder": "CmpModbusTcpClient"
+      },
+      {
+        "placeholder": "CmpModbusSerialMaster"
+      },
+      {
+        "placeholder": "CmpIoCards"
+      },
+      {
+        "placeholder": "SysSem Implementation"
+      }
+    ]
   },
   "target": {
     "deviceName": "Codesys_Control_Win_V3",
-    "instances": {
-      "instance1": {
+    "instances": [
+      {
         "ipAddress": "172.17.0.4",
         "id": "Instance1",
-        "password": "Wonderous7641!"
+        "password": "Splendid1234!"
+      },
+      {
+        "ipAddress": "172.17.0.5",
+        "id": "Instance2",
+        "password": "Splendid1234!"
+      },
+      {
+        "ipAddress": "172.17.0.6",
+        "id": "Instance3",
+        "password": "Splendid1234!"
       }
-    }
+    ]
   }
 }

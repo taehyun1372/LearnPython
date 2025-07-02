@@ -1,24 +1,17 @@
 import xml.etree.ElementTree as ET
 
-# from argsHandler import (ProjectFile, RemoveDevice, RemoveConnector, AddDevice, AddConnector,
-#                          DeviceDescription, AddLibrary, AddPlaceholder, RemoveLibrary, RemovePlaceholder,
-#                          Library, Instance, Target, Arguments)
-import os
-
 class XMLHandler:
-    def __init__(self, projectFile, deviceDescription, library):
-        self.path = os.path.join(projectFile.path, projectFile.backupXMLName)
-        self.projectFile = projectFile
+    def __init__(self, xml_path, deviceDescription, library):
         self.library= library
         self.deviceDescription = deviceDescription
         self.tree = None
         self.root = None
 
-        self.initialise()
+        self.initialise(xml_path)
 
-    def initialise(self):
+    def initialise(self, xml_path):
         # Load the XML file
-        self.tree = ET.parse(self.path)
+        self.tree = ET.parse(xml_path)
         self.root = self.tree.getroot()
         self.strip_namespaces(self.root)
 
@@ -199,12 +192,11 @@ class XMLHandler:
         else:
             print("Could not find the Libraries element")
 
-    def save_xml_file(self):
-        path = os.path.join(self.projectFile.path, self.projectFile.editedXMLName)
-        self.tree.write(path, encoding="utf-8", xml_declaration=True)
+    def save_xml_file(self, xml_path):
+        self.tree.write(xml_path, encoding="utf-8", xml_declaration=True)
 
 if __name__ == "__main__":
-    import Util
+    import util
     test_argument_path = "test_arguments.json"
     sample_xml_path = "test_project.xml"
     output_xml_path = "test_project_output.xml"
@@ -212,7 +204,7 @@ if __name__ == "__main__":
     test_argument = Util.get_arguments_instance(test_argument_path)
 
     # create a xml handler with test arguments
-    handler = XMLHandler(projectFile=test_argument.projectFile, library=test_argument.library, deviceDescription=test_argument.deviceDescription)
+    handler = XMLHandler(xml_path=test_argument.files, library=test_argument.library, deviceDescription=test_argument.deviceDescription)
 
     # manipulate the xml file according to the arguments
     handler.process()
