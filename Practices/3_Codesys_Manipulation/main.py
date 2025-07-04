@@ -21,7 +21,7 @@ def to_dict(obj):
 # Argument processing
 try:
     print("Argument parsing started..")
-    arguments = util.get_arguments_instance('test_arguments.json')
+    arguments = util.get_arguments_instance('arguments.json')
 except Exception as e:
     print(f"Argument parsing failed..{e}")
     sys.exit(1)

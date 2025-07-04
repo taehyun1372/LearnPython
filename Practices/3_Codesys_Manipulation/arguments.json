@@ -1,7 +1,7 @@
 {
   "files": {
-    "projectPath": "C:\\Users\\a00533064\\OneDrive - ONEVIRTUALOFFICE\\Desktop\\Code\\LearnPython\\Practices\\3_Codesys_Manipulation" ,
-    "projectName": "Modbus_Test_Project.project"
+    "projectPath": "D:\\git\\Tumalo" ,
+    "projectName": "Modbus_Test_Project_Abingdon.project"
   },
   "deviceDescription": {
     "addDevice": {
@@ -12,29 +12,31 @@
     "removeDevice": {
       "id" : "175c 0001"
     },
-    "removeConnector": {
-      "interface" : "GPIOSysfs"
+    "addConnector": {
+      "moduleType": "1280",
+      "interface" : "GPIOSysfs",
+      "connectorId": "1"
     }
   },
   "library": {
     "addLibraries": [
       {
-        "name": "#ModbusFB",
-        "namespace": "ModbusFB",
+        "name": "#VirtualModbusTcpServer",
+        "namespace": "VirtualModbusTcpServer",
         "hideWhenReferencedAsDependency": "false",
         "publishSymbolsInContainer": "false",
         "systemLibrary": "false",
         "linkAllContent": "false",
-        "defaultResolution": "ModbusFB, * (CODESYS)"
+        "defaultResolution": "VirtualModbusTcpServer, * (Edwards)"
       },
       {
-        "name": "#Util",
-        "namespace": "Util",
+        "name": "#CAA Device Diagnosis",
+        "namespace": "DED",
         "hideWhenReferencedAsDependency": "false",
         "publishSymbolsInContainer": "false",
         "systemLibrary": "false",
         "linkAllContent": "false",
-        "defaultResolution": "Util, * (System)"
+        "defaultResolution": "CAA Device Diagnosis, 3.5.21.0 (CAA Technical Workgroup)"
       }
     ],
     "addPlaceholders": [
@@ -43,35 +45,41 @@
         "redirection": "ModbusFB, 4.4.0.0 (CODESYS)"
       },
       {
-        "placeholder": "Util",
-        "redirection": "Util, 3.5.19.0 (System)"
+        "placeholder": "VirtualModbusTcpServer",
+        "redirection": "VirtualModbusTcpServer, 1.0.0 (Edwards)"
+      },
+      {
+        "placeholder": "StringUtils",
+        "redirection": "StringUtils, 3.5.20.0 (System)"
       }
     ],
     "removeLibraries": [
       {
-        "namespace": "CmpModbusTcpClient"
-      },
-      {
-        "namespace": "CmpModbusSerialMaster"
+        "namespace": "CmpModbusTcpServer"
       }
     ],
     "removePlaceholders": [
       {
-        "placeholder": "CmpModbusTcpClient"
-      },
+        "placeholder": "CmpModbusTcpServer"
+      }
+    ]
+  },
+  "variable": {
+    "replacePlaceholders": [
       {
-        "placeholder": "CmpModbusSerialMaster"
-      },
+        "oldPlaceholder": "CmpModbusTcpServer",
+        "newPlaceholder": "VirtualModbusTcpServer"
+      }
+    ],
+    "inputAssignments": [
       {
-        "placeholder": "CmpIoCards"
-      },
-      {
-        "placeholder": "SysSem Implementation"
+        "targetType": "VirtualModbusTcpServer.ModbusServerDevice",
+        "inputType": "VirtualModbusTcpServer.ModbusServer"
       }
     ]
   },
   "target": {
-    "deviceName": "Codesys_Control_Win_V3",
+    "deviceName": "EDWARDS_ARM_Cortex",
     "instances": [
       {
         "ipAddress": "172.17.0.4",
