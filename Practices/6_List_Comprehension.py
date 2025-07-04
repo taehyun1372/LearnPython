@@ -15,5 +15,6 @@ print(new_characters)
 print(new_items)
 print(new_mixed_items)
 print(labels)
+print("Hello World")
 
 
