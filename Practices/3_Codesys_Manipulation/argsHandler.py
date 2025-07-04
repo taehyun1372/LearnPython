@@ -71,6 +71,21 @@ class Library:
     removePlaceholders: Optional[List[RemovePlaceholder]] = None
 
 @dataclass
+class ReplacePlaceholder:
+    oldPlaceholder : str
+    newPlaceholder : str
+
+@dataclass
+class InputAssignment:
+    targetType : str
+    inputType : str
+
+@dataclass
+class Variable:
+    replacePlaceholders: Optional[List[ReplacePlaceholder]] = None
+    inputAssignments: Optional[List[InputAssignment]] = None
+
+@dataclass
 class Instance:
     ipAddress : str
     id: str
@@ -90,6 +105,7 @@ class Arguments:
     files: Files
     deviceDescription: DeviceDescription
     library: Library
+    variable: Variable
     target: Target
 
 if __name__ == "__main__":

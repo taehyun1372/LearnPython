@@ -225,41 +225,51 @@ def from_dict(d):
     else:
         return d
 
-# Wrong argument
+# Wrong argument, exit the programme
 if len(sys.argv) < 2:
     print("arguments have not been passed correctly")
     sys.exit(1)
 
 temp_args_file_path = ' '.join(sys.argv[1:])
 
+# Opening the serialized argument file
 print(temp_args_file_path)
 with open(temp_args_file_path, "r") as f:
+    # Making an instance with de-serialized argument data
     raw_data = json.load(f)
     arguments = from_dict(raw_data)
 
+    # 1. First codesys handler exports project as a xml file
     print(arguments.target.deviceName)
     codesysHandler = CodesysHandler()
     backup_xml_path = get_backup_xml_path(files=arguments.files)
     codesysHandler.export_xml(device_name=arguments.target.deviceName, xml_path=backup_xml_path)
 
-    xmlHandler = XMLHandler(xml_path=backup_xml_path, deviceDescription=arguments.deviceDescription, library=arguments.library)
+    # 2. XML handler process the exported xml and modify it according to the argument data
+    xmlHandler = XMLHandler(xml_path=backup_xml_path, deviceDescription=arguments.deviceDescription, library=arguments.library, variable=arguments.variable)
     xmlHandler.process()
     edited_xml_path = get_edited_xml_path(files=arguments.files)
     xmlHandler.save_xml_file(edited_xml_path)
 
+    # 3. Codesys handler imports the manipulated xml file in a clean new project
     new_project_path = get_new_project_path(files=arguments.files)
     codesysHandler.import_xml(new_project_path=new_project_path, xml_path=edited_xml_path)
+
+    # 4. Codesys handler build the imported project
     codesysHandler.build(application_name=arguments.target.applicationName)
     gateway_name = codesysHandler.set_gateway(device_name=arguments.target.deviceName, gateway_name=arguments.target.gatewayName, gateway_ip_address=arguments.target.gatewayIPAddress, gateway_port=arguments.target.gatewayPort)
 
+    # 5. Codesys handler set's gateway
     if gateway_name is None:
         print("gateway setting has not been done correctly..{}".format(gateway_name))
         sys.exit(1)
 
+    # 6. Codesys handler connect the instances one-by-one attempting log in
     setup_instances = []
     for instance in arguments.target.instances:
         setup_instance = codesysHandler.online(device_name=arguments.target.deviceName, gateway_name=gateway_name, instance_ip_address=instance.ipAddress, instance_id=instance.id, instance_password=instance.password)
         if setup_instance is not None:
             setup_instances.append(setup_instance)
 
+    # All process finished
     print("Successfully setup {} instances - {}".format(len(setup_instances), setup_instances))

@@ -1,9 +1,10 @@
 import xml.etree.ElementTree as ET
 
 class XMLHandler:
-    def __init__(self, xml_path, deviceDescription, library):
+    def __init__(self, xml_path, deviceDescription, library, variable):
         self.library= library
         self.deviceDescription = deviceDescription
+        self.variable = variable
         self.tree = None
         self.root = None
 
@@ -72,6 +73,20 @@ class XMLHandler:
                 print("Removing placeholder {}..".format(removePlaceholder.placeholder))
                 self.remove_placeholder(removePlaceholder)
 
+        # Check replace types
+        if self.variable.replacePlaceholders is not None:
+            print("A replace type is detected..")
+            for replacePlaceholder in self.variable.replacePlaceholders:
+                print("replacing {} to {}..".format(replacePlaceholder.oldPlaceholder, replacePlaceholder.newPlaceholder))
+                self.replace_placeholder(replacePlaceholder)
+
+        # Check input assignments
+        if self.variable.inputAssignments is not None:
+            print("A input assignment is detected..")
+            for inputAssignment in self.variable.inputAssignments:
+                print("Assigning {} to {}..".format(inputAssignment.inputType, inputAssignment.targetType))
+                self.input_assignment(inputAssignment)
+
     def add_device(self, addDevice):
         print("Searching the parent element to add a device")
         device_type = self.root.find(".//DeviceType")
@@ -95,11 +110,13 @@ class XMLHandler:
         if device_type is not None:
             print("Found the device type element")
 
-            ET.SubElement(device_type, "Connector", {
+            connect = ET.SubElement(device_type, "Connector", {
                 "moduleType" : addConnector.moduleType,
                 "interface" : addConnector.interface,
                 "connectorId" : addConnector.connectorId
             })
+            ET.SubElement(connect, "HostParameterSet")
+
             print("Added a connector successfully : {}".format(addConnector.interface))
         else:
             print("Could not find the device type element")
@@ -191,6 +208,47 @@ class XMLHandler:
                 print("Could not find the PlaceholderRedirections element")
         else:
             print("Could not find the Libraries element")
+
+    def replace_placeholder(self, replacePlaceholder):
+        print("Searching for a target type to replace")
+
+        derives = self.root.findall(".//derived")
+        if derives is not None:
+            for derived in derives:
+                if replacePlaceholder.oldPlaceholder in derived.attrib.get("name") and "." in derived.attrib.get("name"):
+                    prefix, suffix = derived.attrib.get("name").split(".")
+                    new_derived_name = ".".join([replacePlaceholder.newPlaceholder, suffix])
+                    derived.attrib["name"] = new_derived_name
+                    print("replace the target type successfully : {}".format(replacePlaceholder.newPlaceholder))
+        else:
+            print("Could not find the target type")
+
+    def input_assignment(self, inputAssignment):
+        input_variable_name = None
+        # Find the variable that has the input type.
+        for variable in self.root.findall(".//variable"):
+            derived = variable.find("./type/derived")
+            if derived is not None and derived.attrib.get("name") == inputAssignment.inputType:
+                input_variable_name = variable.attrib.get("name")
+                print("Found the variable name successfully : {}".format(input_variable_name))
+
+        if input_variable_name is not None:
+            # Find the variable that has the target type.
+            for variable in self.root.findall(".//variable"):
+                derived = variable.find("./type/derived")
+                if derived is not None and derived.attrib.get("name") == inputAssignment.targetType:
+                    addData = ET.SubElement(variable, "addData")
+                    data = ET.SubElement(addData, "data", {
+                        "name": "http://www.3s-software.com/plcopenxml/inputassignments",
+                        "handleUnknown": "implementation"
+                    })
+                    _inputAssignments = ET.SubElement(data,"InputAssignments")
+                    _inputAssignment = ET.SubElement(_inputAssignments, "InputAssignment")
+                    value = ET.SubElement(_inputAssignment, "Value")
+                    value.text = input_variable_name
+                    print("Assign the input variable successfully : {}".format(input_variable_name))
+        else:
+            print("Could not find the input variable")
 
     def save_xml_file(self, xml_path):
         self.tree.write(xml_path, encoding="utf-8", xml_declaration=True)

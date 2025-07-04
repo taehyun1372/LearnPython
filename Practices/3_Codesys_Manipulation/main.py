@@ -21,18 +21,18 @@ def to_dict(obj):
 # Argument processing
 try:
     print("Argument parsing started..")
-    arguments = util.get_arguments_instance('arguments.json')
+    arguments = util.get_arguments_instance('test_arguments.json')
 except Exception as e:
     print(f"Argument parsing failed..{e}")
     sys.exit(1)
 
-# Serialization
+# Argument serialization
 dict = to_dict(arguments)
 current_path = os.path.dirname(os.path.abspath(__file__))
 temp_args_file = "arguments_temp.json"
 temp_args_file_path = os.path.join(current_path, temp_args_file)
 
-
+# Making a file with serialized argument data
 try:
     with open(temp_args_file_path, "w") as f:
         json.dump(dict, f, indent=2)
@@ -45,6 +45,7 @@ project_path = os.path.join(arguments.files.projectPath, arguments.files.project
 codesys_version = arguments.files.codesysVersion
 iron_python_script_path = os.path.join(current_path, arguments.files.ironPythonScript)
 
+# Formatting command line
 cmd = (
     f'cd {codesys_path} && '
     r'CODESYS.exe '
@@ -56,7 +57,7 @@ cmd = (
 )
 
 try:
-    # Command Line Execution
+    # Command line execution
     subprocess.run(cmd, shell=True)
 except Exception as e:
     print(f"Failed to execute the command line..{e}")
