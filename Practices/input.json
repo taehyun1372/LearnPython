@@ -3,6 +3,8 @@
   "mail_sender": "your_email@example.com",
   "mail_receiver": "other_email@example.com",
   "mail_domain": "smtp.gmail.com",
-  "mail_pass": "supersecurepassword",
-  "mail_on": false
+  "mail_on": true
+}
+{
+  "main_added":1234
 }
