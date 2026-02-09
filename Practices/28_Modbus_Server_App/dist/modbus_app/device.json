@@ -1,0 +1,6 @@
+{
+  "ip" : "192.168.2.190",
+  "port" : 502,
+  "num_of_registers" : 5000,
+  "start_Address" : 1000
+}
