@@ -26,7 +26,7 @@ class MyMainWindow(QWidget):
         self.unit = unit
         self.holding_register_start_address = 0
         self.input_register_start_address = 0
-        self.number_of_registers = 100
+        self.number_of_registers = 10
 
         # Connect
         self.client.connect()
@@ -107,7 +107,7 @@ class MyMainWindow(QWidget):
         grid1.setSpacing(0)
 
         self._holding_cells = []
-        for j in range(10):
+        for j in range(1):
             for i in range(10):
                 cell = MyCell(j*10 + i)
                 self._holding_cells.append(cell)
@@ -145,7 +145,7 @@ class MyMainWindow(QWidget):
         grid2.setSpacing(0)
 
         self._input_cells = []
-        for j in range(10):
+        for j in range(1):
             for i in range(10):
                 cell = MyCell(j*10 + i)
                 self._input_cells.append(cell)

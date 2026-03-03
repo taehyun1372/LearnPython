@@ -316,7 +316,7 @@ def start_rb2_dp_device():
 
 def set_src_master_device():
     print("Changing source master values")
-    SRC_MASTER_DEVICE[1].setValues(4, 1612, [3] * 1) #Test
+    SRC_MASTER_DEVICE[1].setValues(4, 1612, [4] * 1) # HRS Config Type Value: 1=HRS Dummy, 3=HRS#3, 4=HRS#4
     SRC_MASTER_DEVICE[1].setValues(4, 1713, [40] * 1)  # Test
     SRC_MASTER_DEVICE[1].setValues(4, 2999, [8650, 3, 0, 0, 0, 90, 80, 70, 60, 50, 40, 0])
     SRC_MASTER_DEVICE[1].setValues(4, 3071, [0, 0, 0, 392, 1560])
@@ -354,6 +354,19 @@ def set_exp2_device():
     print("Changing exp 2 values")
     EXP2_DEVICE[1].setValues(4, 999, [1] * 1000)
     EXP2_DEVICE[1].setValues(4, 1275, [0])
+
+    # EXP2_DEVICE[1].setValues(4, 1030, [0] * 1) # UV/IR not fitted
+    # EXP2_DEVICE[1].setValues(4, 1288, [4097] * 1)  # UV/IR not fitted
+    #
+    # EXP2_DEVICE[1].setValues(4, 1266, [1] * 1)  # Extract Fitted
+    # EXP2_DEVICE[1].setValues(4, 1265, [1500] * 1)  # Extract Value
+    #
+    # EXP2_DEVICE[1].setValues(4, 1018, [1] * 1)  # Gas Detect Fitted
+    # EXP2_DEVICE[1].setValues(4, 1069, [1] * 1)  # Gas Detect Value
+    #
+    # EXP2_DEVICE[1].setValues(4, 1021, [0] * 1)  # Water Detect Fitted
+    # EXP2_DEVICE[1].setValues(4, 1073, [1] * 1)  # Water Detect Value
+
     EXP2_DEVICE[1].setValues(4, 2999,
                              [16855, 16385, 16385, 1675, 243, 0, 0, 0, 0, 0, 104, 105, 106, 104, 103, 102, 222, 155, 102, 102, 103, 101, 102, 420, 0, 155, 0, 2, 240, 132, 142, 0, 69, 120, 112, 50])
 
@@ -677,22 +690,22 @@ def get_bit(value, position):
 
 if __name__ == "__main__":
     set_src_master_device()
-    # set_exp_master_device()
+    set_exp_master_device()
 
     # set_hrs_device()
     # set_h2d1_device()
     # set_h2d2_device()
-    set_exp1_device()
+    # set_exp1_device()
     set_exp2_device()
     set_exp3_device()
     set_exp4_device()
 
-    # set_src1_device()
-    # set_src2_device()
-    # set_src3_device()
-    # set_src4_device()
-    # set_src5_device()
-    # set_src6_device()
+    set_src1_device()
+    set_src2_device()
+    set_src3_device()
+    set_src4_device()
+    set_src5_device()
+    set_src6_device()
     # set_src7_device()
     # set_src8_device()
     # set_src1_dp_device()
@@ -703,21 +716,22 @@ if __name__ == "__main__":
     # set_rb2_dp_device()
 
     threading.Thread(target=start_src_master_device, daemon=True).start()
-    # threading.Thread(target=start_exp_master_device, daemon=True).start()
+    threading.Thread(target=start_exp_master_device, daemon=True).start()
     # threading.Thread(target=start_hrs_device, daemon=True).start()
     # threading.Thread(target=start_h2d1_device, daemon=True).start()
     # threading.Thread(target=start_h2d2_device, daemon=True).start()
 
-    threading.Thread(target=start_exp1_device, daemon=True).start()
+    # threading.Thread(target=start_exp1_device, daemon=True).start()
     threading.Thread(target=start_exp2_device, daemon=True).start()
     threading.Thread(target=start_exp3_device, daemon=True).start()
     threading.Thread(target=start_exp4_device, daemon=True).start()
-    # threading.Thread(target=start_src1_device, daemon=True).start()
-    # threading.Thread(target=start_src2_device, daemon=True).start()
-    # threading.Thread(target=start_src3_device, daemon=True).start()
-    # threading.Thread(target=start_src4_device, daemon=True).start()
-    # threading.Thread(target=start_src5_device, daemon=True).start()
-    # threading.Thread(target=start_src6_device, daemon=True).start()
+
+    threading.Thread(target=start_src1_device, daemon=True).start()
+    threading.Thread(target=start_src2_device, daemon=True).start()
+    threading.Thread(target=start_src3_device, daemon=True).start()
+    threading.Thread(target=start_src4_device, daemon=True).start()
+    threading.Thread(target=start_src5_device, daemon=True).start()
+    threading.Thread(target=start_src6_device, daemon=True).start()
     # threading.Thread(target=start_src7_device, daemon=True).start()
     # threading.Thread(target=start_src8_device, daemon=True).start()
     # threading.Thread(target=start_src1_dp_device, daemon=True).start()

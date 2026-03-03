@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout
 import qdarkstyle
 
 if __name__ == "__main__":
-    client = ModbusUdpClient(EXP_MASTER_IP, port=PORT)
+    client = ModbusUdpClient(EXP3_IP, port=PORT)
 
     # Connect
     client.connect()
