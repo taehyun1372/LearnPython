@@ -166,7 +166,7 @@ class IOWidget(QWidget):
         grid.addWidget(DigitalButton("Pin08", self.client, IN_PL07_PL08, 15), 9, 8)
 
         grid.addWidget(QLabel("PL09"), 10, 0)
-        grid.addWidget(DigitalButton("Pin01", self.client, IN_PL09_PL10, 0, default=True), 10, 1)
+        grid.addWidget(DigitalButton("Pin01", self.client, IN_PL09_PL10, 0, default=False), 10, 1)
         grid.addWidget(DigitalButton("Pin02", self.client, IN_PL09_PL10, 1, default=True), 10, 2)
         grid.addWidget(DigitalButton("Pin03", self.client, IN_PL09_PL10, 2, default=True), 10, 3)
         grid.addWidget(DigitalButton("Pin04", self.client, IN_PL09_PL10, 3), 10, 4)
