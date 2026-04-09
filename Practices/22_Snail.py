@@ -4,6 +4,7 @@ def snail(snail_map):
     return col
 
 def get_line(snail_map, start_row, start_col):
+    pass
 
 if __name__ == "__main__":
 
