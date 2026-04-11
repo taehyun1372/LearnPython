@@ -77,6 +77,13 @@ EXP4_STORE = ModbusSlaveContext(
     ir=ModbusSequentialDataBlock(0, [0]*NUM_REGISTERS),
 )
 
+VPSA_STORE = ModbusSlaveContext(
+    di=ModbusSequentialDataBlock(0, [0]*NUM_REGISTERS),
+    co=ModbusSequentialDataBlock(0, [0]*NUM_REGISTERS),
+    hr=ModbusSequentialDataBlock(0, [0]*NUM_REGISTERS),
+    ir=ModbusSequentialDataBlock(0, [0]*NUM_REGISTERS),
+)
+
 SRC1_STORE = ModbusSlaveContext(
     di=ModbusSequentialDataBlock(0, [0]*NUM_REGISTERS),
     co=ModbusSequentialDataBlock(0, [0]*NUM_REGISTERS),
@@ -194,6 +201,8 @@ EXP3_DEVICE = ModbusServerContext(slaves=EXP3_STORE, single=True)
 
 EXP4_DEVICE = ModbusServerContext(slaves=EXP4_STORE, single=True)
 
+VPSA_DEVICE = ModbusServerContext(slaves=VPSA_STORE, single=True)
+
 SRC1_DEVICE = ModbusServerContext(slaves=SRC1_STORE, single=True)
 
 SRC2_DEVICE = ModbusServerContext(slaves=SRC2_STORE, single=True)
@@ -258,6 +267,10 @@ def start_exp4_device():
     print(f"Starting exp 4 server on port {PORT} with {NUM_REGISTERS} registers")
     StartUdpServer(EXP4_DEVICE, address=(EXP4_IP, PORT))
 
+def start_vpsa_device():
+    print(f"Starting vpsa server on port {PORT} with {NUM_REGISTERS} registers")
+    StartUdpServer(VPSA_DEVICE, address=(VPSA_IP, PORT))
+
 def start_src1_device():
     print(f"Starting src 1 server on port {PORT} with {NUM_REGISTERS} registers")
     StartUdpServer(SRC1_DEVICE, address=(SRC1_IP, PORT))
@@ -316,19 +329,32 @@ def start_rb2_dp_device():
 
 def set_src_master_device():
     print("Changing source master values")
+    SRC_MASTER_DEVICE[1].setValues(4, 999, [1] * 200)
+    SRC_MASTER_DEVICE[1].setValues(4, 1699, [1] * 100)
+    SRC_MASTER_DEVICE[1].setValues(4, 1999, [1] * 200)
+    SRC_MASTER_DEVICE[1].setValues(4, 2053, [1]) # HRS Dummy EMO OK
+    SRC_MASTER_DEVICE[1].setValues(4, 2054, [1]) # HRS Dummy Water Leak OK
+    SRC_MASTER_DEVICE[1].setValues(4, 2055, [1]) # HRS Dummy Extract Leak OK
+    SRC_MASTER_DEVICE[1].setValues(4, 2056, [1]) # HRS Dummy H2 Leak OK
+
+    SRC_MASTER_DEVICE[1].setValues(4, 1715, [1])  # HRS Extract
+    SRC_MASTER_DEVICE[1].setValues(4, 1726, [1])  # HRS Air Flow
+    SRC_MASTER_DEVICE[1].setValues(4, 1719, [1])  # HRS Mst
+
     SRC_MASTER_DEVICE[1].setValues(4, 1612, [4] * 1) # HRS Config Type Value: 1=HRS Dummy, 3=HRS#3, 4=HRS#4
     SRC_MASTER_DEVICE[1].setValues(4, 1713, [40] * 1)  # Test
     SRC_MASTER_DEVICE[1].setValues(4, 2999, [8650, 3, 0, 0, 0, 90, 80, 70, 60, 50, 40, 0])
     SRC_MASTER_DEVICE[1].setValues(4, 3071, [0, 0, 0, 392, 1560])
     SRC_MASTER_DEVICE[1].setValues(4, 3082, [110, 112, 278, 279, 133, 275, 276, 201, 201, 202, 201, 202, 201, 201, 87, 218, 156])
 
-    SRC_MASTER_DEVICE[1].setValues(3, 59999, [1234, 2345, 3456, 4567])
+    SRC_MASTER_DEVICE[1].setValues(3, 59999, [1234, 2345, 3456, 4567, 5678])
 
 def set_exp_master_device():
     print("Changing exposure master values")
-    EXP_MASTER_DEVICE[1].setValues(4, 1713, [20] * 1)  # Test
-    EXP_MASTER_DEVICE[1].setValues(4, 2999, [360, 2, 10, 20, 30, 0, 0, 0, 0, 0, 0, 150, 0, 0])
-    EXP_MASTER_DEVICE[1].setValues(3, 59999, [1234, 2345, 3456, 4567])
+    EXP_MASTER_DEVICE[1].setValues(4, 1713, [10] * 1)  # Facility Left Location
+    EXP_MASTER_DEVICE[1].setValues(4, 1714, [10] * 1)  # Backup Pump Left Location
+    EXP_MASTER_DEVICE[1].setValues(4, 2999, [9066, 2, 10, 20, 30, 0, 0, 0, 0, 0, 0, 120, 0, 140])
+    EXP_MASTER_DEVICE[1].setValues(3, 59999, [1234, 2345, 3456, 4567, 5678])
 
 def set_hrs_device():
     print("Changing HRS values")
@@ -346,13 +372,17 @@ def set_h2d2_device():
 def set_exp1_device():
     print("Changing exp 1 values")
     EXP1_DEVICE[1].setValues(4, 999, [1] * 1000)
+    EXP1_DEVICE[1].setValues(4, 1609, [0]) # Gas detect 2 not fitted
+    EXP1_DEVICE[1].setValues(4, 1069, [12289])  # Gas detect 1 alarm
     EXP1_DEVICE[1].setValues(4, 1275, [0])
     EXP1_DEVICE[1].setValues(4, 2999,
-                             [33207, 16385, 16385, 1707, 130, 0, 0, 0, 0, 2, 101, 102, 103, 115, 114, 101, 221, 157, 101, 101, 103, 101, 103, 410, 0, 157, 0, 1, 241, 131, 141, 0, 69, 120, 112, 49])
+                             [9047, 16393, 16521, 683, 130, 0, 0, 0, 4, 6, 101, 102, 103, 115, 114, 101, 221, 157, 101, 101, 103, 101, 103, 410, 0, 157, 0, 1, 241, 131, 141, 0, 69, 120, 112, 49])
 
 def set_exp2_device():
     print("Changing exp 2 values")
     EXP2_DEVICE[1].setValues(4, 999, [1] * 1000)
+    EXP2_DEVICE[1].setValues(4, 1609, [0])  # Gas detect 2 not fitted
+    EXP2_DEVICE[1].setValues(4, 3503, [4])
     EXP2_DEVICE[1].setValues(4, 1275, [0])
 
     # EXP2_DEVICE[1].setValues(4, 1030, [0] * 1) # UV/IR not fitted
@@ -368,18 +398,19 @@ def set_exp2_device():
     # EXP2_DEVICE[1].setValues(4, 1073, [1] * 1)  # Water Detect Value
 
     EXP2_DEVICE[1].setValues(4, 2999,
-                             [16855, 16385, 16385, 1675, 243, 0, 0, 0, 0, 0, 104, 105, 106, 104, 103, 102, 222, 155, 102, 102, 103, 101, 102, 420, 0, 155, 0, 2, 240, 132, 142, 0, 69, 120, 112, 50])
+                             [5463, 16387, 16419, 651, 243, 0, 0, 0, 4, 4, 104, 105, 106, 104, 103, 102, 222, 155, 102, 102, 103, 101, 102, 420, 0, 155, 0, 2, 240, 132, 142, 0, 69, 120, 112, 50])
 
 def set_exp3_device():
     print("Changing exp 3 values")
     EXP3_DEVICE[1].setValues(4, 999, [1] * 1000)
     EXP3_DEVICE[1].setValues(4, 1061, [0]) # Top pump not fitted
+    EXP3_DEVICE[1].setValues(4, 1609, [0])  # Gas detect 2 not fitted
     EXP3_DEVICE[1].setValues(4, 1265, [600])  # Extract Pressure
     EXP3_DEVICE[1].setValues(4, 1272, [1024]) # 2RB RB1
     EXP3_DEVICE[1].setValues(4, 1275, [4])  # Top pump pipeline not fitted
 
     EXP3_DEVICE[1].setValues(4, 2999,
-                             [33152, 16385, 16385, 10027, 243, 0, 0, 0, 0, 0, 104, 105, 106, 104, 103, 102, 222, 155, 102, 102, 103, 101, 102, 420, 0, 155, 0, 2, 240, 132, 142, 0, 82, 66, 49, 0])
+                             [33152, 16385, 16385, 10027, 243, 0, 0, 0, 0, 0, 104, 105, 106, 104, 103, 102, 222, 155, 103, 103, 103, 101, 102, 420, 0, 155, 0, 2, 240, 132, 142, 0, 82, 66, 49, 0])
     EXP3_DEVICE[1].setValues(4, 3047,
                              [82, 66, 49])
 
@@ -393,9 +424,21 @@ def set_exp4_device():
     EXP4_DEVICE[1].setValues(4, 1275, [4])  # Top pump pipeline not fitted
 
     EXP4_DEVICE[1].setValues(4, 2999,
-                             [16768, 16385, 16385, 1835, 243, 0, 0, 0, 0, 0, 104, 105, 106, 104, 103, 102, 222, 155, 102, 102, 103, 101, 102, 420, 0, 155, 0, 2, 240, 132, 142, 0, 82, 66, 50, 0])
+                             [16768, 16385, 16385, 1835, 243, 0, 0, 0, 0, 0, 104, 105, 106, 104, 103, 102, 222, 155, 104, 104, 201, 101, 102, 420, 0, 155, 0, 2, 240, 132, 142, 0, 82, 66, 50, 0])
     EXP4_DEVICE[1].setValues(4, 3047,
                              [82, 66, 50])
+
+def set_vpsa_device():
+    print("Changing vpsa values")
+    VPSA_DEVICE[1].setValues(4, 999, [1] * 1000)
+    VPSA_DEVICE[1].setValues(4, 1272, [4096]) # Backup pump enable
+    VPSA_DEVICE[1].setValues(4, 1069, [0])  # Gas detect 1 not fitted
+    VPSA_DEVICE[1].setValues(4, 1609, [0])  # Gas detect 2 not fitted
+    VPSA_DEVICE[1].setValues(4, 1266, [0])  # Extract Pressure 2 not fitted
+    VPSA_DEVICE[1].setValues(4, 1275, [4])  # Disable pb pump
+    VPSA_DEVICE[1].setValues(4, 2999,
+                             [53252, 0, 32929, 42, 0, 0, 0, 0, 0, 16, 111, 112, 106, 104, 114, 102, 221, 157, 101, 101, 103, 101, 103, 410, 0, 157, 0, 1, 241, 131, 141, 0, 69, 120, 112, 49])
+
 def set_src1_device(): #IEA2B1123010_SS12
     print("Changing src 1 values")
     SRC1_DEVICE[1].setValues(4, 999, [1] * 1000)
@@ -442,7 +485,12 @@ def set_src6_device():
 
 def set_src7_device():
     print("Changing src 7 values")
-    SRC7_DEVICE[1].setValues(4, 999, [1] * 1000)
+    SRC7_DEVICE[1].setValues(4, 1275, [0])
+    SRC7_DEVICE[1].setValues(4, 1090, [900]) # FT-104 Value
+    SRC7_DEVICE[1].setValues(4, 1265, [800])  # Extract Pressure
+    SRC7_DEVICE[1].setValues(4, 2999,
+                             [16855, 16385, 16385, 1963, 130, 0, 0, 0, 0, 2, 201, 202, 203, 0, 0, 201, 231, 351, 201, 201, 103, 101, 201, 151, 0, 351, 0, 4, 251, 331, 341, 0, 83, 114, 99, 49])
+
 
 def set_src8_device():
     print("Changing src 8 values")
@@ -692,13 +740,14 @@ if __name__ == "__main__":
     set_src_master_device()
     set_exp_master_device()
 
-    # set_hrs_device()
+    set_hrs_device()
     # set_h2d1_device()
     # set_h2d2_device()
-    # set_exp1_device()
+    set_exp1_device()
     set_exp2_device()
     set_exp3_device()
     set_exp4_device()
+    set_vpsa_device()
 
     set_src1_device()
     set_src2_device()
@@ -717,14 +766,15 @@ if __name__ == "__main__":
 
     threading.Thread(target=start_src_master_device, daemon=True).start()
     threading.Thread(target=start_exp_master_device, daemon=True).start()
-    # threading.Thread(target=start_hrs_device, daemon=True).start()
+    threading.Thread(target=start_hrs_device, daemon=True).start()
     # threading.Thread(target=start_h2d1_device, daemon=True).start()
     # threading.Thread(target=start_h2d2_device, daemon=True).start()
 
-    # threading.Thread(target=start_exp1_device, daemon=True).start()
+    threading.Thread(target=start_exp1_device, daemon=True).start()
     threading.Thread(target=start_exp2_device, daemon=True).start()
     threading.Thread(target=start_exp3_device, daemon=True).start()
     threading.Thread(target=start_exp4_device, daemon=True).start()
+    threading.Thread(target=start_vpsa_device, daemon=True).start()
 
     threading.Thread(target=start_src1_device, daemon=True).start()
     threading.Thread(target=start_src2_device, daemon=True).start()
