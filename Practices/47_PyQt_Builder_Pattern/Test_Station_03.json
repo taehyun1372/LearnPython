@@ -1,0 +1,26 @@
+{
+    "step1":
+    {
+        "name": "Initialization Test 03",
+        "description": "We need to initialize test 03",
+        "timeout" : 5000
+    },
+    "step2" :
+    {
+        "name": "Calibration Test 03",
+        "description": "We need to calibrate test 03",
+        "timeout" : 5000
+    },
+    "step3" :
+    {
+        "name": "Registration Test 03",
+        "description": "We need to register test 03",
+        "timeout" : 5000
+    },
+    "step4" :
+    {
+        "name": "Purging Test 03",
+        "description": "We need to purge test 03",
+        "timeout" : 5000
+    }
+}

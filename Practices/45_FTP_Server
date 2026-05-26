@@ -1,0 +1,20 @@
+from pyftpdlib.authorizers import DummyAuthorizer
+from pyftpdlib.handlers import FTPHandler
+from pyftpdlib.servers import FTPServer
+
+authorizer = DummyAuthorizer()
+
+# 👉 익명 사용자 (로그인 없이 접속)
+authorizer.add_anonymous("C:\\Users\\ko1z528\\Downloads\\Wireshark", perm="elr")  
+# "." = 공유할 폴더
+
+handler = FTPHandler
+handler.authorizer = authorizer
+
+# passive 포트 (방화벽 문제 줄이기)
+handler.passive_ports = range(30000, 30100)
+
+server = FTPServer(("0.0.0.0", 2121), handler)
+
+print("Anonymous FTP server started")
+server.serve_forever()

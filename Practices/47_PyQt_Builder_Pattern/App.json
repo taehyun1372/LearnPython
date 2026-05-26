@@ -1,0 +1,17 @@
+{
+    "Test01" :
+    {
+        "ui_file" : "Test_Station_01.ui",
+        "test_file" : "Test_Station_01.json"
+    },
+    "Test02" :
+    {
+        "ui_file" : "Test_Station_02.ui",
+        "test_file" : "Test_Station_02.json"
+    },
+    "Test03" :
+    {
+        "ui_file" : "Test_Station_03.ui",
+        "test_file" : "Test_Station_03.json"
+    }
+}
