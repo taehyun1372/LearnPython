@@ -1,0 +1,33 @@
+Start_Time,2026-04-22 16:13:12
+End_Time,2026-04-22 16:14:21
+Execution_Time,69 Seconds
+Total_Test_Count,12
+Passed_Test_Count,12
+Failed_Test_Count,0
+Skipped_Test_Count,0
+Not_Executed_Test_Count,0
+Passed_Percentage,100.0
+Failed_Percentage,0.0
+Test Step Tag,Test Plan Name,Test Case Title,Test Status,Test Step Id,Test Step CMD,Test Step Status,Test Step Error
+111,SCB flashing process. (PRODUCTION),Flashing firmware,Pass,1.1,,Pass,
+112,,,,1.2,,Pass,
+113,,,,1.3,,Pass,
+114,,,,1.4,,Pass,
+121,SCB flashing process. (PRODUCTION),Getting SCB digital signature public key,Pass,2.1,rtt_1 sendCommand security getPubkey,Pass,
+122,,,,2.2,,Pass,
+123,,,,2.3,,Pass,
+131,SCB flashing process. (PRODUCTION),Deploying secondary digital signature key sets,Pass,3.1,,Pass,
+132,,,,3.2,rtt_1 sendCommand security setPubkey $DB_SECONDARY_SIGN_VERIFY_PUB_KEY,Pass,
+133,,,,3.3,rtt_1 sendCommand settings display,Pass,
+141,SCB flashing process. (PRODUCTION),Adding SCB to inventory,Pass,4.1,,Pass,
+151,SCB flashing process. (PRODUCTION),Writing device name,Pass,5.1,flash_scb_1 reset_otp_address device_name,Pass,
+161,SCB flashing process. (PRODUCTION),Writing SCB component ID,Pass,6.1,,Pass,
+171,SCB flashing process. (PRODUCTION),Writing BLE mac address,Pass,7.1,flash_scb_1 reset_otp_address ble_mac_addr,Pass,
+181,SCB flashing process. (PRODUCTION),Verifying RTT bootup,Pass,8.1,,Pass,
+182,,,,8.2,,Pass,
+183,,,,8.3,,Pass,
+184,,,,8.4,,Pass,
+191,SCB flashing process. (PRODUCTION),Verifying firmware version,Pass,9.1,rtt_1 sendCommand system reset,Pass,
+1101,SCB flashing process. (PRODUCTION),"Verifying BLE MAC, NAME and SCB ID",Pass,10.1,,Pass,
+1111,SCB flashing process. (PRODUCTION),Enabling BLE Encryption,Pass,11.1,rtt_1 sendCommand settings encryption on,Pass,
+1121,SCB flashing process. (PRODUCTION),Locking Debug Access Port (AP),Pass,12.1,,Pass,

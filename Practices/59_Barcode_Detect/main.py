@@ -2,7 +2,7 @@ import cv2
 import zxingcpp
 from pathlib import Path
 
-def test_detect(img_path):
+def test_cv2_detect(img_path):
     img = cv2.imread(img_path)
     
     detector = cv2.QRCodeDetector()
@@ -17,8 +17,15 @@ def test_detect(img_path):
     else:
         for r in results:
             print(r.text)
+            
+def test_pyzbar_detect(img_path):
+    img = cv2.imread(img_path)
+    results = zxingcpp.read_barcodes(img)
+    
+    for result in results:
+        print(result.text)
 
 if __name__ == "__main__":
-    img_path = "raw_image2.png"
+    img_path = "raw_image.png"
     print(img_path)
-    test_detect(img_path)
+    test_pyzbar_detect(img_path)

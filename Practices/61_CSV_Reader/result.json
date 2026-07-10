@@ -1,0 +1,296 @@
+[
+    {
+        "Name": "Flashing firmware",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "1.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "1.2",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "1.3",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "1.4",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Getting SCB digital signature public key",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "2.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "rtt_1 sendCommand security getPubkey",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "2.2",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "2.3",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Deploying secondary digital signature key sets",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "3.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "3.2",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "rtt_1 sendCommand security setPubkey $DB_SECONDARY_SIGN_VERIFY_PUB_KEY",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "3.3",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "rtt_1 sendCommand settings display",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Adding SCB to inventory",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "4.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Writing device name",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "5.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "flash_scb_1 reset_otp_address device_name",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Writing SCB component ID",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "6.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Writing BLE mac address",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "7.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "flash_scb_1 reset_otp_address ble_mac_addr",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Verifying RTT bootup",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "8.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "8.2",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "8.3",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            },
+            {
+                "Name": "8.4",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Verifying firmware version",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "9.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "rtt_1 sendCommand system reset",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Verifying BLE MAC, NAME and SCB ID",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "10.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Enabling BLE Encryption",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "11.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "rtt_1 sendCommand settings encryption on",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    },
+    {
+        "Name": "Locking Debug Access Port (AP)",
+        "StartTime": "2026-06-15T11:55:27.553245",
+        "EndTime": "2026-06-15T11:55:27.553245",
+        "TestStatus": "Pass",
+        "TestStepExecutions": [
+            {
+                "Name": "12.1",
+                "StartTime": "2026-06-15T11:55:27.553245",
+                "EndTime": "2026-06-15T11:55:27.553245",
+                "TestStatus": "Pass",
+                "TestStepCmd": "",
+                "TestStepError": "",
+                "Metadata": {}
+            }
+        ]
+    }
+]
