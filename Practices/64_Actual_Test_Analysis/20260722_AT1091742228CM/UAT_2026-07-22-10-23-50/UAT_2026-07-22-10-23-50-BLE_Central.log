@@ -1,0 +1,244 @@
+Initialized BLEInfoDevice 
+Initialized Successfully : BLEInfoDevice
+ -- E8:45:EB:00:0B:4D: Dekoda-1091742228
+ -- 17:88:3B:40:76:64: None
+ -- 78:AD:85:03:B0:02: None
+ -- 05:FF:7E:8A:FB:76: None
+ -- 34:FC:99:32:1F:96: Room A/C
+ -- 50:FD:D5:68:15:79: Samsung-Room-Air-Cond
+ -- 54:B7:BD:C7:34:05: [LG] webOS TV TQ615S
+ -- E8:45:EB:00:0C:6E: Dekoda-1091750068
+ -- D8:E3:5E:0B:18:6D: [LG] webOS TV TQ615S
+ -- 37:6A:6B:2C:F7:93: None
+ -- 54:B7:BD:C3:E6:F1: None
+ -- 26:CC:10:19:D5:E9: None
+ -- E8:45:EB:00:0C:07: Dekoda-0000000000
+ -- B8:16:5F:96:83:E9: [LG] webOS TV TQ615S
+ -- 60:95:32:72:95:79: D6J261310837
+ -- 60:78:D9:E4:49:82: None
+ -- B8:16:5F:75:BD:25: [LG] webOS TV TQ615S
+ -- CC:B5:4C:F4:B0:50: 71J243200531
+ -- B8:16:5F:96:7A:33: [LG] webOS TV TQ615S
+ -- 65:6A:35:0B:E1:A6: None
+ -- 04:B4:1E:61:62:8F: None
+ -- 60:95:32:74:35:4D: D6J261310830
+ -- 31:D9:96:F7:62:91: None
+ -- A4:36:C7:5E:15:07: [LG] webOS TV TQ615S
+ -- 61:27:71:E8:40:35: None
+ -- 77:AB:96:C0:74:BF: None
+ -- 5B:39:D1:1B:4E:6A: None
+ -- B8:16:5F:F0:EE:A3: [LG] webOS TV TQ615S
+ -- 60:95:32:69:A5:28: ZD421-1
+ -- 60:95:32:74:35:4F: D6J261310843
+ -- CC:B5:4C:F4:B3:6E: 71J243200529
+ -- 2B:A1:EB:26:82:B5: None
+ -- B8:16:5F:75:BB:53: [LG] webOS TV TQ615S
+ -- 6B:79:6E:71:3E:4D: None
+ -- CC:B5:4C:F4:A6:57: 71J243200530
+ -- 4C:CC:B9:0C:A6:B3: None
+ -- 26:45:01:1C:12:E3: None
+ -- D8:E3:5E:0B:18:4F: None
+ -- 7B:17:CA:E8:11:D6: None
+ -- 0B:53:17:75:0B:C0: None
+ -- 4F:0F:05:80:ED:A8: None
+ -- 5A:81:4E:21:9A:9D: None
+ -- 45:EC:BE:BA:4E:B1: None
+ -- 16:44:8B:96:60:CE: None
+ -- 4A:6D:06:F3:EA:AC: None
+ -- 78:3B:75:FD:0A:0D: None
+ -- 2C:20:84:8D:99:F9: None
+ -- 60:F8:A0:5C:E3:E5: None
+ -- 26:E0:AA:64:6D:5A: None
+ -- 51:A5:80:8C:9C:57: None
+ -- 54:5C:FD:40:76:5D: None
+ -- 60:95:32:2A:E6:BC: D6J243100400
+ -- 54:44:34:AE:49:EA: None
+ -- B8:16:5F:96:5C:13: [LG] webOS TV TQ615S
+ -- 7E:B5:43:A2:FC:38: None
+ -- A4:36:C7:8E:B2:A5: [LG] webOS TV TQ615S
+ -- C8:2C:F8:28:26:64: None
+ -- 57:34:C2:DB:7B:60: None
+ -- 2E:5C:0D:85:D3:9A: None
+ -- 94:E6:BA:BF:28:23: None
+ -- 49:CB:9A:ED:AE:98: None
+ -- B8:16:5F:96:84:07: None
+ -- 64:7E:88:AC:55:0F: None
+ -- 7B:A6:9E:7A:DE:D2: None
+ -- 47:C6:4F:B2:C8:17: None
+ -- 44:08:81:39:FF:04: None
+ -- 64:C4:18:0B:4D:F6: None
+ -- 58:19:BD:C7:99:5E: None
+ -- 4B:E3:C2:2E:E1:71: None
+ -- 5A:12:0C:CE:77:26: None
+ -- 79:91:05:FD:2F:BA: None
+ -- 60:95:32:74:33:8D: D6J261310820
+ -- 60:95:32:6F:88:37: D6J261310807
+ -- 0A:F6:16:12:A1:B7: None
+ -- 5E:3B:2F:B9:50:3D: None
+ -- 50:F5:61:37:91:74: None
+Scan Complete.
+E8:45:EB:00:0B:4D:Dekoda-1091742228 SELECTION SUCCESSFUL
+[ERR] Connect - Traceback (most recent call last):
+  File "C:\Users\abc\Desktop\spectra\dms-1.49.1\src\drivers\ble\ble_central.py", line 544, in __connect
+    self.__device_client = BleakClient(self.__device_obj, timeout=30.0)  # NOTE This timeout is important, if it takes longer to connect, this keeps failing.
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abc\AppData\Local\Programs\Python\Python312\Lib\site-packages\bleak\__init__.py", line 521, in __init__
+    self._backend = PlatformBleakClient(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abc\AppData\Local\Programs\Python\Python312\Lib\site-packages\bleak\backends\winrt\client.py", line 216, in __init__
+    self._device_info = address_or_ble_device.details.adv.bluetooth_address
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'bluetooth_address'
+
+ -- 16:44:8B:96:60:CE: None
+ -- 05:FF:7E:8A:FB:76: None
+ -- 60:95:32:74:35:4F: D6J261310843
+ -- 32:95:E2:B0:AA:0F: None
+ -- 78:AD:85:03:B0:02: None
+ -- 60:95:32:69:A5:28: ZD421-1
+ -- E8:45:EB:00:0C:07: Dekoda-0000000000
+ -- 64:7E:88:AC:55:0F: Galaxy Watch4 (VT0Z)
+ -- 60:95:32:6F:88:37: D6J261310807
+ -- B8:16:5F:96:7A:33: [LG] webOS TV TQ615S
+ -- A4:36:C7:5E:15:07: [LG] webOS TV TQ615S
+ -- 31:D9:96:F7:62:91: None
+ -- F0:B5:F3:78:A8:17: None
+ -- 34:FC:99:32:1F:96: Room A/C
+ -- 50:FD:D5:68:15:79: Samsung-Room-Air-Cond
+ -- E8:45:EB:00:0B:4D: Dekoda-1091742228
+ -- 37:6A:6B:2C:F7:93: None
+ -- B8:16:5F:F0:EE:A3: [LG] webOS TV TQ615S
+ -- 26:CC:10:19:D5:E9: None
+ -- E3:1F:34:57:D2:2D: None
+ -- 51:A5:80:8C:9C:57: None
+ -- 54:44:34:AE:49:EA: None
+ -- 04:B4:1E:61:62:8F: None
+ -- 26:45:01:1C:12:E3: None
+ -- CC:B5:4C:F4:B0:50: 71J243200531
+ -- F4:05:AF:B3:5F:6A: None
+ -- 60:95:32:2A:E6:BC: D6J243100400
+ -- 17:88:3B:40:76:64: None
+ -- 60:78:D9:E4:49:82: None
+ -- CC:B5:4C:F4:A6:57: 71J243200530
+ -- D8:E3:5E:0B:18:6D: [LG] webOS TV TQ615S
+ -- 65:6A:35:0B:E1:A6: None
+ -- A4:36:C7:8E:B2:A5: [LG] webOS TV TQ615S
+ -- 47:C6:4F:B2:C8:17: None
+ -- 7B:A6:9E:7A:DE:D2: None
+ -- 2E:5C:0D:85:D3:9A: None
+ -- 45:EC:BE:BA:4E:B1: None
+ -- D8:E3:5E:0B:18:4F: [LG] webOS TV TQ615S
+ -- B8:16:5F:96:84:07: [LG] webOS TV TQ615S
+ -- 6B:79:6E:71:3E:4D: None
+ -- B8:16:5F:75:BB:53: [LG] webOS TV TQ615S
+ -- 78:3B:75:FD:0A:0D: None
+ -- 7B:17:CA:E8:11:D6: None
+ -- 5E:3B:2F:B9:50:3D: None
+ -- B8:16:5F:96:83:E9: [LG] webOS TV TQ615S
+ -- E1:21:57:3F:B5:C8: None
+ -- 0A:F6:16:12:A1:B7: None
+ -- 94:E6:BA:BF:28:23: None
+ -- 57:34:C2:DB:7B:60: None
+ -- 64:C4:18:0B:4D:F6: None
+ -- 26:E0:AA:64:6D:5A: None
+ -- 60:95:32:74:33:8D: None
+ -- 4F:0F:05:80:ED:A8: None
+ -- 0B:53:17:75:0B:C0: None
+ -- 61:27:71:E8:40:35: None
+ -- 2B:A1:EB:26:82:B5: None
+ -- 4B:E3:C2:2E:E1:71: None
+ -- 2C:20:84:8D:99:F9: None
+ -- 78:C3:E1:C4:7E:0F: None
+ -- CC:B5:4C:F4:B3:6E: 71J243200529
+ -- 58:19:BD:C7:99:5E: None
+ -- 50:F5:61:37:91:74: None
+ -- 54:B7:BD:C7:34:05: [LG] webOS TV TQ615S
+ -- 29:90:AE:14:2F:29: None
+ -- C5:DF:2B:61:80:49: None
+ -- B8:16:5F:96:5C:13: [LG] webOS TV TQ615S
+ -- 60:F8:A0:5C:E3:E5: None
+ -- 5A:12:0C:CE:77:26: None
+ -- 60:95:32:72:95:79: D6J261310837
+ -- 54:B7:BD:C3:E6:F1: None
+ -- 5B:39:D1:1B:4E:6A: None
+ -- B8:16:5F:75:BD:25: [LG] webOS TV TQ615S
+ -- 60:95:32:74:35:4D: D6J261310830
+ -- 49:CB:9A:ED:AE:98: None
+ -- 7D:C0:1F:2C:DF:24: None
+ -- C8:2C:F8:28:26:64: None
+ -- E8:45:EB:00:0C:6E: Dekoda-1091750068
+ -- 44:1A:A9:F9:BE:B5: None
+Scan Complete.
+E8:45:EB:00:0B:4D:Dekoda-1091742228 SELECTION SUCCESSFUL
+E8:45:EB:00:0B:4D:Dekoda-1091742228 CONNECTION SUCCESSFUL
+Pairing ... 
+[Level 2] ... 
+Pairing Successful.
+
+ ... Setting up BLE encryption ...
+
+ ======= STEP ONE    ==========
+ === SCB public keys - OK
+
+ ======= STEP TWO    ==========
+ === Testrunner keys - OK
+
+ ======= STEP THREE    ==========
+READ  OK -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a5-2f09-4309-a18f-d2f56b93f36f | VAL:{"msg":{"rev":4,"req":1,"epk":"1tdzHlGyq1ZFXMqe3rCI8xMUFCMMPHt5CaBtSDLaDhw="},"sig":"7YnyTSSu8gm8panwLPeCBG+yMD7zY3np6U4CWjNrAeZ9k9tdyHW+Eou6eyHBRw+9XGOWpsQ3bn45ltGdL2u3Aw=="}
+From encryptionConfig encryptionConfigChar - {"msg":{"rev":4,"req":1,"epk":"1tdzHlGyq1ZFXMqe3rCI8xMUFCMMPHt5CaBtSDLaDhw="},"sig":"7YnyTSSu8gm8panwLPeCBG+yMD7zY3np6U4CWjNrAeZ9k9tdyHW+Eou6eyHBRw+9XGOWpsQ3bn45ltGdL2u3Aw=="}
+ === SCB encryption configurations - OK
+
+ ======= STEP FOUR    ==========
+ === SCB encryption parsing - OK
+
+ ======= STEP FIVE    ==========
+ === Derived shared secret keys from encryption configs - OK
+
+ ======= STEP SIX    ==========
+Sending Command : encryptionConfig encryptionSetupChar {"epk": "pIru3WXPA7z6npPS0pyHtIaMnPZeRHdI3aulQFCrwWM="}
+Characteristic ID: 46a750a3-2f09-4309-a18f-d2f56b93f36f
+Data Value: {"epk": "pIru3WXPA7z6npPS0pyHtIaMnPZeRHdI3aulQFCrwWM="}
+WRITE OK, EN: False -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a3-2f09-4309-a18f-d2f56b93f36f | VAL:{"epk": "pIru3WXPA7z6npPS0pyHtIaMnPZeRHdI3aulQFCrwWM="}
+Send successful.
+ === Sending new derived secrets for encryption setup - OK
+
+ ======= STEP SEVEN    ==========
+ === New encryption key generation - OK
+
+ ======= STEP EIGHT    ==========
+READ  OK -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a7-2f09-4309-a18f-d2f56b93f36f | VAL:ENCRYPTED
+From encryptionConfig encryptionStatusChar - ENCRYPTED
+ === SCB BLE encryption status (before test service) - OK
+
+ ======= STEP NINE    ==========
+
+ ======= STEP TEN    ==========
+READ ENCRYPTED -> Service ID: 46a750a2-2f09-4309-a18f-d2f56b93f36f | Characteristic ID: 46a750a9-2f09-4309-a18f-d2f56b93f36f | Value(Encrypt): 4f9c196ad8925a5e44c0ba554e03ca9dc6cc22046860e99a3820f366e5a136cc69ad14fe3706435bcd1d02d5d939383748dd194074f432ea0cb443b80ba08f261a03493106
+Data decrypted successfully for service encryptionConfig.
+Decryption OK for encryptionConfig.
+From encryptionConfig encrptionTestChar - Hello World, from the most secure toilet!
+ === Reading data on the test service [ bytearray(b'O\x9c\x19j\xd8\x92Z^D\xc0\xbaUN\x03\xca\x9d\xc6\xcc"\x04h`\xe9\x9a8 \xf3f\xe5\xa16\xcci\xad\x14\xfe7\x06C[\xcd\x1d\x02\xd5\xd9987H\xdd\x19@t\xf42\xea\x0c\xb4C\xb8\x0b\xa0\x8f&\x1a\x03I1\x06') ] - OK
+
+ ======= STEP ELEVEN    ==========
+Sending Command : encryptionConfig encrptionTestChar Hello World, from the most secure toilet!
+Characteristic ID: 46a750a9-2f09-4309-a18f-d2f56b93f36f
+Data Value: Hello World, from the most secure toilet!
+Data encrypted successfully for service encryptionConfig.
+ENCYTPING b'\x08\x1d#\xbcx_\x9f\xe2w\xef:\xd4\x9b\xa1*y \x98iZ}\xdb\x94W4_P\xa5X\xba#h\x19\xf4\xe1i)\xce(\x0b\xdd)\x8c\xcd\n(\x06 ~\t\x0f\x87%|+\xe2\xb7r5i\xc0\xa3\x17]\xf1\xf52\x1a\xf2' - b'\x08\x1d#\xbcx_\x9f\xe2w\xef:\xd4\x9b\xa1*y \x98iZ}\xdb\x94W4_P\xa5X\xba#h\x19\xf4\xe1i)\xce(\x0b\xdd)\x8c\xcd\n(\x06 ~\t\x0f\x87%|+\xe2\xb7r5i\xc0\xa3\x17]\xf1\xf52\x1a\xf2'
+WRITE OK, EN: True -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a9-2f09-4309-a18f-d2f56b93f36f | VAL:b'\x08\x1d#\xbcx_\x9f\xe2w\xef:\xd4\x9b\xa1*y \x98iZ}\xdb\x94W4_P\xa5X\xba#h\x19\xf4\xe1i)\xce(\x0b\xdd)\x8c\xcd\n(\x06 ~\t\x0f\x87%|+\xe2\xb7r5i\xc0\xa3\x17]\xf1\xf52\x1a\xf2'
+Send successful.
+ === Sending encrpyted message on test service - OK
+
+ ======= STEP TWELVE    ==========
+From encryptionConfig encryptionStatusChar - bytearray(b'ENCRYPTED')
+ === SCB BLE encryption status (after test service) - OK
+ *** BLE ENCRYPTED *** 
+
+Sending Command : factoryReset 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service factoryReset.
+ENCYTPING b'\x812\xdd\x07G\xe4\xee\xcb`\xb6\xa6L\xbc\x8f\x8c\xf3Y+|h_s3S\xe2\\aQ\\' - b'\x812\xdd\x07G\xe4\xee\xcb`\xb6\xa6L\xbc\x8f\x8c\xf3Y+|h_s3S\xe2\\aQ\\'
+WRITE OK, EN: True -> ID:b8c99279-21f9-4464-908e-48a8184d939a - e83768ab-07a2-4ac2-a979-c5f8d65394d7 (Handle: 87): Unknown | VAL:b'\x812\xdd\x07G\xe4\xee\xcb`\xb6\xa6L\xbc\x8f\x8c\xf3Y+|h_s3S\xe2\\aQ\\'
+Send successful.
+Device Unpairied.
+Device disconnected.

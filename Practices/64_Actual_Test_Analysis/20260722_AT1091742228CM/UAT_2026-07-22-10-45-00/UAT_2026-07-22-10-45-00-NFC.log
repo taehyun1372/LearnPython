@@ -1,0 +1,31 @@
+Context established.
+Initialized Successfully.
+PCSC Readers:['ACS ACR1552 1S CL Reader PICC 0', 'ACS ACR1552 1S CL Reader SAM 0']
+Connection OK - ACS ACR1552 1S CL Reader PICC 0
+Connected card 16861477009170104320 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc20000028100
+Rx              | Sts = OK | - | Data [hex] = c0030090009000
+Connected card 16861477009170104321 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc20002048f020203
+Rx              | Sts = OK | - | Data [hex] = c0030090008f0290009000
+Connected card 16861477009170104322 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc2000106ff6e03030102
+Rx              | Sts = OK | - | Data [hex] = c0030090009000
+Connected card 16861477009170104323 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc200010490021f00
+Rx              | Sts = OK | - | Data [hex] = c0030090009000
+Connected card 16861477009170104324 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc2000106ff6e03050180
+Rx              | Sts = OK | - | Data [hex] = c0030090009000
+Connected card 16861477009170104325 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc200010e5f460440420f009505260100f60a
+Rx              | Sts = OK | - | Data [hex] = c00300900092010096020000970c00008e56ef77080104e04a179000
+Connected card 16861477009170104326 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc20001175f460440420f00950e22238e56ef77080104e0010b5642
+Rx              | Sts = OK | - | Data [hex] = c00300900092010096020000973300034c91013355046c6e6b2e6d796b682e696e666f2f595651392f6e66633f64657669636553657269616c3d4154313039a9409000
+Connected card 16861477009170104327 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc20001175f460440420f00950e22238e56ef77080104e00f053831
+Rx              | Sts = OK | - | Data [hex] = c00300900092010096020000971b004d5101115402656e415431303931373432323238434dfe00e8189000
+Connected card 16861477009170104328 with active protocol 2
+Tx              | Sts = OK | - | Data [hex] = ffc20001175f460440420f00950e22238e56ef77080104e01105b93e
+Rx              | Sts = OK | - | Data [hex] = c00300900092010096020000971b00415431303931373432323238434dfe0000000000000000003bee9000

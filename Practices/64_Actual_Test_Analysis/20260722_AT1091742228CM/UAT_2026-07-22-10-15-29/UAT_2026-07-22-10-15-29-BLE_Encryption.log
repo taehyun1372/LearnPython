@@ -1,0 +1,201 @@
+Setting device public key from base64: IiPhAJtgQdjsbOjr9fbKXVrCh1E5J2QUEhFTzepSO54=
+set device public key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+Uploading Testrunner ephemeral public key to database...
+Testrunner Ephemeral Public Key (Base64): ow0em2hbJjKaMCSNyQD2UKs3C6wXUTqc5nQ0dq2ZX3A=
+Testrunner ephemeral public key uploaded to database successfully.
+Generating Testrunner ephemeral public key message package in database...
+Message package generated: {"epk": "ow0em2hbJjKaMCSNyQD2UKs3C6wXUTqc5nQ0dq2ZX3A="}
+Message package written to database successfully.
+Testrunner keys generated successfully
+prepare_device_pub_ephereal_key input: {"msg":{"rev":4,"req":1,"epk":"S6GZr51VyKBxBDLetVgxbuyMPIBSbHEfwbYPsmuDWmY="},"sig":"XSJukA7SJ42TLi/kqrZxYKiYizuUC12zr1JC5dDwA5+Zj6w55WjLqfQTBbH+t4t8gekoOy+RHxea34jEm5CIDA=="}
+Using provided value: {"msg":{"rev":4,"req":1,"epk":"S6GZr51VyKBxBDLetVgxbuyMPIBSbHEfwbYPsmuDWmY="},"sig":"XSJukA7SJ42TLi/kqrZxYKiYizuUC12zr1JC5dDwA5+Zj6w55WjLqfQTBbH+t4t8gekoOy+RHxea34jEm5CIDA=="}
+Parsed JSON: {'msg': {'rev': 4, 'req': 1, 'epk': 'S6GZr51VyKBxBDLetVgxbuyMPIBSbHEfwbYPsmuDWmY='}, 'sig': 'XSJukA7SJ42TLi/kqrZxYKiYizuUC12zr1JC5dDwA5+Zj6w55WjLqfQTBbH+t4t8gekoOy+RHxea34jEm5CIDA=='}
+Extracted EPK: S6GZr51VyKBxBDLetVgxbuyMPIBSbHEfwbYPsmuDWmY=
+Extracted Signature: XSJukA7SJ42TLi/kqrZxYKiYizuUC12zr1JC5dDwA5+Zj6w55WjLqfQTBbH+t4t8gekoOy+RHxea34jEm5CIDA==
+Device ephemeral public key set successfully.
+Verify the epk with public keys
+Message string in verify epk {"rev":4,"req":1,"epk":"S6GZr51VyKBxBDLetVgxbuyMPIBSbHEfwbYPsmuDWmY="} len : 70
+sig_base64 string in verify epk XSJukA7SJ42TLi/kqrZxYKiYizuUC12zr1JC5dDwA5+Zj6w55WjLqfQTBbH+t4t8gekoOy+RHxea34jEm5CIDA== len : 88
+Key Data for Device:
+  Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+  Ephemeral Public Key: 4ba199af9d55c8a0710432deb558316eec8c3c80526c711fc1b60fb26b835a66
+Verifying signed message with public key...
+message bytes b'{"rev":4,"req":1,"epk":"S6GZr51VyKBxBDLetVgxbuyMPIBSbHEfwbYPsmuDWmY="}' len: 70
+sig bytes    b']"n\x90\x0e\xd2\'\x8d\x93./\xe4\xaa\xb6q`\xa8\x98\x8b;\x94\x0b]\xb3\xafRB\xe5\xd0\xf0\x03\x9f\x99\x8f\xac9\xe5h\xcb\xa9\xf4\x13\x05\xb1\xfe\xb7\x8b|\x81\xe9(;/\x91\x1f\x17\x9a\xdf\x88\xc4\x9b\x90\x88\x0c' len : 64
+Verified signed message: b'{"rev":4,"req":1,"epk":"S6GZr51VyKBxBDLetVgxbuyMPIBSbHEfwbYPsmuDWmY="}'
+Verifying signed message: {"rev":4,"req":1,"epk":"S6GZr51VyKBxBDLetVgxbuyMPIBSbHEfwbYPsmuDWmY="} with signature: XSJukA7SJ42TLi/kqrZxYKiYizuUC12zr1JC5dDwA5+Zj6w55WjLqfQTBbH+t4t8gekoOy+RHxea34jEm5CIDA==
+Key Data for Device:
+  Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+  Ephemeral Public Key: 4ba199af9d55c8a0710432deb558316eec8c3c80526c711fc1b60fb26b835a66
+Key Data for Testrunner:
+  Ephemeral Secret Key: b843b934e8bebeab9d2aeba11dccaa57aef2743da55a25c56539697de47f0d55
+  Ephemeral Public Key: a30d1e9b685b26329a30248dc900f650ab370bac17513a9ce6743476ad995f70
+Deriving shared secret using keys...
+Key Data for Testrunner:
+  Ephemeral Secret Key: b843b934e8bebeab9d2aeba11dccaa57aef2743da55a25c56539697de47f0d55
+  Ephemeral Public Key: a30d1e9b685b26329a30248dc900f650ab370bac17513a9ce6743476ad995f70
+Key Data for Device:
+  Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+  Ephemeral Public Key: 4ba199af9d55c8a0710432deb558316eec8c3c80526c711fc1b60fb26b835a66
+Shared secret derived successfully.
+Shared secret (hex): a7b1dfc473c6479e89b665fa8f284b3fe5ec7c1fbc6977dc764bc074f5e8c023
+Generating encryption key with salt: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c' and additional info: b'\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9'
+Encryption key generated successfully.
+Encryption Key (Hex): f8defd327eb21402ca0e87fdeaf633a148565c81e130d3dd9815347fc36022bd
+Encryption Key (Base64): +N79Mn6yFALKDof96vYzoUhWXIHhMNPdmBU0f8NgIr0=
+Starting decryption with Nordic AES GCM...
+Decrypted Message: Hello World, from the most secure toilet!
+Decrypted Message: Hello World, from the most secure toilet!
+Beginning encryption, message to encrypt: Hello World, from the most secure toilet!
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: Hello World, from the most secure toilet!
+Decrypted Message: Hello World, from the most secure toilet!
+Decrypted message after encryption: Hello World, from the most secure toilet!
+Starting decryption with Nordic AES GCM...
+Decrypted Message: AT1091742228CM
+Decrypted Message: AT1091742228CM
+Beginning encryption, message to encrypt: {"ssid":"KVshopfloor","pass":"fan-birthday1mambo"}
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: {"ssid":"KVshopfloor","pass":"fan-birthday1mambo"}
+Decrypted Message: {"ssid":"KVshopfloor","pass":"fan-birthday1mambo"}
+Decrypted message after encryption: {"ssid":"KVshopfloor","pass":"fan-birthday1mambo"}
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-1
+Decrypted Message: IN-PROGRESS-1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: IN-PROGRESS-3
+Decrypted Message: IN-PROGRESS-3
+Starting decryption with Nordic AES GCM...
+Decrypted Message: OK
+Decrypted Message: OK
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: OK
+Decrypted Message: OK
+Beginning encryption, message to encrypt: {"eventid":"9e421fdf-4ada-5d40-b14a-93c3f11111b3","action":"start","type":"StoolShootingRegime"}
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: {"eventid":"9e421fdf-4ada-5d40-b14a-93c3f11111b3","action":"start","type":"StoolShootingRegime"}
+Decrypted Message: {"eventid":"9e421fdf-4ada-5d40-b14a-93c3f11111b3","action":"start","type":"StoolShootingRegime"}
+Decrypted message after encryption: {"eventid":"9e421fdf-4ada-5d40-b14a-93c3f11111b3","action":"start","type":"StoolShootingRegime"}
+Beginning encryption, message to encrypt: {"eventid":"event_capture_stool","action":"stop","type":"StoolShootingRegime"}
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: {"eventid":"event_capture_stool","action":"stop","type":"StoolShootingRegime"}
+Decrypted Message: {"eventid":"event_capture_stool","action":"stop","type":"StoolShootingRegime"}
+Decrypted message after encryption: {"eventid":"event_capture_stool","action":"stop","type":"StoolShootingRegime"}
+Starting decryption with Nordic AES GCM...
+Decrypted Message: UNSET
+Decrypted Message: UNSET
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 3.86.23
+Decrypted Message: 3.86.23
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 3.86.23
+Decrypted Message: 3.86.23
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 3.86.23
+Decrypted Message: 3.86.23
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 3.86.23
+Decrypted Message: 3.86.23
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 3.86.23
+Decrypted Message: 3.86.23
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 3.86.23
+Decrypted Message: 3.86.23
+Starting decryption with Nordic AES GCM...
+Decrypted Message: AT1091742228CM
+Decrypted Message: AT1091742228CM
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1

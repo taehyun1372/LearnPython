@@ -1,0 +1,145 @@
+Initialized BLEInfoDevice 
+Initialized Successfully : BLEInfoDevice
+ -- B8:16:5F:75:BB:53: None
+ -- E8:45:EB:00:0B:4D: Dekoda-1091742228
+ -- 06:C9:2C:B6:3E:CC: None
+ -- 50:FD:D5:68:15:79: Samsung-Room-Air-Cond
+ -- 2D:17:5E:7D:1E:C6: None
+ -- 79:C2:4E:5E:26:42: None
+ -- 7E:D1:72:87:D3:32: None
+ -- 5F:9D:9A:B9:C3:F2: None
+ -- 34:FC:99:32:1F:96: Room A/C
+ -- A4:36:C7:8E:B2:A5: [LG] webOS TV TQ615S
+ -- 2C:5A:AD:5C:49:73: None
+ -- 66:C3:09:53:44:D1: None
+ -- 60:95:32:2A:E6:BC: D6J243100400
+ -- 54:B7:BD:C7:34:05: [LG] webOS TV TQ615S
+ -- 26:C8:00:EC:4F:32: None
+ -- 7A:02:AA:9C:D7:B6: None
+ -- A4:36:C7:5E:15:07: [LG] webOS TV TQ615S
+ -- 56:3B:0D:4F:14:1D: None
+ -- 31:6E:8E:90:95:DE: None
+ -- B8:16:5F:75:BD:25: [LG] webOS TV TQ615S
+ -- B8:16:5F:96:83:E9: [LG] webOS TV TQ615S
+ -- B8:16:5F:96:5C:13: [LG] webOS TV TQ615S
+ -- 5D:D2:80:88:0C:AD: None
+ -- B8:16:5F:96:84:07: [LG] webOS TV TQ615S
+ -- 6A:C5:CC:4F:A3:C7: None
+ -- 60:95:32:6F:88:37: D6J261310807
+ -- 5C:4F:CE:11:47:D2: None
+ -- 25:26:E6:BA:C2:A7: None
+ -- 54:B7:BD:C3:E6:F1: [LG] webOS TV TQ615S
+ -- 2F:DD:B2:6D:3E:1B: None
+ -- CF:63:CF:87:CE:B1: None
+ -- 06:38:60:A0:CA:28: None
+ -- 60:95:32:74:35:4F: D6J261310843
+ -- 2C:5F:12:45:88:4D: None
+ -- 68:56:FF:3F:4B:F8: None
+ -- 3E:6D:6F:E1:13:9C: None
+ -- CC:B5:4C:F4:B3:6E: 71J243200529
+ -- 48:5C:F3:C3:B6:2B: None
+ -- 2A:3F:F3:A8:8F:6E: None
+ -- F2:95:83:0B:28:2A: None
+ -- B8:16:5F:F0:EE:A3: None
+ -- CC:B5:4C:F4:A6:57: 71J243200530
+ -- 94:E6:BA:BF:28:23: None
+ -- 60:95:32:69:A5:28: ZD421-1
+ -- CC:B5:4C:F4:B0:50: 71J243200531
+ -- 5C:F8:7F:A6:31:30: None
+ -- C8:FB:2B:A6:6E:EE: None
+ -- 60:95:32:72:95:79: D6J261310837
+ -- 22:74:6B:42:08:96: None
+ -- B8:16:5F:96:7A:33: [LG] webOS TV TQ615S
+ -- 78:EB:E5:DB:F4:BF: None
+ -- 67:64:AC:2F:BC:13: None
+ -- 58:71:40:9C:E2:3E: None
+ -- 2E:68:09:27:B4:E4: None
+ -- C7:40:D7:18:6C:7F: None
+ -- 09:A7:9C:0F:B9:1F: None
+ -- FA:EA:AD:4B:BC:04: None
+ -- 4B:11:1C:E9:33:88: None
+ -- 60:95:32:74:35:4D: D6J261310830
+ -- D4:37:56:39:7B:7B: None
+ -- 7B:E6:0A:AF:64:C5: None
+ -- 66:B6:A6:A3:C0:AB: None
+ -- 42:FC:53:D5:31:87: None
+ -- D8:E3:5E:0B:18:6D: [LG] webOS TV TQ615S
+ -- 64:7E:88:AC:55:0F: Galaxy Watch4 (VT0Z)
+ -- 64:11:E4:26:A0:F2: None
+ -- F6:BB:04:FB:29:05: None
+ -- 54:4F:F1:81:B1:C5: None
+ -- 5D:2A:31:1A:FB:6D: None
+Scan Complete.
+E8:45:EB:00:0B:4D:Dekoda-1091742228 SELECTION SUCCESSFUL
+E8:45:EB:00:0B:4D:Dekoda-1091742228 CONNECTION SUCCESSFUL
+Pairing ... 
+[Level 2] ... 
+Pairing Successful.
+
+ ... Setting up BLE encryption ...
+
+ ======= STEP ONE    ==========
+ === SCB public keys - OK
+
+ ======= STEP TWO    ==========
+ === Testrunner keys - OK
+
+ ======= STEP THREE    ==========
+READ  OK -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a5-2f09-4309-a18f-d2f56b93f36f | VAL:{"msg":{"rev":4,"req":1,"epk":"ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ="},"sig":"JNwVkTT+6kluGE40bpxlDTKw/AytuNN9dtrMblVnskCvlZW6PFnTm4A4AzSqlKk4NXQD/SNXM+nsbjP7zPr4DA=="}
+From encryptionConfig encryptionConfigChar - {"msg":{"rev":4,"req":1,"epk":"ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ="},"sig":"JNwVkTT+6kluGE40bpxlDTKw/AytuNN9dtrMblVnskCvlZW6PFnTm4A4AzSqlKk4NXQD/SNXM+nsbjP7zPr4DA=="}
+ === SCB encryption configurations - OK
+
+ ======= STEP FOUR    ==========
+ === SCB encryption parsing - OK
+
+ ======= STEP FIVE    ==========
+ === Derived shared secret keys from encryption configs - OK
+
+ ======= STEP SIX    ==========
+Sending Command : encryptionConfig encryptionSetupChar {"epk": "nC1hOHYINqDodZGrgp+xkh6iXa+7fxxoBWXITJcRujk="}
+Characteristic ID: 46a750a3-2f09-4309-a18f-d2f56b93f36f
+Data Value: {"epk": "nC1hOHYINqDodZGrgp+xkh6iXa+7fxxoBWXITJcRujk="}
+WRITE OK, EN: False -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a3-2f09-4309-a18f-d2f56b93f36f | VAL:{"epk": "nC1hOHYINqDodZGrgp+xkh6iXa+7fxxoBWXITJcRujk="}
+Send successful.
+ === Sending new derived secrets for encryption setup - OK
+
+ ======= STEP SEVEN    ==========
+ === New encryption key generation - OK
+
+ ======= STEP EIGHT    ==========
+READ  OK -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a7-2f09-4309-a18f-d2f56b93f36f | VAL:ENCRYPTED
+From encryptionConfig encryptionStatusChar - ENCRYPTED
+ === SCB BLE encryption status (before test service) - OK
+
+ ======= STEP NINE    ==========
+
+ ======= STEP TEN    ==========
+READ ENCRYPTED -> Service ID: 46a750a2-2f09-4309-a18f-d2f56b93f36f | Characteristic ID: 46a750a9-2f09-4309-a18f-d2f56b93f36f | Value(Encrypt): cdd5d15fc8853de2119443a44934a7e7bd8faa7b4a025d2ca0ab54da8f298f69157db7af8ecb1de9bfadcfa42f83cf3427e7ecc53e4a3646532077c22d7adabbfbd744d889
+Data decrypted successfully for service encryptionConfig.
+Decryption OK for encryptionConfig.
+From encryptionConfig encrptionTestChar - Hello World, from the most secure toilet!
+ === Reading data on the test service [ bytearray(b"\xcd\xd5\xd1_\xc8\x85=\xe2\x11\x94C\xa4I4\xa7\xe7\xbd\x8f\xaa{J\x02],\xa0\xabT\xda\x8f)\x8fi\x15}\xb7\xaf\x8e\xcb\x1d\xe9\xbf\xad\xcf\xa4/\x83\xcf4\'\xe7\xec\xc5>J6FS w\xc2-z\xda\xbb\xfb\xd7D\xd8\x89") ] - OK
+
+ ======= STEP ELEVEN    ==========
+Sending Command : encryptionConfig encrptionTestChar Hello World, from the most secure toilet!
+Characteristic ID: 46a750a9-2f09-4309-a18f-d2f56b93f36f
+Data Value: Hello World, from the most secure toilet!
+Data encrypted successfully for service encryptionConfig.
+ENCYTPING b'a\x04B\xb3l+$q9L\xd0\x86\xf5\x8354\x1a\xfe\xb3*\xddrc\xca]\xaf\xddQQ\xbe4w^\xa8#\x16o\xe6\x01\xe6A\xa78H\xa4\xa0\x87\n\xf3b\xb5\xf0T\xda\xae#\\qj\xd9@f\xca\xfdtbr\r\xd8' - b'a\x04B\xb3l+$q9L\xd0\x86\xf5\x8354\x1a\xfe\xb3*\xddrc\xca]\xaf\xddQQ\xbe4w^\xa8#\x16o\xe6\x01\xe6A\xa78H\xa4\xa0\x87\n\xf3b\xb5\xf0T\xda\xae#\\qj\xd9@f\xca\xfdtbr\r\xd8'
+WRITE OK, EN: True -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a9-2f09-4309-a18f-d2f56b93f36f | VAL:b'a\x04B\xb3l+$q9L\xd0\x86\xf5\x8354\x1a\xfe\xb3*\xddrc\xca]\xaf\xddQQ\xbe4w^\xa8#\x16o\xe6\x01\xe6A\xa78H\xa4\xa0\x87\n\xf3b\xb5\xf0T\xda\xae#\\qj\xd9@f\xca\xfdtbr\r\xd8'
+Send successful.
+ === Sending encrpyted message on test service - OK
+
+ ======= STEP TWELVE    ==========
+From encryptionConfig encryptionStatusChar - bytearray(b'ENCRYPTED')
+ === SCB BLE encryption status (after test service) - OK
+ *** BLE ENCRYPTED *** 
+
+Sending Command : factoryReset 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service factoryReset.
+ENCYTPING b'e\xf9\xd7\x8d:\xffGwu!\xe81\xed\xa5\xf36\x9cQ\xc1#\x91\x80\x11\xe8\xc6\xd7\x1f\xe9a' - b'e\xf9\xd7\x8d:\xffGwu!\xe81\xed\xa5\xf36\x9cQ\xc1#\x91\x80\x11\xe8\xc6\xd7\x1f\xe9a'
+WRITE OK, EN: True -> ID:b8c99279-21f9-4464-908e-48a8184d939a - e83768ab-07a2-4ac2-a979-c5f8d65394d7 (Handle: 87): Unknown | VAL:b'e\xf9\xd7\x8d:\xffGwu!\xe81\xed\xa5\xf36\x9cQ\xc1#\x91\x80\x11\xe8\xc6\xd7\x1f\xe9a'
+Send successful.
+Device Unpairied.
+Device disconnected.

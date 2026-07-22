@@ -1,0 +1,18 @@
+Start_Time,2026-07-22 09:46:45
+End_Time,2026-07-22 09:47:21
+Execution_Time,36 Seconds
+Total_Test_Count,2
+Passed_Test_Count,2
+Failed_Test_Count,0
+Skipped_Test_Count,0
+Not_Executed_Test_Count,0
+Passed_Percentage,100.0
+Failed_Percentage,0.0
+Test Step Tag,Test Plan Name,Test Case Title,Test Status,Test Step Id,Test Step CMD,Test Step Status,Test Step Error
+111,Factory OP50 Factory Reset,BLE Connectivity,Pass,1.2,,Pass,
+112,,,,1.2,,Pass,
+113,,,,1.3,,Pass,
+114,,,,1.4,,Pass,
+115,,,,1.5,,Pass,
+121,Factory OP50 Factory Reset,Factory Reset,Pass,2.1,,Pass,
+122,,,,2.2,,Pass,

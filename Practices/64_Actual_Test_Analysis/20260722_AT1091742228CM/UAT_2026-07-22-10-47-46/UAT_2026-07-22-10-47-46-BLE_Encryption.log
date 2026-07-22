@@ -1,0 +1,60 @@
+Setting device public key from base64: IiPhAJtgQdjsbOjr9fbKXVrCh1E5J2QUEhFTzepSO54=
+set device public key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+Uploading Testrunner ephemeral public key to database...
+Testrunner Ephemeral Public Key (Base64): nC1hOHYINqDodZGrgp+xkh6iXa+7fxxoBWXITJcRujk=
+Testrunner ephemeral public key uploaded to database successfully.
+Generating Testrunner ephemeral public key message package in database...
+Message package generated: {"epk": "nC1hOHYINqDodZGrgp+xkh6iXa+7fxxoBWXITJcRujk="}
+Message package written to database successfully.
+Testrunner keys generated successfully
+prepare_device_pub_ephereal_key input: {"msg":{"rev":4,"req":1,"epk":"ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ="},"sig":"JNwVkTT+6kluGE40bpxlDTKw/AytuNN9dtrMblVnskCvlZW6PFnTm4A4AzSqlKk4NXQD/SNXM+nsbjP7zPr4DA=="}
+Using provided value: {"msg":{"rev":4,"req":1,"epk":"ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ="},"sig":"JNwVkTT+6kluGE40bpxlDTKw/AytuNN9dtrMblVnskCvlZW6PFnTm4A4AzSqlKk4NXQD/SNXM+nsbjP7zPr4DA=="}
+Parsed JSON: {'msg': {'rev': 4, 'req': 1, 'epk': 'ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ='}, 'sig': 'JNwVkTT+6kluGE40bpxlDTKw/AytuNN9dtrMblVnskCvlZW6PFnTm4A4AzSqlKk4NXQD/SNXM+nsbjP7zPr4DA=='}
+Extracted EPK: ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ=
+Extracted Signature: JNwVkTT+6kluGE40bpxlDTKw/AytuNN9dtrMblVnskCvlZW6PFnTm4A4AzSqlKk4NXQD/SNXM+nsbjP7zPr4DA==
+Device ephemeral public key set successfully.
+Verify the epk with public keys
+Message string in verify epk {"rev":4,"req":1,"epk":"ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ="} len : 70
+sig_base64 string in verify epk JNwVkTT+6kluGE40bpxlDTKw/AytuNN9dtrMblVnskCvlZW6PFnTm4A4AzSqlKk4NXQD/SNXM+nsbjP7zPr4DA== len : 88
+Key Data for Device:
+  Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+  Ephemeral Public Key: 721eac64f22e8deeeae77b960ca08d34bf81fed3f3a2eb4f22de168e2b8d6604
+Verifying signed message with public key...
+message bytes b'{"rev":4,"req":1,"epk":"ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ="}' len: 70
+sig bytes    b'$\xdc\x15\x914\xfe\xeaIn\x18N4n\x9ce\r2\xb0\xfc\x0c\xad\xb8\xd3}v\xda\xccnUg\xb2@\xaf\x95\x95\xba<Y\xd3\x9b\x808\x034\xaa\x94\xa985t\x03\xfd#W3\xe9\xecn3\xfb\xcc\xfa\xf8\x0c' len : 64
+Verified signed message: b'{"rev":4,"req":1,"epk":"ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ="}'
+Verifying signed message: {"rev":4,"req":1,"epk":"ch6sZPIuje7q53uWDKCNNL+B/tPzoutPIt4WjiuNZgQ="} with signature: JNwVkTT+6kluGE40bpxlDTKw/AytuNN9dtrMblVnskCvlZW6PFnTm4A4AzSqlKk4NXQD/SNXM+nsbjP7zPr4DA==
+Key Data for Device:
+  Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+  Ephemeral Public Key: 721eac64f22e8deeeae77b960ca08d34bf81fed3f3a2eb4f22de168e2b8d6604
+Key Data for Testrunner:
+  Ephemeral Secret Key: 30e5c84efc91fe252ede8b99d28efa29b7931b5f1d50882f1564bda3a06df04a
+  Ephemeral Public Key: 9c2d6138760836a0e87591ab829fb1921ea25dafbb7f1c680565c84c9711ba39
+Deriving shared secret using keys...
+Key Data for Testrunner:
+  Ephemeral Secret Key: 30e5c84efc91fe252ede8b99d28efa29b7931b5f1d50882f1564bda3a06df04a
+  Ephemeral Public Key: 9c2d6138760836a0e87591ab829fb1921ea25dafbb7f1c680565c84c9711ba39
+Key Data for Device:
+  Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+  Ephemeral Public Key: 721eac64f22e8deeeae77b960ca08d34bf81fed3f3a2eb4f22de168e2b8d6604
+Shared secret derived successfully.
+Shared secret (hex): a31bf3712dbbe685e8c51a999b29311702919bc8036d18a680d13636076ea430
+Generating encryption key with salt: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c' and additional info: b'\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9'
+Encryption key generated successfully.
+Encryption Key (Hex): 38a15639bfe8e63c889593563c3bb543572bec3c284cf37acd451df1dea0c696
+Encryption Key (Base64): OKFWOb/o5jyIlZNWPDu1Q1cr7DwoTPN6zUUd8d6gxpY=
+Starting decryption with Nordic AES GCM...
+Decrypted Message: Hello World, from the most secure toilet!
+Decrypted Message: Hello World, from the most secure toilet!
+Beginning encryption, message to encrypt: Hello World, from the most secure toilet!
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: Hello World, from the most secure toilet!
+Decrypted Message: Hello World, from the most secure toilet!
+Decrypted message after encryption: Hello World, from the most secure toilet!
+Beginning encryption, message to encrypt: 1
+Encryption completed successfully.
+Starting decryption with Nordic AES GCM...
+Decrypted Message: 1
+Decrypted Message: 1
+Decrypted message after encryption: 1

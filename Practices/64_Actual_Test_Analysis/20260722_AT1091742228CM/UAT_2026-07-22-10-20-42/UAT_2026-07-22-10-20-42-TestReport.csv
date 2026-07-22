@@ -1,0 +1,39 @@
+Start_Time,2026-07-22 10:20:42
+End_Time,2026-07-22 10:22:10
+Execution_Time,88 Seconds
+Total_Test_Count,12
+Passed_Test_Count,9
+Failed_Test_Count,0
+Skipped_Test_Count,0
+Not_Executed_Test_Count,3
+Passed_Percentage,75.0
+Failed_Percentage,0.0
+Test Step Tag,Test Plan Name,Test Case Title,Test Status,Test Step Id,Test Step CMD,Test Step Status,Test Step Error
+111,OP50 Plan - FULL,DUT Setup,Pass,1.1,,Pass,
+112,,,,1.2,,Pass,
+113,,,,1.3,,Pass,
+121,OP50 Plan - FULL,NFC Detection,Pass,2.1,,Pass,
+122,,,,2.2,,Pass,
+123,,,,2.2,,Pass,
+131,OP50 Plan - FULL,NFC Serial Number Verification,Pass,3.1,,Pass,
+132,,,,3.2,,Pass,
+133,,,,3.3,,Pass,
+134,,,,3.4,,Pass,
+141,OP50 Plan - FULL,BLE Connectivity,Pass,4.1,,Pass,
+142,,,,4.2,,Pass,
+151,OP50 Plan - FULL,BLE Encryption Setup,Pass,5.1,,Pass,
+152,,,,5.2,,Pass,
+161,OP50 Plan - FULL,BLE Serial Number Verification,Pass,6.1,,Pass,
+162,,,,6.2,,Pass,
+163,,,,6.3,,Pass,
+171,OP50 Plan - FULL,WiFi Connectivity,Pass,7.1,ble_central_1 sendCommand sendWifiCreds KVshopfloor fan-birthday1mambo,Pass,
+181,OP50 Plan - FULL,Device Activation,Pass,8.1,ble_central_1 sendCommand activateDevice 1,Pass,
+191,OP50 Plan - FULL,Image Capture,Pass,9.1,ble_central_1 sendCommand triggerEvent $DB_EC_UUID_STOOL_KEY start StoolShootingRegime,Pass,
+192,,,,9.2,ble_central_1 sendCommand triggerEvent $DB_EC_UUID_STOOL_KEY stop StoolShootingRegime,Pass,
+1101,OP50 Plan - FULL,Image Upload,Not Executed,10.1,ble_central_1 sendCommand getVersion 1,Not Executed,
+1102,,,,10.2,,Not Executed,
+1103,,,,10.3,,Not Executed,
+1104,,,,10.4,,Not Executed,
+1111,OP50 Plan - FULL,Factory Reset,Not Executed,12.1,,Not Executed,
+1112,,,,12.2,,Not Executed,
+1121,OP50 Plan - FULL,Image Verification,Not Executed,11.1,,Not Executed,

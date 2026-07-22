@@ -1,0 +1,514 @@
+2026-07-22 09:46:45,589 - ApplicationFactory - INFO - Logging Set to : INFO
+2026-07-22 09:46:45,590 - ApplicationFactory - INFO - Log location: C:\Users\abc\Desktop\spectra\dms-1.49.1\logs/testruns\UAT_2026-07-22-09-46-45
+2026-07-22 09:46:46,128 - UniversalAutomatedTesting - INFO - Logging Ready.
+2026-07-22 09:46:46,128 - UniversalAutomatedTesting - INFO - Application Initialized.
+2026-07-22 09:46:46,129 - ApplicationFactory - INFO - Application Ready.
+2026-07-22 09:46:46,131 - UniversalAutomatedTesting - INFO - Starting Application ...
+2026-07-22 09:46:46,132 - Config - INFO - Logging Ready.
+2026-07-22 09:46:46,133 - Config - INFO - Config File Read successful
+2026-07-22 09:46:46,133 - Config - INFO - Active Config Available : Windows
+2026-07-22 09:46:46,134 - UniversalAutomatedTesting - INFO - Configs loaded.
+2026-07-22 09:46:46,134 - UniversalAutomatedTesting - INFO - Validating Test Group JSON
+2026-07-22 09:46:46,134 - SchemaValidator - INFO - Logging Ready.
+2026-07-22 09:46:46,143 - SchemaValidator - INFO - Schema and Target are validated!
+2026-07-22 09:46:46,144 - UniversalAutomatedTesting - INFO - Test groups validated.
+2026-07-22 09:46:46,144 - TestGroup - INFO - Logging Ready.
+2026-07-22 09:46:46,144 - TestGroup - INFO - Test Group File C:\Users\abc\Desktop\spectra\dms-1.49.1\tests/Factory/testgroup_factory_op50.json Loaded Successfully
+2026-07-22 09:46:46,145 - TestGroup - INFO - Loading Test Plan : op50_FactoryReset
+2026-07-22 09:46:46,154 - TestGroup - INFO - Test Plan File C:\Users\abc\Desktop\spectra\dms-1.49.1\tests\Factory\op50_FactoryReset.json Loaded Successfully
+2026-07-22 09:46:46,154 - TestGroup - INFO - Loading Variable File : test_variables
+2026-07-22 09:46:46,155 - TestGroup - INFO - Test Variable File C:\Users\abc\Desktop\spectra\dms-1.49.1\tests/test_variables.json Loaded Successfully
+2026-07-22 09:46:46,156 - UniversalAutomatedTesting - INFO - Test groups loaded.
+2026-07-22 09:46:46,160 - SchemaValidator - INFO - Schema and Target are validated!
+2026-07-22 09:46:46,160 - UniversalAutomatedTesting - INFO - Test plans validated.
+2026-07-22 09:46:46,160 - Builder - INFO - Logging Ready.
+2026-07-22 09:46:46,160 - IOManager - INFO - Logging Ready.
+2026-07-22 09:46:46,161 - ReportBuilder - INFO - Logging Ready.
+2026-07-22 09:46:46,172 - ReportBuilder - INFO - Report Builder Initialized Successfully
+2026-07-22 09:46:46,172 - JIRAUploader - INFO - Logging Ready.
+2026-07-22 09:46:46,172 - JIRAUploader - INFO - No jira key found, test results will not be uploaded to JIRA
+2026-07-22 09:46:46,174 - JIRAUploader - INFO - JIRA Uploader Initialized Successfully
+2026-07-22 09:46:46,175 - Builder - INFO - Test Builder Initialized Successfully.
+2026-07-22 09:46:46,175 - Builder - INFO - Loading test plan : Factory OP50 Factory Reset
+2026-07-22 09:46:46,175 - Builder - INFO - Total number of test cases found : 2
+2026-07-22 09:46:46,175 - Builder - INFO - Loading test case : BLE Connectivity
+2026-07-22 09:46:46,176 - Builder - INFO - Step: 1.2 is an Event Listener Step until it timeouts in 45000 ms.
+2026-07-22 09:46:46,239 - BLECentral - INFO - Logging Ready.
+2026-07-22 09:46:46,240 - BLECentralEncryption - INFO - Logging Ready.
+2026-07-22 09:46:46,240 - BLECentral - INFO - Initialized BLEInfoDevice 
+2026-07-22 09:46:46,241 - BLECentral - INFO - Initialized Successfully : BLEInfoDevice
+2026-07-22 09:46:46,242 - Builder - INFO - Peripheral Created: ble_central_1
+2026-07-22 09:46:46,242 - Builder - INFO - Step: 1.2 is an Event Listener Step until it timeouts in 15000 ms.
+2026-07-22 09:46:46,244 - Builder - INFO - Step: 1.3 is an Event Listener Step until it timeouts in 5000 ms.
+2026-07-22 09:46:46,249 - ManufacturingInventory - INFO - Logging Ready.
+2026-07-22 09:46:46,249 - ManufacturingAPIClient - INFO - Logging Ready.
+2026-07-22 09:46:46,250 - HTTPRequestClient - INFO - Logging Ready.
+2026-07-22 09:46:46,250 - HTTPRequestClient - INFO - Initialized successfully.
+2026-07-22 09:46:46,250 - ManufacturingAPIClient - INFO - Initialized successfully.
+2026-07-22 09:46:46,251 - ManufacturingInventory - INFO - Initialized Successfully.
+2026-07-22 09:46:46,251 - Builder - INFO - Peripheral Created: mfg_inventory_1
+2026-07-22 09:46:46,252 - Builder - INFO - Step: 1.4 is an Event Listener Step until it timeouts in 5000 ms.
+2026-07-22 09:46:46,252 - Builder - INFO - Step: 1.5 is an Event Listener Step until it timeouts in 30000 ms.
+2026-07-22 09:46:46,252 - Builder - INFO - Loading test case : Factory Reset
+2026-07-22 09:46:46,253 - Builder - INFO - Step: 2.1 is an Event Listener Step until it timeouts in 5000 ms.
+2026-07-22 09:46:46,253 - Builder - INFO - Step: 2.2 is an Event Listener Step until it timeouts in 5000 ms.
+2026-07-22 09:46:46,253 - Builder - INFO -  --> Preparation for test execution is complete.
+
+2026-07-22 09:46:46,253 - Builder - INFO -  ** Test Plan : Factory OP50 Factory Reset | Total test cases : 2
+2026-07-22 09:46:46,254 - Builder - INFO -  >> Test Case : BLE Connectivity [ INIT ] 
+2026-07-22 09:46:46,254 - Builder - INFO -  ****************************************************** Step ID = 1.2
+2026-07-22 09:46:46,254 - Builder - INFO -  == Step Command  : No Command - Step Listener ONLY
+2026-07-22 09:46:46,254 - Builder - INFO -  == Step Asserts  : ble_central_1 connect NAME Dekoda-1091742228
+2026-07-22 09:46:46,255 - TestStepHandler - INFO - Logging Ready.
+2026-07-22 09:46:46,255 - Assertion - INFO - Logging Ready.
+2026-07-22 09:46:46,255 - Assertion - INFO - Initialized successfully.
+2026-07-22 09:46:46,255 - TestStepHandler - INFO - Initialized successfully.
+2026-07-22 09:46:46,256 - TestStepHandler - INFO - Step Execution : Step_Retries = 3.
+2026-07-22 09:46:46,256 - TestStepHandler - INFO - Step Execution : Forced_Retry = False.
+2026-07-22 09:46:46,256 - TestStepHandler - INFO - Step Execution : Retry_Delay = 0.0 sec.
+2026-07-22 09:46:46,256 - TestStepHandler - INFO - Step Execution : Step_Timeout_MS = 45.0 sec.
+2026-07-22 09:46:46,257 - TestStepHandler - INFO - Step Execution : Attempt # 1
+2026-07-22 09:46:46,259 - TestStepHandler - INFO - Step_CMD : Starting ...
+2026-07-22 09:46:46,259 - TestStepHandler - WARNING - Step_CMD : Not provided for this step. Listening to the Assert_Src ...
+2026-07-22 09:46:46,260 - TestStepHandler - INFO - Step_CMD : DONE
+2026-07-22 09:46:46,260 - TestStepHandler - INFO - Step_Assert : Starting ...
+2026-07-22 09:46:56,304 - BLECentral - INFO -  -- E8:45:EB:00:07:FC: Dekoda-1091741894
+2026-07-22 09:46:56,304 - BLECentral - INFO -  -- E8:45:EB:00:0B:4D: Dekoda-1091742228
+2026-07-22 09:46:56,304 - BLECentral - INFO -  -- E8:45:EB:00:0C:46: Dekoda-1091750063
+2026-07-22 09:46:56,304 - BLECentral - INFO -  -- E8:45:EB:00:09:6D: Dekoda-1091742114
+2026-07-22 09:46:56,304 - BLECentral - INFO -  -- 63:CF:1C:2E:DA:EA: None
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- E8:45:EB:00:07:D4: Dekoda-1091741875
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- E8:45:EB:00:09:47: Dekoda-1091742103
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- E8:45:EB:00:07:0C: Dekoda-1091741739
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- E8:45:EB:00:08:CE: Dekoda-1091742067
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- E8:45:EB:00:09:37: Dekoda-1091741876
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- E8:45:EB:00:07:6F: Dekoda-1091741773
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- E8:45:EB:00:08:35: Dekoda-1091741934
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- B8:16:5F:96:83:E9: [LG] webOS TV TQ615S
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- E8:45:EB:00:09:03: Dekoda-1091741878
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 5A:D7:C0:74:24:2F: None
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 60:95:32:74:35:4F: D6J261310843
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 5A:4C:EC:72:F4:28: None
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 54:B7:BD:C3:E6:F1: [LG] webOS TV TQ615S
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 28:48:5F:BE:4B:F6: None
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 54:B7:BD:C7:34:05: [LG] webOS TV TQ615S
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 79:51:D5:07:30:D8: None
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 31:45:64:79:74:F3: None
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 60:95:32:72:95:79: D6J261310837
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 60:95:32:69:A5:28: ZD421-1
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 7C:BB:CF:F1:6A:55: None
+2026-07-22 09:46:56,314 - BLECentral - INFO -  -- 42:76:C9:C9:F9:67: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 62:3F:61:B8:87:08: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- CC:B5:4C:F4:A6:57: 71J243200530
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- E8:45:EB:00:0A:A1: Dekoda-1091742221
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 5A:3E:2D:56:E5:73: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 34:FC:99:32:1F:96: Room A/C
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- B8:16:5F:96:7A:33: [LG] webOS TV TQ615S
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 03:3C:80:5B:9D:A4: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 50:FD:D5:68:15:79: Samsung-Room-Air-Cond
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 69:2B:76:7B:4B:87: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 05:DD:8D:83:9B:5D: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 13:FC:00:3E:52:19: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 68:45:BD:BF:A5:1B: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 0F:8F:4F:0A:81:50: None
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- CC:B5:4C:F4:B3:6E: 71J243200529
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- CC:B5:4C:F4:B0:50: 71J243200531
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- B8:16:5F:96:5C:13: [LG] webOS TV TQ615S
+2026-07-22 09:46:56,324 - BLECentral - INFO -  -- 3F:B0:D3:F9:00:88: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 60:7B:91:B5:05:7B: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 60:95:32:2A:E6:BC: D6J243100400
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 57:9E:18:3F:16:E7: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- A4:36:C7:5E:15:07: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 3A:49:DE:05:E8:60: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 71:A4:C6:DC:E6:A2: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 64:7E:88:AC:55:0F: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 38:AF:32:FA:6B:22: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 3B:30:BC:8A:9D:EF: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 1D:83:FA:2E:05:DC: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- A4:36:C7:8E:B2:A5: [LG] webOS TV TQ615S
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- C5:69:E1:91:AF:9E: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 25:47:78:1E:CD:D3: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 60:95:32:6F:88:37: D6J261310807
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- B8:16:5F:75:BD:25: [LG] webOS TV TQ615S
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- D9:44:C7:7F:EC:05: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 22:B7:BE:4C:2E:C3: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 94:E6:BA:BF:28:23: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 60:95:32:74:35:4D: D6J261310830
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 12:6B:6A:E1:38:A8: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- B8:16:5F:96:84:07: None
+2026-07-22 09:46:56,333 - BLECentral - INFO -  -- 76:D7:BE:62:32:F4: None
+2026-07-22 09:46:56,343 - BLECentral - INFO -  -- B8:16:5F:75:BB:53: None
+2026-07-22 09:46:56,343 - BLECentral - INFO -  -- 61:B8:A9:EF:B0:39: None
+2026-07-22 09:46:56,343 - BLECentral - INFO -  -- 68:1C:79:CF:9E:0B: None
+2026-07-22 09:46:56,343 - BLECentral - INFO - Scan Complete.
+2026-07-22 09:46:56,343 - BLECentral - INFO - E8:45:EB:00:0B:4D:Dekoda-1091742228 SELECTION SUCCESSFUL
+2026-07-22 09:46:57,141 - BLECentral - INFO - E8:45:EB:00:0B:4D:Dekoda-1091742228 CONNECTION SUCCESSFUL
+2026-07-22 09:46:57,141 - TestStepHandler - INFO - Step_Assert : DONE | Result = PASS
+2026-07-22 09:46:57,141 - TestStepHandler - INFO - Step Execution : Timeout = NO
+2026-07-22 09:46:57,151 - TestStepHandler - INFO - Step Execution : Reverse Assert = False
+2026-07-22 09:46:57,151 - TestStepHandler - INFO - Step Execution : Result = True
+2026-07-22 09:46:57,151 - Builder - INFO -  == Step Post Delay : 1000 ms
+2026-07-22 09:46:58,162 - Builder - INFO -  ====================================================== Step ID = 1.2 -> RESULT = PASS
+
+2026-07-22 09:46:58,162 - Builder - INFO -  ****************************************************** Step ID = 1.2
+2026-07-22 09:46:58,162 - Builder - INFO -  == Step Command  : No Command - Step Listener ONLY
+2026-07-22 09:46:58,162 - Builder - INFO -  == Step Asserts  : ble_central_1 pair_device None
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Logging Ready.
+2026-07-22 09:46:58,162 - Assertion - INFO - Logging Ready.
+2026-07-22 09:46:58,162 - Assertion - INFO - Initialized successfully.
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Initialized successfully.
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Step Execution : Step_Retries = 2.
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Step Execution : Forced_Retry = False.
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Step Execution : Retry_Delay = 0.0 sec.
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Step Execution : Step_Timeout_MS = 15.0 sec.
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Step Execution : Attempt # 1
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Step_CMD : Starting ...
+2026-07-22 09:46:58,162 - TestStepHandler - WARNING - Step_CMD : Not provided for this step. Listening to the Assert_Src ...
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Step_CMD : DONE
+2026-07-22 09:46:58,162 - TestStepHandler - INFO - Step_Assert : Starting ...
+2026-07-22 09:46:58,162 - BLECentral - INFO - Pairing ... 
+2026-07-22 09:46:58,162 - BLECentral - INFO - [Level 2] ... 
+2026-07-22 09:46:58,172 - BLECentral - INFO - Pairing Successful.
+2026-07-22 09:46:58,172 - TestStepHandler - INFO - Step_Assert : DONE | Result = PASS
+2026-07-22 09:46:58,172 - TestStepHandler - INFO - Step Execution : Timeout = NO
+2026-07-22 09:46:58,172 - TestStepHandler - INFO - Step Execution : Reverse Assert = False
+2026-07-22 09:46:58,172 - TestStepHandler - INFO - Step Execution : Result = True
+2026-07-22 09:46:58,172 - Builder - INFO -  == Step Post Delay : 1000 ms
+2026-07-22 09:46:59,181 - Builder - INFO -  ====================================================== Step ID = 1.2 -> RESULT = PASS
+
+2026-07-22 09:46:59,181 - Builder - INFO -  ****************************************************** Step ID = 1.3
+2026-07-22 09:46:59,181 - Builder - INFO -  == Step Command  : No Command - Step Listener ONLY
+2026-07-22 09:46:59,181 - Builder - INFO -  == Step Asserts  : mfg_inventory_1 retrieve_data Device
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Logging Ready.
+2026-07-22 09:46:59,181 - Assertion - INFO - Logging Ready.
+2026-07-22 09:46:59,181 - Assertion - INFO - Initialized successfully.
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Initialized successfully.
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Step Execution : Step_Retries = 1.
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Step Execution : Forced_Retry = False.
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Step Execution : Retry_Delay = 0.0 sec.
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Step Execution : Step_Timeout_MS = 5.0 sec.
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Step Execution : Attempt # 1
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Step_CMD : Starting ...
+2026-07-22 09:46:59,181 - TestStepHandler - WARNING - Step_CMD : Not provided for this step. Listening to the Assert_Src ...
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Step_CMD : DONE
+2026-07-22 09:46:59,181 - TestStepHandler - INFO - Step_Assert : Starting ...
+2026-07-22 09:46:59,181 - Database - INFO - UPDT. Device_Serial :: AT1091742228CM
+2026-07-22 09:46:59,181 - ManufacturingInventory - INFO - Device serial = AT1091742228CM
+2026-07-22 09:46:59,181 - ManufacturingInventory - INFO - Component Data Device - OK
+2026-07-22 09:46:59,181 - ManufacturingInventory - INFO - Data Retrieved.
+2026-07-22 09:46:59,191 - TestStepHandler - INFO - Step_Assert : DONE | Result = PASS
+2026-07-22 09:46:59,191 - TestStepHandler - INFO - Step Execution : Timeout = NO
+2026-07-22 09:46:59,191 - TestStepHandler - INFO - Step Execution : Reverse Assert = False
+2026-07-22 09:46:59,191 - TestStepHandler - INFO - Step Execution : Result = True
+2026-07-22 09:46:59,191 - Builder - INFO -  == Step Post Delay : 1000 ms
+2026-07-22 09:47:00,200 - Builder - INFO -  ====================================================== Step ID = 1.3 -> RESULT = PASS
+
+2026-07-22 09:47:00,200 - Builder - INFO -  ****************************************************** Step ID = 1.4
+2026-07-22 09:47:00,200 - Builder - INFO -  == Step Command  : No Command - Step Listener ONLY
+2026-07-22 09:47:00,200 - Builder - INFO -  == Step Asserts  : mfg_inventory_1 get_SCB_pub_key Device
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Logging Ready.
+2026-07-22 09:47:00,200 - Assertion - INFO - Logging Ready.
+2026-07-22 09:47:00,200 - Assertion - INFO - Initialized successfully.
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Initialized successfully.
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Step Execution : Step_Retries = 1.
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Step Execution : Forced_Retry = False.
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Step Execution : Retry_Delay = 0.0 sec.
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Step Execution : Step_Timeout_MS = 5.0 sec.
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Step Execution : Attempt # 1
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Step_CMD : Starting ...
+2026-07-22 09:47:00,200 - TestStepHandler - WARNING - Step_CMD : Not provided for this step. Listening to the Assert_Src ...
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Step_CMD : DONE
+2026-07-22 09:47:00,200 - TestStepHandler - INFO - Step_Assert : Starting ...
+2026-07-22 09:47:00,200 - Database - INFO - Read Device_Serial :: AT1091742228CM
+2026-07-22 09:47:00,200 - HTTPRequestClient - INFO - Sending request: method=get, url=http://192.168.1.56:8080/device-module-inventory/scb-pub-key?deviceSerial=AT1091742228CM
+2026-07-22 09:47:00,200 - HTTPRequestClient - INFO - headers={'Content-Type': 'application/json'}
+2026-07-22 09:47:00,240 - HTTPRequestClient - INFO - Response Code: 200
+2026-07-22 09:47:00,240 - HTTPRequestClient - INFO - Response Reason: OK
+2026-07-22 09:47:00,240 - HTTPRequestClient - INFO - Response Message: {"scbSignVerifyPubKey":"IiPhAJtgQdjsbOjr9fbKXVrCh1E5J2QUEhFTzepSO54=","secondarySignVerifyPubKey":"LdI7F9yv5ky3kUMIY8xngJMfLWvjx/E1WdNO7y4al2M="}
+2026-07-22 09:47:00,240 - Database - INFO - UPDT. $DB_PUBLIC_KEY :: IiPhAJtgQdjsbOjr9fbKXVrCh1E5J2QUEhFTzepSO54=
+2026-07-22 09:47:00,240 - ManufacturingInventory - INFO - Server 200: .
+2026-07-22 09:47:00,240 - TestStepHandler - INFO - Step_Assert : DONE | Result = PASS
+2026-07-22 09:47:00,240 - TestStepHandler - INFO - Step Execution : Timeout = NO
+2026-07-22 09:47:00,240 - TestStepHandler - INFO - Step Execution : Reverse Assert = False
+2026-07-22 09:47:00,250 - TestStepHandler - INFO - Step Execution : Result = True
+2026-07-22 09:47:00,250 - Builder - INFO -  == Step Post Delay : 1000 ms
+2026-07-22 09:47:01,252 - Builder - INFO -  ====================================================== Step ID = 1.4 -> RESULT = PASS
+
+2026-07-22 09:47:01,252 - Builder - INFO -  ****************************************************** Step ID = 1.5
+2026-07-22 09:47:01,252 - Builder - INFO -  == Step Command  : No Command - Step Listener ONLY
+2026-07-22 09:47:01,252 - Builder - INFO -  == Step Asserts  : ble_central_1 setup_ble_encryption
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Logging Ready.
+2026-07-22 09:47:01,252 - Assertion - INFO - Logging Ready.
+2026-07-22 09:47:01,252 - Assertion - INFO - Initialized successfully.
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Initialized successfully.
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Step Execution : Step_Retries = 2.
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Step Execution : Forced_Retry = False.
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Step Execution : Retry_Delay = 0.0 sec.
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Step Execution : Step_Timeout_MS = 30.0 sec.
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Step Execution : Attempt # 1
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Step_CMD : Starting ...
+2026-07-22 09:47:01,252 - TestStepHandler - WARNING - Step_CMD : Not provided for this step. Listening to the Assert_Src ...
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Step_CMD : DONE
+2026-07-22 09:47:01,252 - TestStepHandler - INFO - Step_Assert : Starting ...
+2026-07-22 09:47:01,262 - BLECentral - INFO - 
+ ... Setting up BLE encryption ...
+2026-07-22 09:47:01,262 - BLECentral - INFO - 
+ ======= STEP ONE    ==========
+2026-07-22 09:47:01,262 - Database - INFO - Read $DB_PUBLIC_KEY :: IiPhAJtgQdjsbOjr9fbKXVrCh1E5J2QUEhFTzepSO54=
+2026-07-22 09:47:01,262 - BLECentralEncryption - INFO - Setting device public key from base64: IiPhAJtgQdjsbOjr9fbKXVrCh1E5J2QUEhFTzepSO54=
+2026-07-22 09:47:01,272 - BLECentralEncryption - INFO - set device public key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+2026-07-22 09:47:01,272 - BLECentral - INFO -  === SCB public keys - OK
+2026-07-22 09:47:01,272 - BLECentral - INFO - 
+ ======= STEP TWO    ==========
+2026-07-22 09:47:01,272 - BLECentralEncryption - INFO - Uploading Testrunner ephemeral public key to database...
+2026-07-22 09:47:01,272 - BLECentralEncryption - INFO - Testrunner Ephemeral Public Key (Base64): arfjOTpKN0Xy37Gm44IBqtPwTrVs0Cp4xjopKC8j2yQ=
+2026-07-22 09:47:01,272 - Database - INFO - UPDT. $DB_TESTRUNNER_E_PUB_KEY :: arfjOTpKN0Xy37Gm44IBqtPwTrVs0Cp4xjopKC8j2yQ=
+2026-07-22 09:47:01,272 - BLECentralEncryption - INFO - Testrunner ephemeral public key uploaded to database successfully.
+2026-07-22 09:47:01,272 - BLECentralEncryption - INFO - Generating Testrunner ephemeral public key message package in database...
+2026-07-22 09:47:01,282 - BLECentralEncryption - INFO - Message package generated: {"epk": "arfjOTpKN0Xy37Gm44IBqtPwTrVs0Cp4xjopKC8j2yQ="}
+2026-07-22 09:47:01,282 - Database - INFO - UPDT. $DB_TESTRUNNER_E_PUB_PACKAGE :: {"epk": "arfjOTpKN0Xy37Gm44IBqtPwTrVs0Cp4xjopKC8j2yQ="}
+2026-07-22 09:47:01,282 - BLECentralEncryption - INFO - Message package written to database successfully.
+2026-07-22 09:47:01,282 - BLECentralEncryption - INFO - Testrunner keys generated successfully
+2026-07-22 09:47:01,282 - BLECentral - INFO -  === Testrunner keys - OK
+2026-07-22 09:47:01,282 - BLECentral - INFO - 
+ ======= STEP THREE    ==========
+2026-07-22 09:47:05,443 - BLECentral - INFO - READ  OK -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a5-2f09-4309-a18f-d2f56b93f36f | VAL:{"msg":{"rev":4,"req":1,"epk":"BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw="},"sig":"BayTEAouEqEfohNydpLN7UYkDY2RuUGw4KWlFdeRG6IsLbuAikrFGUIYJEAzqwflCsy+RsS7Vq1YUnHwZRtHAQ=="}
+2026-07-22 09:47:05,443 - BLECentral - INFO - From encryptionConfig encryptionConfigChar - {"msg":{"rev":4,"req":1,"epk":"BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw="},"sig":"BayTEAouEqEfohNydpLN7UYkDY2RuUGw4KWlFdeRG6IsLbuAikrFGUIYJEAzqwflCsy+RsS7Vq1YUnHwZRtHAQ=="}
+2026-07-22 09:47:05,453 - BLECentral - INFO -  === SCB encryption configurations - OK
+2026-07-22 09:47:05,453 - BLECentral - INFO - 
+ ======= STEP FOUR    ==========
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - prepare_device_pub_ephereal_key input: {"msg":{"rev":4,"req":1,"epk":"BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw="},"sig":"BayTEAouEqEfohNydpLN7UYkDY2RuUGw4KWlFdeRG6IsLbuAikrFGUIYJEAzqwflCsy+RsS7Vq1YUnHwZRtHAQ=="}
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Using provided value: {"msg":{"rev":4,"req":1,"epk":"BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw="},"sig":"BayTEAouEqEfohNydpLN7UYkDY2RuUGw4KWlFdeRG6IsLbuAikrFGUIYJEAzqwflCsy+RsS7Vq1YUnHwZRtHAQ=="}
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Parsed JSON: {'msg': {'rev': 4, 'req': 1, 'epk': 'BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw='}, 'sig': 'BayTEAouEqEfohNydpLN7UYkDY2RuUGw4KWlFdeRG6IsLbuAikrFGUIYJEAzqwflCsy+RsS7Vq1YUnHwZRtHAQ=='}
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Extracted EPK: BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw=
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Extracted Signature: BayTEAouEqEfohNydpLN7UYkDY2RuUGw4KWlFdeRG6IsLbuAikrFGUIYJEAzqwflCsy+RsS7Vq1YUnHwZRtHAQ==
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Device ephemeral public key set successfully.
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Verify the epk with public keys
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Message string in verify epk {"rev":4,"req":1,"epk":"BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw="} len : 70
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - sig_base64 string in verify epk BayTEAouEqEfohNydpLN7UYkDY2RuUGw4KWlFdeRG6IsLbuAikrFGUIYJEAzqwflCsy+RsS7Vq1YUnHwZRtHAQ== len : 88
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Key Data for Device:
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO -   Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO -   Ephemeral Public Key: 060ae326609a6da83bb0a55a254261203143a84dd09f18674f0cd3246e2b5e5c
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - Verifying signed message with public key...
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - message bytes b'{"rev":4,"req":1,"epk":"BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw="}' len: 70
+2026-07-22 09:47:05,453 - BLECentralEncryption - INFO - sig bytes    b'\x05\xac\x93\x10\n.\x12\xa1\x1f\xa2\x13rv\x92\xcd\xedF$\r\x8d\x91\xb9A\xb0\xe0\xa5\xa5\x15\xd7\x91\x1b\xa2,-\xbb\x80\x8aJ\xc5\x19B\x18$@3\xab\x07\xe5\n\xcc\xbeF\xc4\xbbV\xadXRq\xf0e\x1bG\x01' len : 64
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO - Verified signed message: b'{"rev":4,"req":1,"epk":"BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw="}'
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO - Verifying signed message: {"rev":4,"req":1,"epk":"BgrjJmCabag7sKVaJUJhIDFDqE3QnxhnTwzTJG4rXlw="} with signature: BayTEAouEqEfohNydpLN7UYkDY2RuUGw4KWlFdeRG6IsLbuAikrFGUIYJEAzqwflCsy+RsS7Vq1YUnHwZRtHAQ==
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO - Key Data for Device:
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO -   Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO -   Ephemeral Public Key: 060ae326609a6da83bb0a55a254261203143a84dd09f18674f0cd3246e2b5e5c
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO - Key Data for Testrunner:
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO -   Ephemeral Secret Key: 687b7f9a406ef3cd4c45a8f1e25fcf330de4a6b2a0265c9c07f3f39948554843
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO -   Ephemeral Public Key: 6ab7e3393a4a3745f2dfb1a6e38201aad3f04eb56cd02a78c63a29282f23db24
+2026-07-22 09:47:05,463 - BLECentral - INFO -  === SCB encryption parsing - OK
+2026-07-22 09:47:05,463 - BLECentral - INFO - 
+ ======= STEP FIVE    ==========
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO - Deriving shared secret using keys...
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO - Key Data for Testrunner:
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO -   Ephemeral Secret Key: 687b7f9a406ef3cd4c45a8f1e25fcf330de4a6b2a0265c9c07f3f39948554843
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO -   Ephemeral Public Key: 6ab7e3393a4a3745f2dfb1a6e38201aad3f04eb56cd02a78c63a29282f23db24
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO - Key Data for Device:
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO -   Public Key: 2223e1009b6041d8ec6ce8ebf5f6ca5d5ac2875139276414121153cdea523b9e
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO -   Ephemeral Public Key: 060ae326609a6da83bb0a55a254261203143a84dd09f18674f0cd3246e2b5e5c
+2026-07-22 09:47:05,463 - BLECentralEncryption - INFO - Shared secret derived successfully.
+2026-07-22 09:47:05,473 - BLECentralEncryption - INFO - Shared secret (hex): 4f6cb359086f8e65671bc1eed2f994e1372b77705948257419c5b6f47101eb06
+2026-07-22 09:47:05,473 - BLECentral - INFO -  === Derived shared secret keys from encryption configs - OK
+2026-07-22 09:47:05,473 - BLECentral - INFO - 
+ ======= STEP SIX    ==========
+2026-07-22 09:47:05,473 - BLECentral - INFO - Sending Command : encryptionConfig encryptionSetupChar {"epk": "arfjOTpKN0Xy37Gm44IBqtPwTrVs0Cp4xjopKC8j2yQ="}
+2026-07-22 09:47:05,473 - BLECentral - INFO - Characteristic ID: 46a750a3-2f09-4309-a18f-d2f56b93f36f
+2026-07-22 09:47:05,483 - Database - ERROR - Read Failed. Exception: Key not found.
+2026-07-22 09:47:05,483 - BLECentral - INFO - Data Value: {"epk": "arfjOTpKN0Xy37Gm44IBqtPwTrVs0Cp4xjopKC8j2yQ="}
+2026-07-22 09:47:05,483 - BLECentral - INFO - WRITE OK, EN: False -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a3-2f09-4309-a18f-d2f56b93f36f | VAL:{"epk": "arfjOTpKN0Xy37Gm44IBqtPwTrVs0Cp4xjopKC8j2yQ="}
+2026-07-22 09:47:05,483 - BLECentral - INFO - Send successful.
+2026-07-22 09:47:05,483 - BLECentral - INFO -  === Sending new derived secrets for encryption setup - OK
+2026-07-22 09:47:05,483 - BLECentral - INFO - 
+ ======= STEP SEVEN    ==========
+2026-07-22 09:47:05,483 - BLECentralEncryption - INFO - Generating encryption key with salt: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c' and additional info: b'\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9'
+2026-07-22 09:47:05,483 - BLECentralEncryption - INFO - Encryption key generated successfully.
+2026-07-22 09:47:05,483 - BLECentralEncryption - INFO - Encryption Key (Hex): cc7d74c8298ef07574acaf39147b4ec295d4befdcf1fbd22b9d71a482ea568ce
+2026-07-22 09:47:05,493 - BLECentralEncryption - INFO - Encryption Key (Base64): zH10yCmO8HV0rK85FHtOwpXUvv3PH70iudcaSC6laM4=
+2026-07-22 09:47:05,493 - BLECentral - INFO -  === New encryption key generation - OK
+2026-07-22 09:47:05,493 - BLECentral - INFO - 
+ ======= STEP EIGHT    ==========
+2026-07-22 09:47:09,632 - BLECentral - INFO - READ  OK -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a7-2f09-4309-a18f-d2f56b93f36f | VAL:ENCRYPTED
+2026-07-22 09:47:09,632 - BLECentral - INFO - From encryptionConfig encryptionStatusChar - ENCRYPTED
+2026-07-22 09:47:09,632 - BLECentral - INFO -  === SCB BLE encryption status (before test service) - OK
+2026-07-22 09:47:09,632 - BLECentral - INFO - 
+ ======= STEP NINE    ==========
+2026-07-22 09:47:09,632 - BLECentral - INFO - 
+ ======= STEP TEN    ==========
+2026-07-22 09:47:13,768 - BLECentral - INFO - READ ENCRYPTED -> Service ID: 46a750a2-2f09-4309-a18f-d2f56b93f36f | Characteristic ID: 46a750a9-2f09-4309-a18f-d2f56b93f36f | Value(Encrypt): f53a673db78f54c66c3570ad10c59c4c27550fd7e33af2eeacc34fbc00fc996e744cf529b7f3ac80d626b956aa7a43107f3ad97064d8e09e18d1844202209910d3eacd3ea3
+2026-07-22 09:47:13,768 - BLECentralEncryption - INFO - Encrypted Materials:
+2026-07-22 09:47:13,768 - BLECentralEncryption - INFO -   Message: f53a673db78f54c66c3570ad10c59c4c27550fd7e33af2eeacc34fbc00fc996e744cf529b7f3ac80d626b956aa7a43107f3ad97064d8e09e18d1844202209910d3eacd3ea3, len: 69
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO -   IV: f53a673db78f54c66c3570ad, len: 12
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO -   Ciphertext: 10c59c4c27550fd7e33af2eeacc34fbc00fc996e744cf529b7f3ac80d626b956aa7a43107f3ad97064, len: 41
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO -   Tag: d8e09e18d1844202209910d3eacd3ea3, len: 16
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO -   Signature: 05ac93100a2e12a11fa213727692cded46240d8d91b941b0e0a5a515d7911ba22c2dbb808a4ac5194218244033ab07e50accbe46c4bb56ad585271f0651b4701, len: 64
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO -   Additional Info: 456e6372797074000000, len: 10
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO -   Encryption Key: cc7d74c8298ef07574acaf39147b4ec295d4befdcf1fbd22b9d71a482ea568ce, len: 32
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO -   Shared Secret: 4f6cb359086f8e65671bc1eed2f994e1372b77705948257419c5b6f47101eb06, len: 32
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO - Starting decryption with Nordic AES GCM...
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO - Decrypted Message: Hello World, from the most secure toilet!
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO - Cleaning all values in EncryptedMessageMaterials...
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO - Message values have been reset to their default states.
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO - Decrypted Message: Hello World, from the most secure toilet!
+2026-07-22 09:47:13,778 - BLECentral - INFO - Data decrypted successfully for service encryptionConfig.
+2026-07-22 09:47:13,778 - BLECentral - INFO - Decryption OK for encryptionConfig.
+2026-07-22 09:47:13,778 - BLECentral - INFO - From encryptionConfig encrptionTestChar - Hello World, from the most secure toilet!
+2026-07-22 09:47:13,778 - BLECentral - INFO -  === Reading data on the test service [ bytearray(b"\xf5:g=\xb7\x8fT\xc6l5p\xad\x10\xc5\x9cL\'U\x0f\xd7\xe3:\xf2\xee\xac\xc3O\xbc\x00\xfc\x99ntL\xf5)\xb7\xf3\xac\x80\xd6&\xb9V\xaazC\x10\x7f:\xd9pd\xd8\xe0\x9e\x18\xd1\x84B\x02 \x99\x10\xd3\xea\xcd>\xa3") ] - OK
+2026-07-22 09:47:13,778 - BLECentral - INFO - 
+ ======= STEP ELEVEN    ==========
+2026-07-22 09:47:13,778 - BLECentral - INFO - Sending Command : encryptionConfig encrptionTestChar Hello World, from the most secure toilet!
+2026-07-22 09:47:13,778 - BLECentral - INFO - Characteristic ID: 46a750a9-2f09-4309-a18f-d2f56b93f36f
+2026-07-22 09:47:13,778 - Database - ERROR - Read Failed. Exception: Key not found.
+2026-07-22 09:47:13,778 - BLECentral - INFO - Data Value: Hello World, from the most secure toilet!
+2026-07-22 09:47:13,778 - BLECentralEncryption - INFO - Beginning encryption, message to encrypt: Hello World, from the most secure toilet!
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Encryption completed successfully.
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Encrypted Materials:
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Message: 48656c6c6f20576f726c642c2066726f6d20746865206d6f73742073656375726520746f696c657421, len: 41
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   IV: 463230a82ba96949457d3265, len: 12
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Ciphertext: d8a0a022b9c5fbc29ec2206c76fdd609d2c9b0bcd271e3ae668ffb1eb70058776b2ad031bcb7c41c26, len: 41
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Tag: 4144ebb6161912878c99d5455d317ae2, len: 16
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Signature: 05ac93100a2e12a11fa213727692cded46240d8d91b941b0e0a5a515d7911ba22c2dbb808a4ac5194218244033ab07e50accbe46c4bb56ad585271f0651b4701, len: 64
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Additional Info: 456e6372797074000000, len: 10
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Encryption Key: cc7d74c8298ef07574acaf39147b4ec295d4befdcf1fbd22b9d71a482ea568ce, len: 32
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Shared Secret: 4f6cb359086f8e65671bc1eed2f994e1372b77705948257419c5b6f47101eb06, len: 32
+2026-07-22 09:47:13,788 - Database - INFO - UPDT. $DB_ENCRYPTED_MESSAGE_TO_SEND :: b'F20\xa8+\xa9iIE}2e\xd8\xa0\xa0"\xb9\xc5\xfb\xc2\x9e\xc2 lv\xfd\xd6\t\xd2\xc9\xb0\xbc\xd2q\xe3\xaef\x8f\xfb\x1e\xb7\x00Xwk*\xd01\xbc\xb7\xc4\x1c&AD\xeb\xb6\x16\x19\x12\x87\x8c\x99\xd5E]1z\xe2'
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Encrypted Materials:
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Message: 463230a82ba96949457d3265d8a0a022b9c5fbc29ec2206c76fdd609d2c9b0bcd271e3ae668ffb1eb70058776b2ad031bcb7c41c264144ebb6161912878c99d5455d317ae2, len: 69
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   IV: 463230a82ba96949457d3265, len: 12
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Ciphertext: d8a0a022b9c5fbc29ec2206c76fdd609d2c9b0bcd271e3ae668ffb1eb70058776b2ad031bcb7c41c26, len: 41
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Tag: 4144ebb6161912878c99d5455d317ae2, len: 16
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Signature: 05ac93100a2e12a11fa213727692cded46240d8d91b941b0e0a5a515d7911ba22c2dbb808a4ac5194218244033ab07e50accbe46c4bb56ad585271f0651b4701, len: 64
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Additional Info: 456e6372797074000000, len: 10
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Encryption Key: cc7d74c8298ef07574acaf39147b4ec295d4befdcf1fbd22b9d71a482ea568ce, len: 32
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO -   Shared Secret: 4f6cb359086f8e65671bc1eed2f994e1372b77705948257419c5b6f47101eb06, len: 32
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Starting decryption with Nordic AES GCM...
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Decrypted Message: Hello World, from the most secure toilet!
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Cleaning all values in EncryptedMessageMaterials...
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Message values have been reset to their default states.
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Decrypted Message: Hello World, from the most secure toilet!
+2026-07-22 09:47:13,788 - BLECentralEncryption - INFO - Decrypted message after encryption: Hello World, from the most secure toilet!
+2026-07-22 09:47:13,798 - BLECentralEncryption - INFO - Cleaning all values in EncryptedMessageMaterials...
+2026-07-22 09:47:13,798 - BLECentralEncryption - INFO - Message values have been reset to their default states.
+2026-07-22 09:47:13,798 - BLECentral - INFO - Data encrypted successfully for service encryptionConfig.
+2026-07-22 09:47:13,798 - BLECentral - INFO - ENCYTPING b'F20\xa8+\xa9iIE}2e\xd8\xa0\xa0"\xb9\xc5\xfb\xc2\x9e\xc2 lv\xfd\xd6\t\xd2\xc9\xb0\xbc\xd2q\xe3\xaef\x8f\xfb\x1e\xb7\x00Xwk*\xd01\xbc\xb7\xc4\x1c&AD\xeb\xb6\x16\x19\x12\x87\x8c\x99\xd5E]1z\xe2' - b'F20\xa8+\xa9iIE}2e\xd8\xa0\xa0"\xb9\xc5\xfb\xc2\x9e\xc2 lv\xfd\xd6\t\xd2\xc9\xb0\xbc\xd2q\xe3\xaef\x8f\xfb\x1e\xb7\x00Xwk*\xd01\xbc\xb7\xc4\x1c&AD\xeb\xb6\x16\x19\x12\x87\x8c\x99\xd5E]1z\xe2'
+2026-07-22 09:47:13,798 - BLECentral - INFO - WRITE OK, EN: True -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a9-2f09-4309-a18f-d2f56b93f36f | VAL:b'F20\xa8+\xa9iIE}2e\xd8\xa0\xa0"\xb9\xc5\xfb\xc2\x9e\xc2 lv\xfd\xd6\t\xd2\xc9\xb0\xbc\xd2q\xe3\xaef\x8f\xfb\x1e\xb7\x00Xwk*\xd01\xbc\xb7\xc4\x1c&AD\xeb\xb6\x16\x19\x12\x87\x8c\x99\xd5E]1z\xe2'
+2026-07-22 09:47:13,798 - BLECentral - INFO - Send successful.
+2026-07-22 09:47:13,798 - BLECentral - INFO -  === Sending encrpyted message on test service - OK
+2026-07-22 09:47:13,798 - BLECentral - INFO - 
+ ======= STEP TWELVE    ==========
+2026-07-22 09:47:17,959 - BLECentral - INFO - From encryptionConfig encryptionStatusChar - bytearray(b'ENCRYPTED')
+2026-07-22 09:47:17,959 - BLECentral - INFO -  === SCB BLE encryption status (after test service) - OK
+2026-07-22 09:47:17,959 - BLECentral - INFO -  *** BLE ENCRYPTED *** 
+
+2026-07-22 09:47:17,959 - TestStepHandler - INFO - Step_Assert : DONE | Result = PASS
+2026-07-22 09:47:17,959 - TestStepHandler - INFO - Step Execution : Timeout = NO
+2026-07-22 09:47:17,959 - TestStepHandler - INFO - Step Execution : Reverse Assert = False
+2026-07-22 09:47:17,959 - TestStepHandler - INFO - Step Execution : Result = True
+2026-07-22 09:47:17,959 - Builder - INFO -  == Step Post Delay : 1000 ms
+2026-07-22 09:47:18,969 - Builder - INFO -  ====================================================== Step ID = 1.5 -> RESULT = PASS
+
+2026-07-22 09:47:18,969 - Builder - INFO -  >> Test Case : BLE Connectivity [ DONE ] 
+ -----
+2026-07-22 09:47:18,969 - Builder - INFO -  >> Test Case : Factory Reset [ INIT ] 
+2026-07-22 09:47:18,969 - Builder - INFO -  ****************************************************** Step ID = 2.1
+2026-07-22 09:47:18,969 - Builder - INFO -  == Step Command  : No Command - Step Listener ONLY
+2026-07-22 09:47:18,969 - Builder - INFO -  == Step Asserts  : ble_central_1 sendCommand factoryReset 1
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Logging Ready.
+2026-07-22 09:47:18,969 - Assertion - INFO - Logging Ready.
+2026-07-22 09:47:18,969 - Assertion - INFO - Initialized successfully.
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Initialized successfully.
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Step Execution : Step_Retries = 1.
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Step Execution : Forced_Retry = False.
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Step Execution : Retry_Delay = 0.0 sec.
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Step Execution : Step_Timeout_MS = 5.0 sec.
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Step Execution : Attempt # 1
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Step_CMD : Starting ...
+2026-07-22 09:47:18,969 - TestStepHandler - WARNING - Step_CMD : Not provided for this step. Listening to the Assert_Src ...
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Step_CMD : DONE
+2026-07-22 09:47:18,969 - TestStepHandler - INFO - Step_Assert : Starting ...
+2026-07-22 09:47:18,979 - BLECentral - INFO - Sending Command : factoryReset 1
+2026-07-22 09:47:18,979 - BLECentral - WARNING - Nothing to store in database. list index out of range
+2026-07-22 09:47:18,979 - BLECentralEncryption - INFO - Beginning encryption, message to encrypt: 1
+2026-07-22 09:47:18,979 - BLECentralEncryption - INFO - Encryption completed successfully.
+2026-07-22 09:47:18,979 - BLECentralEncryption - INFO - Encrypted Materials:
+2026-07-22 09:47:18,979 - BLECentralEncryption - INFO -   Message: 31, len: 1
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   IV: 93feb583d7e5dcf8fde1c6f4, len: 12
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Ciphertext: 55, len: 1
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Tag: 32277a211d16240feed42a2b0ab9db49, len: 16
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Signature: 05ac93100a2e12a11fa213727692cded46240d8d91b941b0e0a5a515d7911ba22c2dbb808a4ac5194218244033ab07e50accbe46c4bb56ad585271f0651b4701, len: 64
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Additional Info: 46616352737472000000, len: 10
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Encryption Key: cc7d74c8298ef07574acaf39147b4ec295d4befdcf1fbd22b9d71a482ea568ce, len: 32
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Shared Secret: 4f6cb359086f8e65671bc1eed2f994e1372b77705948257419c5b6f47101eb06, len: 32
+2026-07-22 09:47:18,989 - Database - INFO - UPDT. $DB_ENCRYPTED_MESSAGE_TO_SEND :: b"\x93\xfe\xb5\x83\xd7\xe5\xdc\xf8\xfd\xe1\xc6\xf4U2'z!\x1d\x16$\x0f\xee\xd4*+\n\xb9\xdbI"
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO - Encrypted Materials:
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Message: 93feb583d7e5dcf8fde1c6f45532277a211d16240feed42a2b0ab9db49, len: 29
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   IV: 93feb583d7e5dcf8fde1c6f4, len: 12
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Ciphertext: 55, len: 1
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Tag: 32277a211d16240feed42a2b0ab9db49, len: 16
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Signature: 05ac93100a2e12a11fa213727692cded46240d8d91b941b0e0a5a515d7911ba22c2dbb808a4ac5194218244033ab07e50accbe46c4bb56ad585271f0651b4701, len: 64
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Additional Info: 46616352737472000000, len: 10
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Encryption Key: cc7d74c8298ef07574acaf39147b4ec295d4befdcf1fbd22b9d71a482ea568ce, len: 32
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO -   Shared Secret: 4f6cb359086f8e65671bc1eed2f994e1372b77705948257419c5b6f47101eb06, len: 32
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO - Starting decryption with Nordic AES GCM...
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO - Decrypted Message: 1
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO - Cleaning all values in EncryptedMessageMaterials...
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO - Message values have been reset to their default states.
+2026-07-22 09:47:18,989 - BLECentralEncryption - INFO - Decrypted Message: 1
+2026-07-22 09:47:18,999 - BLECentralEncryption - INFO - Decrypted message after encryption: 1
+2026-07-22 09:47:18,999 - BLECentralEncryption - INFO - Cleaning all values in EncryptedMessageMaterials...
+2026-07-22 09:47:18,999 - BLECentralEncryption - INFO - Message values have been reset to their default states.
+2026-07-22 09:47:18,999 - BLECentral - INFO - Data encrypted successfully for service factoryReset.
+2026-07-22 09:47:18,999 - BLECentral - INFO - ENCYTPING b"\x93\xfe\xb5\x83\xd7\xe5\xdc\xf8\xfd\xe1\xc6\xf4U2'z!\x1d\x16$\x0f\xee\xd4*+\n\xb9\xdbI" - b"\x93\xfe\xb5\x83\xd7\xe5\xdc\xf8\xfd\xe1\xc6\xf4U2'z!\x1d\x16$\x0f\xee\xd4*+\n\xb9\xdbI"
+2026-07-22 09:47:18,999 - BLECentral - INFO - WRITE OK, EN: True -> ID:b8c99279-21f9-4464-908e-48a8184d939a - e83768ab-07a2-4ac2-a979-c5f8d65394d7 (Handle: 87): Unknown | VAL:b"\x93\xfe\xb5\x83\xd7\xe5\xdc\xf8\xfd\xe1\xc6\xf4U2'z!\x1d\x16$\x0f\xee\xd4*+\n\xb9\xdbI"
+2026-07-22 09:47:18,999 - BLECentral - INFO - Send successful.
+2026-07-22 09:47:18,999 - TestStepHandler - INFO - Step_Assert : DONE | Result = PASS
+2026-07-22 09:47:18,999 - TestStepHandler - INFO - Step Execution : Timeout = NO
+2026-07-22 09:47:18,999 - TestStepHandler - INFO - Step Execution : Reverse Assert = False
+2026-07-22 09:47:19,009 - TestStepHandler - INFO - Step Execution : Result = True
+2026-07-22 09:47:19,009 - Builder - INFO -  == Step Post Delay : 1000 ms
+2026-07-22 09:47:20,014 - Builder - INFO -  ====================================================== Step ID = 2.1 -> RESULT = PASS
+
+2026-07-22 09:47:20,014 - Builder - INFO -  ****************************************************** Step ID = 2.2
+2026-07-22 09:47:20,015 - Builder - INFO -  == Step Command  : No Command - Step Listener ONLY
+2026-07-22 09:47:20,017 - Builder - INFO -  == Step Asserts  : ble_central_1 unpair_device
+2026-07-22 09:47:20,017 - TestStepHandler - INFO - Logging Ready.
+2026-07-22 09:47:20,017 - Assertion - INFO - Logging Ready.
+2026-07-22 09:47:20,018 - Assertion - INFO - Initialized successfully.
+2026-07-22 09:47:20,018 - TestStepHandler - INFO - Initialized successfully.
+2026-07-22 09:47:20,018 - TestStepHandler - INFO - Step Execution : Step_Retries = 1.
+2026-07-22 09:47:20,018 - TestStepHandler - INFO - Step Execution : Forced_Retry = False.
+2026-07-22 09:47:20,019 - TestStepHandler - INFO - Step Execution : Retry_Delay = 0.0 sec.
+2026-07-22 09:47:20,019 - TestStepHandler - INFO - Step Execution : Step_Timeout_MS = 5.0 sec.
+2026-07-22 09:47:20,019 - TestStepHandler - INFO - Step Execution : Attempt # 1
+2026-07-22 09:47:20,020 - TestStepHandler - INFO - Step_CMD : Starting ...
+2026-07-22 09:47:20,020 - TestStepHandler - WARNING - Step_CMD : Not provided for this step. Listening to the Assert_Src ...
+2026-07-22 09:47:20,020 - TestStepHandler - INFO - Step_CMD : DONE
+2026-07-22 09:47:20,021 - TestStepHandler - INFO - Step_Assert : Starting ...
+2026-07-22 09:47:20,561 - bleak.backends.winrt.client - INFO - Unpaired with device.
+2026-07-22 09:47:20,562 - BLECentral - INFO - Device Unpairied.
+2026-07-22 09:47:20,564 - TestStepHandler - INFO - Step_Assert : DONE | Result = PASS
+2026-07-22 09:47:20,565 - TestStepHandler - INFO - Step Execution : Timeout = NO
+2026-07-22 09:47:20,565 - TestStepHandler - INFO - Step Execution : Reverse Assert = False
+2026-07-22 09:47:20,569 - TestStepHandler - INFO - Step Execution : Result = True
+2026-07-22 09:47:20,569 - Builder - INFO -  == Step Post Delay : 1000 ms
+2026-07-22 09:47:21,571 - Builder - INFO -  ====================================================== Step ID = 2.2 -> RESULT = PASS
+
+2026-07-22 09:47:21,575 - Builder - INFO -  >> Test Case : Factory Reset [ DONE ] 
+ -----
+2026-07-22 09:47:21,575 - Builder - INFO -  ** Test Plan : Factory OP50 Factory Reset | EXECUTED
+
+2026-07-22 09:47:21,575 - Builder - INFO - Closing all peripherals ... 
+2026-07-22 09:47:21,695 - BLECentral - WARNING - Device disconnected.
+2026-07-22 09:47:21,699 - JIRAUploader - INFO - No jira key found, test results will not be uploaded to JIRA
+2026-07-22 09:47:21,699 - Builder - INFO - Execution Complete.
+2026-07-22 09:47:21,700 - UniversalAutomatedTesting - INFO - Test Case Execution Completed. Reports are stored here : C:\Users\abc\Desktop\spectra\dms-1.49.1\logs/testruns\UAT_2026-07-22-09-46-45
+2026-07-22 09:47:21,700 - UniversalAutomatedTesting - INFO - Stopping Application ...
+2026-07-22 09:47:21,700 - UniversalAutomatedTesting - INFO - Thread name: MainThread, Thread ID: 10344
+2026-07-22 09:47:21,700 - UniversalAutomatedTesting - INFO - Thread name: Thread-1 (__driver_loop_thread), Thread ID: 13712
+2026-07-22 09:47:21,701 - UniversalAutomatedTesting - INFO - Thread name: Dummy-3, Thread ID: 11260
+2026-07-22 09:47:21,701 - UniversalAutomatedTesting - INFO - Thread name: Dummy-4, Thread ID: 2768
+2026-07-22 09:47:21,701 - UniversalAutomatedTesting - INFO - Thread name: Dummy-11, Thread ID: 13684
+2026-07-22 09:47:21,701 - UniversalAutomatedTesting - INFO - Application Complete.

@@ -1,0 +1,276 @@
+Initialized BLEInfoDevice 
+Initialized Successfully : BLEInfoDevice
+ -- 50:FD:D5:68:15:79: Samsung-Room-Air-Cond
+ -- CC:B5:4C:F4:B0:50: 71J243200531
+ -- E8:45:EB:00:0C:07: Dekoda-0000000000
+ -- E8:45:EB:00:0B:4D: Dekoda-1091742228
+ -- 05:FF:7E:8A:FB:76: None
+ -- 60:95:32:69:A5:28: ZD421-1
+ -- 32:4B:56:B2:B4:B2: None
+ -- 0E:82:7B:31:33:C8: None
+ -- B8:16:5F:96:5C:13: [LG] webOS TV TQ615S
+ -- 54:B7:BD:C7:34:05: [LG] webOS TV TQ615S
+ -- B8:16:5F:75:BB:53: [LG] webOS TV TQ615S
+ -- E8:45:EB:00:0C:A6: Dekoda-1091750058
+ -- 0B:29:85:D8:A2:41: None
+ -- 74:D2:68:1B:07:88: None
+ -- B8:16:5F:96:83:E9: [LG] webOS TV TQ615S
+ -- 64:C4:18:0B:4D:F6: None
+ -- 78:AD:85:03:B0:02: None
+ -- 61:A6:84:9D:D7:D5: None
+ -- 04:B4:1E:61:62:8F: None
+ -- 4B:E3:C2:2E:E1:71: None
+ -- 7E:B5:43:A2:FC:38: None
+ -- CC:B5:4C:F4:A6:57: 71J243200530
+ -- 2B:A1:EB:26:82:B5: None
+ -- 54:44:34:AE:49:EA: None
+ -- D4:FF:26:03:BB:B7: DekodaRemote-25473Z002K
+ -- 34:FC:99:32:1F:96: Room A/C
+ -- 7D:C0:1F:2C:DF:24: None
+ -- A4:36:C7:8E:B2:A5: [LG] webOS TV TQ615S
+ -- 94:E6:BA:BF:28:23: None
+ -- E7:50:20:9F:28:F5: None
+ -- 6B:79:6E:71:3E:4D: None
+ -- 49:CB:9A:ED:AE:98: None
+ -- 58:19:BD:C7:99:5E: None
+ -- 3E:56:07:97:2C:53: None
+ -- 57:34:C2:DB:7B:60: None
+ -- 26:E0:AA:64:6D:5A: None
+ -- 60:95:32:74:33:8D: D6J261310820
+ -- 60:95:32:2A:E6:BC: D6J243100400
+ -- 26:CC:10:19:D5:E9: None
+ -- C8:2C:F8:28:26:64: None
+ -- 5B:39:D1:1B:4E:6A: None
+ -- 54:5C:FD:40:76:5D: None
+ -- B8:16:5F:75:BD:25: None
+ -- 0B:53:17:75:0B:C0: None
+ -- 60:95:32:74:35:4D: D6J261310830
+ -- 44:08:81:39:FF:04: None
+ -- D8:E3:5E:0B:18:4F: [LG] webOS TV TQ615S
+ -- 60:F8:A0:5C:E3:E5: None
+ -- 37:6A:6B:2C:F7:93: None
+ -- 45:EC:BE:BA:4E:B1: None
+ -- 2C:32:89:F0:D6:DB: None
+ -- B8:16:5F:96:84:07: [LG] webOS TV TQ615S
+ -- 7B:17:CA:E8:11:D6: None
+ -- 31:D9:96:F7:62:91: None
+ -- 32:95:E2:B0:AA:0F: None
+ -- 4F:0F:05:80:ED:A8: None
+ -- A4:36:C7:5E:15:07: [LG] webOS TV TQ615S
+ -- 60:95:32:72:95:79: D6J261310837
+ -- 61:27:71:E8:40:35: None
+ -- 60:95:32:74:35:4F: D6J261310843
+ -- 65:6A:35:0B:E1:A6: None
+ -- 74:98:D1:A3:71:8C: None
+ -- B8:16:5F:96:7A:33: None
+ -- B8:16:5F:F0:EE:A3: [LG] webOS TV TQ615S
+ -- 17:88:3B:40:76:64: None
+ -- CC:B5:4C:F4:B3:6E: 71J243200529
+ -- FA:8C:2F:27:C4:B3: None
+ -- 78:3B:75:FD:0A:0D: None
+ -- 64:7E:88:AC:55:0F: None
+ -- 2C:20:84:8D:99:F9: None
+ -- 5E:3B:2F:B9:50:3D: None
+ -- 60:95:32:6F:88:37: D6J261310807
+ -- DF:08:8C:EB:FE:FF: None
+Scan Complete.
+E8:45:EB:00:0B:4D:Dekoda-1091742228 SELECTION SUCCESSFUL
+E8:45:EB:00:0B:4D:Dekoda-1091742228 CONNECTION SUCCESSFUL
+Pairing ... 
+[Level 2] ... 
+Pairing Successful.
+
+ ... Setting up BLE encryption ...
+
+ ======= STEP ONE    ==========
+ === SCB public keys - OK
+
+ ======= STEP TWO    ==========
+ === Testrunner keys - OK
+
+ ======= STEP THREE    ==========
+READ  OK -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a5-2f09-4309-a18f-d2f56b93f36f | VAL:{"msg":{"rev":4,"req":1,"epk":"sa1sbLLHoo7NFCyzBkD3INHUXtrDLpkR+rI+AE0caiE="},"sig":"lYLSANT4fBfE6h7AVjFojoqncTO+ngpu2lobMokEuvgj1IQC76HwmqhEJKfbKklHp2I/VOimCkudfVvvxrNoDw=="}
+From encryptionConfig encryptionConfigChar - {"msg":{"rev":4,"req":1,"epk":"sa1sbLLHoo7NFCyzBkD3INHUXtrDLpkR+rI+AE0caiE="},"sig":"lYLSANT4fBfE6h7AVjFojoqncTO+ngpu2lobMokEuvgj1IQC76HwmqhEJKfbKklHp2I/VOimCkudfVvvxrNoDw=="}
+ === SCB encryption configurations - OK
+
+ ======= STEP FOUR    ==========
+ === SCB encryption parsing - OK
+
+ ======= STEP FIVE    ==========
+ === Derived shared secret keys from encryption configs - OK
+
+ ======= STEP SIX    ==========
+Sending Command : encryptionConfig encryptionSetupChar {"epk": "TYiSG9rLSyrF1wgt5FaAh4TvIkOAjg5+obL7+YUilnQ="}
+Characteristic ID: 46a750a3-2f09-4309-a18f-d2f56b93f36f
+Data Value: {"epk": "TYiSG9rLSyrF1wgt5FaAh4TvIkOAjg5+obL7+YUilnQ="}
+WRITE OK, EN: False -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a3-2f09-4309-a18f-d2f56b93f36f | VAL:{"epk": "TYiSG9rLSyrF1wgt5FaAh4TvIkOAjg5+obL7+YUilnQ="}
+Send successful.
+ === Sending new derived secrets for encryption setup - OK
+
+ ======= STEP SEVEN    ==========
+ === New encryption key generation - OK
+
+ ======= STEP EIGHT    ==========
+READ  OK -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a7-2f09-4309-a18f-d2f56b93f36f | VAL:ENCRYPTED
+From encryptionConfig encryptionStatusChar - ENCRYPTED
+ === SCB BLE encryption status (before test service) - OK
+
+ ======= STEP NINE    ==========
+
+ ======= STEP TEN    ==========
+READ ENCRYPTED -> Service ID: 46a750a2-2f09-4309-a18f-d2f56b93f36f | Characteristic ID: 46a750a9-2f09-4309-a18f-d2f56b93f36f | Value(Encrypt): db550d30b15a98d6cf2df6794b7fdbca85a6da370a8d172fc148e4d195ee4a7915b70aa1cdadda9cf440d5b5114b312621e34a0b009966159819a26f298b143ece4cc376bf
+Data decrypted successfully for service encryptionConfig.
+Decryption OK for encryptionConfig.
+From encryptionConfig encrptionTestChar - Hello World, from the most secure toilet!
+ === Reading data on the test service [ bytearray(b'\xdbU\r0\xb1Z\x98\xd6\xcf-\xf6yK\x7f\xdb\xca\x85\xa6\xda7\n\x8d\x17/\xc1H\xe4\xd1\x95\xeeJy\x15\xb7\n\xa1\xcd\xad\xda\x9c\xf4@\xd5\xb5\x11K1&!\xe3J\x0b\x00\x99f\x15\x98\x19\xa2o)\x8b\x14>\xceL\xc3v\xbf') ] - OK
+
+ ======= STEP ELEVEN    ==========
+Sending Command : encryptionConfig encrptionTestChar Hello World, from the most secure toilet!
+Characteristic ID: 46a750a9-2f09-4309-a18f-d2f56b93f36f
+Data Value: Hello World, from the most secure toilet!
+Data encrypted successfully for service encryptionConfig.
+ENCYTPING b'\x11\xe3\xc7\xdf\x9f\xe6\xc5Pk\x9diW(e\xf2\xba]\xd5g\xf0Iv\xaf\xf5\xeb)\x15\xfc\x1c\xf8c\xf4\xbb:\x10\x0b\xf8I/kz\xc0\xdcj\xe0\xd9\xf6\x08\x12\x8aj?&\x12#\xc0\xb8\x9e\x1cF\x8e.\xd2\xe7JA\x02\xee\x8f' - b'\x11\xe3\xc7\xdf\x9f\xe6\xc5Pk\x9diW(e\xf2\xba]\xd5g\xf0Iv\xaf\xf5\xeb)\x15\xfc\x1c\xf8c\xf4\xbb:\x10\x0b\xf8I/kz\xc0\xdcj\xe0\xd9\xf6\x08\x12\x8aj?&\x12#\xc0\xb8\x9e\x1cF\x8e.\xd2\xe7JA\x02\xee\x8f'
+WRITE OK, EN: True -> ID:46a750a2-2f09-4309-a18f-d2f56b93f36f - 46a750a9-2f09-4309-a18f-d2f56b93f36f | VAL:b'\x11\xe3\xc7\xdf\x9f\xe6\xc5Pk\x9diW(e\xf2\xba]\xd5g\xf0Iv\xaf\xf5\xeb)\x15\xfc\x1c\xf8c\xf4\xbb:\x10\x0b\xf8I/kz\xc0\xdcj\xe0\xd9\xf6\x08\x12\x8aj?&\x12#\xc0\xb8\x9e\x1cF\x8e.\xd2\xe7JA\x02\xee\x8f'
+Send successful.
+ === Sending encrpyted message on test service - OK
+
+ ======= STEP TWELVE    ==========
+From encryptionConfig encryptionStatusChar - bytearray(b'ENCRYPTED')
+ === SCB BLE encryption status (after test service) - OK
+ *** BLE ENCRYPTED *** 
+
+Reading data from service: serialNumber
+READ ENCRYPTED -> Service ID: ab2adede-7f3a-11ed-a1eb-0242ac120002 | Characteristic ID: b42183c6-7f3a-11ed-a1eb-0242ac120002 (Handle: 128): Unknown | Value(Encrypt): d0aabde48bbf0577bbc12837ffb770f6bc7a977a293d96548d3e76fd6031dc2d2b0edccb2a61b22f6f1f
+Data decrypted successfully for service serialNumber.
+Service serialNumber - Data AT1091742228CM
+Sending Command : sendWifiCreds KVshopfloor fan-birthday1mambo
+Nothing to store in database. list index out of range
+Data encrypted successfully for service sendWifiCreds.
+ENCYTPING b'eEj>H\x05\xdfh\x02?P\xf6\xf9\xed\xd0\x0f`\x10\x9c\x1f%\\\x1c*\x17&\xe5WC63XW\xd0\x18\xf1\x95\x149ag\xef\x8f\xc9s\xcd\xe9\xff\xdbt\x85\x13z\x8a5N\xb5\xe4\xb3\xb0\xdb\xe7\xca\xcb\xe9iR\x1b\x10\xff\x0c\x0b\xe7\xc7\xe5\xb4.z' - b'eEj>H\x05\xdfh\x02?P\xf6\xf9\xed\xd0\x0f`\x10\x9c\x1f%\\\x1c*\x17&\xe5WC63XW\xd0\x18\xf1\x95\x149ag\xef\x8f\xc9s\xcd\xe9\xff\xdbt\x85\x13z\x8a5N\xb5\xe4\xb3\xb0\xdb\xe7\xca\xcb\xe9iR\x1b\x10\xff\x0c\x0b\xe7\xc7\xe5\xb4.z'
+WRITE OK, EN: True -> ID:cf2aa038-7d7f-11ed-a1eb-0242ac120002 - 47a8268e-7d80-11ed-a1eb-0242ac120002 (Handle: 132): Unknown | VAL:b'eEj>H\x05\xdfh\x02?P\xf6\xf9\xed\xd0\x0f`\x10\x9c\x1f%\\\x1c*\x17&\xe5WC63XW\xd0\x18\xf1\x95\x149ag\xef\x8f\xc9s\xcd\xe9\xff\xdbt\x85\x13z\x8a5N\xb5\xe4\xb3\xb0\xdb\xe7\xca\xcb\xe9iR\x1b\x10\xff\x0c\x0b\xe7\xc7\xe5\xb4.z'
+Send successful.
+Reading data from service: sendWifiCreds
+READ ENCRYPTED -> Service ID: cf2aa038-7d7f-11ed-a1eb-0242ac120002 | Characteristic ID: 47a8268e-7d80-11ed-a1eb-0242ac120002 (Handle: 132): Unknown | Value(Encrypt): ece7153f04711a2d201a054563457ba3490b519f37a64b1afbff21bfdb6e5c2162db25008520e6312e
+Data decrypted successfully for service sendWifiCreds.
+Service sendWifiCreds - Data IN-PROGRESS-1
+Reading data from service: sendWifiCreds
+READ ENCRYPTED -> Service ID: cf2aa038-7d7f-11ed-a1eb-0242ac120002 | Characteristic ID: 47a8268e-7d80-11ed-a1eb-0242ac120002 (Handle: 132): Unknown | Value(Encrypt): 04ec2a3cee4c13e0ef2e69f725a7777a579234553fddefcb5eb90b4c7f45952c9dc4f1a2dafb0b1974
+Data decrypted successfully for service sendWifiCreds.
+Service sendWifiCreds - Data IN-PROGRESS-1
+Reading data from service: sendWifiCreds
+READ ENCRYPTED -> Service ID: cf2aa038-7d7f-11ed-a1eb-0242ac120002 | Characteristic ID: 47a8268e-7d80-11ed-a1eb-0242ac120002 (Handle: 132): Unknown | Value(Encrypt): e7a897480de93d626c6b698b8912e17d660540b33b95ef4592000f346bacfdb1acbeb032371e6691fa
+Data decrypted successfully for service sendWifiCreds.
+Service sendWifiCreds - Data IN-PROGRESS-1
+Reading data from service: sendWifiCreds
+READ ENCRYPTED -> Service ID: cf2aa038-7d7f-11ed-a1eb-0242ac120002 | Characteristic ID: 47a8268e-7d80-11ed-a1eb-0242ac120002 (Handle: 132): Unknown | Value(Encrypt): 359bd9fd9a2fd0d52e897720f6e8f5f33f5a3c21c3e501667c5bb20367307f2b897aa68046a90a11bc
+Data decrypted successfully for service sendWifiCreds.
+Service sendWifiCreds - Data IN-PROGRESS-1
+Reading data from service: sendWifiCreds
+READ ENCRYPTED -> Service ID: cf2aa038-7d7f-11ed-a1eb-0242ac120002 | Characteristic ID: 47a8268e-7d80-11ed-a1eb-0242ac120002 (Handle: 132): Unknown | Value(Encrypt): 58d3acf5277906a04fad903be1a585f5ee689234d28878549f99f38e9e40e8637a3c470ce408e413d4
+Data decrypted successfully for service sendWifiCreds.
+Service sendWifiCreds - Data IN-PROGRESS-1
+Reading data from service: sendWifiCreds
+READ ENCRYPTED -> Service ID: cf2aa038-7d7f-11ed-a1eb-0242ac120002 | Characteristic ID: 47a8268e-7d80-11ed-a1eb-0242ac120002 (Handle: 132): Unknown | Value(Encrypt): a5583cddd7acd96232b1c30f1976aabcf9542e2073b9eaf6f42ebfec44d5cc238b37b748419357bfb4
+Data decrypted successfully for service sendWifiCreds.
+Service sendWifiCreds - Data IN-PROGRESS-2
+Reading data from service: sendWifiCreds
+READ ENCRYPTED -> Service ID: cf2aa038-7d7f-11ed-a1eb-0242ac120002 | Characteristic ID: 47a8268e-7d80-11ed-a1eb-0242ac120002 (Handle: 132): Unknown | Value(Encrypt): 8527ffaa8f1fdc846507cd90650a06080c3f7952e2a5bab233a2375a4f61
+Data decrypted successfully for service sendWifiCreds.
+Service sendWifiCreds - Data OK
+Sending Command : activateDevice 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service activateDevice.
+ENCYTPING b'y\xb8\x9f0\xe2\x1c\t\x89\n\xd8\x87&\xa9\xf6\xc3\xe95\x0f\x95\xce\xde`}\xf9\xe1!Ln\xeb' - b'y\xb8\x9f0\xe2\x1c\t\x89\n\xd8\x87&\xa9\xf6\xc3\xe95\x0f\x95\xce\xde`}\xf9\xe1!Ln\xeb'
+WRITE OK, EN: True -> ID:a641c09a-793e-403c-83ad-e22ce69430d9 - abb02842-dbd5-4374-8388-74b3557e22d9 (Handle: 46): Unknown | VAL:b'y\xb8\x9f0\xe2\x1c\t\x89\n\xd8\x87&\xa9\xf6\xc3\xe95\x0f\x95\xce\xde`}\xf9\xe1!Ln\xeb'
+Send successful.
+Reading data from service: activateDevice
+READ ENCRYPTED -> Service ID: a641c09a-793e-403c-83ad-e22ce69430d9 | Characteristic ID: abb02842-dbd5-4374-8388-74b3557e22d9 (Handle: 46): Unknown | Value(Encrypt): 8531a342a3e0aa3d6bf55a4b5e0785c83cfd86af03e884db45558b57583a
+Data decrypted successfully for service activateDevice.
+Service activateDevice - Data OK
+Sending Command : triggerEvent event_capture_stool start StoolShootingRegime
+Data encrypted successfully for service triggerEvent.
+ENCYTPING b'\x83\xe1\xd9n\xa0\xde\xc0\x0c\xa5\xbc/0\xde\xb4\xe2\xdc\x8b>zI\x95f>)s\x8b\xcf\xa4\xd7qy\x10\x8b\\\xdc\xea\xf9\x87D\x85\xab\xff\xcc>\xf0\x94\x0e\xa1{\xf9\x1a\xd2\xbaN&\xd2L\xf3\xad\x86\xe5.\xc5\xab\x8d#\x8f=k\x819\xee\xb8E\xdd\x1e\xf5\x04\\\x8d\xf6\x9bI\x0f\xa4\xcb\xca/\xc1\xc6\xf41u\xd5Y\xa2\xf8\xa0\x08\x90\xe7(B<vU\xa1\x9a\xef63\x92\x02\xea\xb7\x18\xb1o\xae\xfa\xdfx\x8f\xc3' - b'\x83\xe1\xd9n\xa0\xde\xc0\x0c\xa5\xbc/0\xde\xb4\xe2\xdc\x8b>zI\x95f>)s\x8b\xcf\xa4\xd7qy\x10\x8b\\\xdc\xea\xf9\x87D\x85\xab\xff\xcc>\xf0\x94\x0e\xa1{\xf9\x1a\xd2\xbaN&\xd2L\xf3\xad\x86\xe5.\xc5\xab\x8d#\x8f=k\x819\xee\xb8E\xdd\x1e\xf5\x04\\\x8d\xf6\x9bI\x0f\xa4\xcb\xca/\xc1\xc6\xf41u\xd5Y\xa2\xf8\xa0\x08\x90\xe7(B<vU\xa1\x9a\xef63\x92\x02\xea\xb7\x18\xb1o\xae\xfa\xdfx\x8f\xc3'
+WRITE OK, EN: True -> ID:5b891a10-b32b-11ed-afa1-0242ac120002 - 5b891dda-b32b-11ed-afa1-0242ac120002 | VAL:b'\x83\xe1\xd9n\xa0\xde\xc0\x0c\xa5\xbc/0\xde\xb4\xe2\xdc\x8b>zI\x95f>)s\x8b\xcf\xa4\xd7qy\x10\x8b\\\xdc\xea\xf9\x87D\x85\xab\xff\xcc>\xf0\x94\x0e\xa1{\xf9\x1a\xd2\xbaN&\xd2L\xf3\xad\x86\xe5.\xc5\xab\x8d#\x8f=k\x819\xee\xb8E\xdd\x1e\xf5\x04\\\x8d\xf6\x9bI\x0f\xa4\xcb\xca/\xc1\xc6\xf41u\xd5Y\xa2\xf8\xa0\x08\x90\xe7(B<vU\xa1\x9a\xef63\x92\x02\xea\xb7\x18\xb1o\xae\xfa\xdfx\x8f\xc3'
+Send successful.
+Sending Command : triggerEvent event_capture_stool stop StoolShootingRegime
+Nothing to store in database. list index out of range
+Data encrypted successfully for service triggerEvent.
+ENCYTPING b"\xb5\xeb\x0c\x96'\x8e\x1e\xa6\xd9\x1d]\xed,;R\xee~`\x89\x9a/\xde0\x13\x03M\xcdY[\xe1vW\xfc2\xf7j\xebL\xde\x87\x04h\xe6\xea\xdd\xb3\xd7\xa8m\xb0\x87\xdf\x9f\n\xd0\x8c\xb0'B\x19\x91\x14J\t\xc0\x8b\n\x9bM#+\xfe\xf0\x01\xafm\xb1>\xfd\x89,1\x93\xd2\xa7:\xccr\xdf\x08ir\x00[\xe3\x1eW4\x9f\xa7C\x8f.\x80Gi" - b"\xb5\xeb\x0c\x96'\x8e\x1e\xa6\xd9\x1d]\xed,;R\xee~`\x89\x9a/\xde0\x13\x03M\xcdY[\xe1vW\xfc2\xf7j\xebL\xde\x87\x04h\xe6\xea\xdd\xb3\xd7\xa8m\xb0\x87\xdf\x9f\n\xd0\x8c\xb0'B\x19\x91\x14J\t\xc0\x8b\n\x9bM#+\xfe\xf0\x01\xafm\xb1>\xfd\x89,1\x93\xd2\xa7:\xccr\xdf\x08ir\x00[\xe3\x1eW4\x9f\xa7C\x8f.\x80Gi"
+WRITE OK, EN: True -> ID:5b891a10-b32b-11ed-afa1-0242ac120002 - 5b891dda-b32b-11ed-afa1-0242ac120002 | VAL:b"\xb5\xeb\x0c\x96'\x8e\x1e\xa6\xd9\x1d]\xed,;R\xee~`\x89\x9a/\xde0\x13\x03M\xcdY[\xe1vW\xfc2\xf7j\xebL\xde\x87\x04h\xe6\xea\xdd\xb3\xd7\xa8m\xb0\x87\xdf\x9f\n\xd0\x8c\xb0'B\x19\x91\x14J\t\xc0\x8b\n\x9bM#+\xfe\xf0\x01\xafm\xb1>\xfd\x89,1\x93\xd2\xa7:\xccr\xdf\x08ir\x00[\xe3\x1eW4\x9f\xa7C\x8f.\x80Gi"
+Send successful.
+Reading data from service: triggerEvent
+READ ENCRYPTED -> Service ID: 5b891a10-b32b-11ed-afa1-0242ac120002 | Characteristic ID: 5b891dda-b32b-11ed-afa1-0242ac120002 | Value(Encrypt): e53c605db354396b6d2f624d8626fd15edd6bb6b24ca084d31b5dfc54fd0f43c0b
+Data decrypted successfully for service triggerEvent.
+Service triggerEvent - Data UNSET
+Sending Command : getVersion 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service getVersion.
+ENCYTPING b'\xd1\xce\xc8\xb8\xcd\xe6\xd7\xed{\x1f^\xcb\x14\x0bE\x9fDa.<\xfb\xcb:\x18R\xd0,6\xaf' - b'\xd1\xce\xc8\xb8\xcd\xe6\xd7\xed{\x1f^\xcb\x14\x0bE\x9fDa.<\xfb\xcb:\x18R\xd0,6\xaf'
+WRITE OK, EN: True -> ID:f646a512-db22-11ed-afa1-0242ac120002 - d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | VAL:b'\xd1\xce\xc8\xb8\xcd\xe6\xd7\xed{\x1f^\xcb\x14\x0bE\x9fDa.<\xfb\xcb:\x18R\xd0,6\xaf'
+Send successful.
+Reading data from service: getVersion
+READ ENCRYPTED -> Service ID: f646a512-db22-11ed-afa1-0242ac120002 | Characteristic ID: d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | Value(Encrypt): 4d167c51e602376784a458f3588d9574cdab5b425f988c08f5e7068f1dce4d0982a660
+Data decrypted successfully for service getVersion.
+Service getVersion - Data 3.86.23
+Sending Command : getVersion 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service getVersion.
+ENCYTPING b'\xc6\x8c\t\xeb<.S\x93F\x95\xa8\x84\xb2\x02wj\x7f\xcfT\xc9f\r\xb7S\xe7\xba \xa2\xdd' - b'\xc6\x8c\t\xeb<.S\x93F\x95\xa8\x84\xb2\x02wj\x7f\xcfT\xc9f\r\xb7S\xe7\xba \xa2\xdd'
+WRITE OK, EN: True -> ID:f646a512-db22-11ed-afa1-0242ac120002 - d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | VAL:b'\xc6\x8c\t\xeb<.S\x93F\x95\xa8\x84\xb2\x02wj\x7f\xcfT\xc9f\r\xb7S\xe7\xba \xa2\xdd'
+Send successful.
+Reading data from service: getVersion
+READ ENCRYPTED -> Service ID: f646a512-db22-11ed-afa1-0242ac120002 | Characteristic ID: d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | Value(Encrypt): bb36f5a4ff372653b8c06a4dd4bfd0a3e0bc965dd34dd3f683e688e79c6f6ea3bd17b0
+Data decrypted successfully for service getVersion.
+Service getVersion - Data 3.86.23
+Sending Command : getVersion 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service getVersion.
+ENCYTPING b'\xf7\n_\xba\xb4j\xec\x8d9\x1cy\x84\x03\x8b\x8aV~\x9b\xdch<\xa5\x1f\xcd4\xf7\xb0\xdf\xe8' - b'\xf7\n_\xba\xb4j\xec\x8d9\x1cy\x84\x03\x8b\x8aV~\x9b\xdch<\xa5\x1f\xcd4\xf7\xb0\xdf\xe8'
+WRITE OK, EN: True -> ID:f646a512-db22-11ed-afa1-0242ac120002 - d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | VAL:b'\xf7\n_\xba\xb4j\xec\x8d9\x1cy\x84\x03\x8b\x8aV~\x9b\xdch<\xa5\x1f\xcd4\xf7\xb0\xdf\xe8'
+Send successful.
+Reading data from service: getVersion
+READ ENCRYPTED -> Service ID: f646a512-db22-11ed-afa1-0242ac120002 | Characteristic ID: d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | Value(Encrypt): 7f0b232f8adf800030ac2e53db16254625f5a22a930fd4ed9215cf799c6ce82a1539f0
+Data decrypted successfully for service getVersion.
+Service getVersion - Data 3.86.23
+Sending Command : getVersion 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service getVersion.
+ENCYTPING b'\x89\xe1\xcb\xfc5\xacX\x0b/\xa5\xd5\x08\xeb\x1f\xb6)\xaf\x0e@"\x0b\x15\x1dJwH\xb8\x95\xc7' - b'\x89\xe1\xcb\xfc5\xacX\x0b/\xa5\xd5\x08\xeb\x1f\xb6)\xaf\x0e@"\x0b\x15\x1dJwH\xb8\x95\xc7'
+WRITE OK, EN: True -> ID:f646a512-db22-11ed-afa1-0242ac120002 - d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | VAL:b'\x89\xe1\xcb\xfc5\xacX\x0b/\xa5\xd5\x08\xeb\x1f\xb6)\xaf\x0e@"\x0b\x15\x1dJwH\xb8\x95\xc7'
+Send successful.
+Reading data from service: getVersion
+READ ENCRYPTED -> Service ID: f646a512-db22-11ed-afa1-0242ac120002 | Characteristic ID: d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | Value(Encrypt): 444f6244cda79f5699509359a82bf6dd14acaa1eb92622139fac0c3814286f556fde1c
+Data decrypted successfully for service getVersion.
+Service getVersion - Data 3.86.23
+Sending Command : getVersion 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service getVersion.
+ENCYTPING b'y\xa0\xd9\xd8o\xb6\xdf[\x17[\xd6\x8e\xfc\xae\xca\xad\x9a\xa5\x18\xc9\x9e\x8a\x9dAo\x85\x07V\xf6' - b'y\xa0\xd9\xd8o\xb6\xdf[\x17[\xd6\x8e\xfc\xae\xca\xad\x9a\xa5\x18\xc9\x9e\x8a\x9dAo\x85\x07V\xf6'
+WRITE OK, EN: True -> ID:f646a512-db22-11ed-afa1-0242ac120002 - d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | VAL:b'y\xa0\xd9\xd8o\xb6\xdf[\x17[\xd6\x8e\xfc\xae\xca\xad\x9a\xa5\x18\xc9\x9e\x8a\x9dAo\x85\x07V\xf6'
+Send successful.
+Reading data from service: getVersion
+READ ENCRYPTED -> Service ID: f646a512-db22-11ed-afa1-0242ac120002 | Characteristic ID: d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | Value(Encrypt): 2483c00720efc8f72240f63c80b84c72e596aa122eeeb5e2fcf1d94a211b2ba3c3b976
+Data decrypted successfully for service getVersion.
+Service getVersion - Data 3.86.23
+Sending Command : getVersion 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service getVersion.
+ENCYTPING b'\xd6\xb9\x9a\x81\x1e\xdc6\x80\xfc\xf8\xab-\xc1\x85\xd6o\xb0\xf9|\xfb\x834\x05G0.D\xdb\x9c' - b'\xd6\xb9\x9a\x81\x1e\xdc6\x80\xfc\xf8\xab-\xc1\x85\xd6o\xb0\xf9|\xfb\x834\x05G0.D\xdb\x9c'
+WRITE OK, EN: True -> ID:f646a512-db22-11ed-afa1-0242ac120002 - d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | VAL:b'\xd6\xb9\x9a\x81\x1e\xdc6\x80\xfc\xf8\xab-\xc1\x85\xd6o\xb0\xf9|\xfb\x834\x05G0.D\xdb\x9c'
+Send successful.
+Reading data from service: getVersion
+READ ENCRYPTED -> Service ID: f646a512-db22-11ed-afa1-0242ac120002 | Characteristic ID: d2d051cf-d9d4-4296-b312-fb84a81e9a80 (Handle: 92): Unknown | Value(Encrypt): bb58c241e71c0156076e04daadd2f9d0358a1b5e62aaa021016e8f874d9b5146ce23db
+Data decrypted successfully for service getVersion.
+Service getVersion - Data 3.86.23
+Reading data from service: serialNumber
+READ ENCRYPTED -> Service ID: ab2adede-7f3a-11ed-a1eb-0242ac120002 | Characteristic ID: b42183c6-7f3a-11ed-a1eb-0242ac120002 (Handle: 128): Unknown | Value(Encrypt): 18f0edc1a1a7d822986faa028796bf550884a363b3a60b266353f80af76a2177a082fca8def29fa2db69
+Data decrypted successfully for service serialNumber.
+Service serialNumber - Data AT1091742228CM
+Sending Command : factoryReset 1
+Nothing to store in database. list index out of range
+Data encrypted successfully for service factoryReset.
+ENCYTPING b'\x1c8\xac~\xdc4\r\x80\rP\x0b\xf6\x02\x9ak\xfb\x05q\xf4\x1c\x12\x84&\xba\xd1B\xaf\x89(' - b'\x1c8\xac~\xdc4\r\x80\rP\x0b\xf6\x02\x9ak\xfb\x05q\xf4\x1c\x12\x84&\xba\xd1B\xaf\x89('
+WRITE OK, EN: True -> ID:b8c99279-21f9-4464-908e-48a8184d939a - e83768ab-07a2-4ac2-a979-c5f8d65394d7 (Handle: 87): Unknown | VAL:b'\x1c8\xac~\xdc4\r\x80\rP\x0b\xf6\x02\x9ak\xfb\x05q\xf4\x1c\x12\x84&\xba\xd1B\xaf\x89('
+Send successful.
+Device Unpairied.
+Device disconnected.

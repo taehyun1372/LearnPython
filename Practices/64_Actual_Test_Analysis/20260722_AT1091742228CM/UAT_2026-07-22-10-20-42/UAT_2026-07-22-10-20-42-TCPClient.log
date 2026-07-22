@@ -1,0 +1,5 @@
+There will be no receiver for this client.
+Ensure a server is running, before connecting.
+Initialized Successfully.
+TCP client connected to 127.0.0.1, 55520
+Tx              | Sts = OK | - | Data [hex] = 302031

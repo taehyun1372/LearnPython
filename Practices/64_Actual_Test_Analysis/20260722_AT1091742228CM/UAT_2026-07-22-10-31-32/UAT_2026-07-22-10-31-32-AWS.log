@@ -1,0 +1,303 @@
+AWS Initialized Successfully
+Session Started.
+s3_fileCount alpha-iot-device-test-images device_serial_number event_capture_stool
+s3_fileCount : Taking Database Route.
+s3_fileCount : AWSErrCode.PREFIX_STR_ERR | 'Contents'
+s3_fileCount alpha-iot-device-test-images device_serial_number event_capture_stool
+s3_fileCount : Taking Database Route.
+s3_fileCount : AWSErrCode.PREFIX_STR_ERR | 'Contents'
+s3_fileCount alpha-iot-device-test-images device_serial_number event_capture_stool
+s3_fileCount : Taking Database Route.
+s3_fileCount : AWSErrCode.PREFIX_STR_ERR | 'Contents'
+s3_fileCount alpha-iot-device-test-images device_serial_number event_capture_stool
+s3_fileCount : Taking Database Route.
+s3_fileCount : AWSErrCode.PREFIX_STR_ERR | 'Contents'
+s3_fileCount alpha-iot-device-test-images device_serial_number event_capture_stool
+s3_fileCount : Taking Database Route.
+s3_fileCount : AWSErrCode.PREFIX_STR_ERR | 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+s3_downloadFiles alpha-iot-device-test-images device_serial_number event_capture_stool logs/images/
+s3_downloadFiles : Taking Image file path
+s3_downloadFiles : 0 | Exception -> 'Contents'
+Session Ended.
