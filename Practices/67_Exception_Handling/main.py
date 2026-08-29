@@ -28,11 +28,19 @@ def print_content_explicit_print(path):
             for line in lines:
                 print(line)
     except:
+        # We explicitly print traceback
         traceback.print_exc()
+
+def process_manager(path, status = "normal"):
+    # Wether we can proceed or not depends on the system status. 
+    if status == "normal":
+        print_content_explicit_print(path)
+    else:
+        print_content_bare_try(path)
 
 if __name__ == "__main__":
     print("Process 1")
     print("Process 2")
-    print_content_bare_try("data\\log1.txt") #target handling process
+    process_manager("data\\log1.txt", "alarm") # Target handling process
     print("Process 4")
     print("Process 5")
