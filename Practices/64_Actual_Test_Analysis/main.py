@@ -1,6 +1,7 @@
 import csv
 from pathlib import Path
 import os
+import pandas as pd
 
 def summary_test(repo_path : str):
     print(repo_path)
@@ -55,16 +56,24 @@ def fail_step_summary(device_folder_path):
     result = []
     if os.path.isdir(device_folder_path):
         for report_folder_path in device_folder_path.rglob("*UAT*"):
-            last_pass_step, first_fail_step = find_fail_step(report_folder_path)
-            result.append({"path" : report_folder_path.name, "last_pass_step" : last_pass_step, "first_fail_step" : first_fail_step})
+            last_pass_step, first_fail_step, total_step = find_fail_step(report_folder_path)
+            if total_step :
+                result.append({"path" : report_folder_path.name, "last_pass_step" : last_pass_step, "first_fail_step" : first_fail_step, "total_step" : total_step})
         return result
     else:
         return None
+    
+def display_result(result):
+    df = pd.DataFrame(result)
+    print("---Fail step summary---")
+    print(df)
     
 def find_fail_step(report_folder_path):
     if os.path.isdir(report_folder_path):
         last_pass_step = 0.0
         first_fail_step = 0.0
+        total_step = 0.0
+        first_fail_updated = False
         for path in report_folder_path.rglob("*TestReport.csv*"):
             with open(path, newline='') as csvfile:
                 # needs to be improved
@@ -77,24 +86,24 @@ def find_fail_step(report_folder_path):
                     if result and stepId:
                         if result == "Pass":
                             last_pass_step = float(stepId)
-                        else:
+                        elif not first_fail_updated:
                             first_fail_step = float(stepId)
-                            break
+                            first_fail_updated = True
+                        total_step = float(stepId)
             break
-        return last_pass_step, first_fail_step
+        return last_pass_step, first_fail_step, total_step
     else:
-        return None, None
+        return None, None, None
 
 if __name__ == "__main__":
     script_dir = Path(__file__).resolve().parent
-    folder1 = Path.joinpath(script_dir, "20260722_AT1091742228CM\\UAT_2026-07-22-09-41-24")
-    total_count, pass_count, fail_count = test_report_summary(folder1)
-    print(f"total : {total_count}, pass : {pass_count}, fail : {fail_count}")
+    # folder1 = Path.joinpath(script_dir, "20260722_AT1091742228CM\\UAT_2026-07-22-09-41-24")
+    # total_count, pass_count, fail_count = test_report_summary(folder1)
+    # print(f"total : {total_count}, pass : {pass_count}, fail : {fail_count}")
     
-    last_pass_step, first_fail_step = find_fail_step(folder1)
-    print(f"last pass step : {last_pass_step}, first fail step : {first_fail_step}")
+    # last_pass_step, first_fail_step, total_step = find_fail_step(folder1)
+    # print(f"last pass step : {last_pass_step}, first fail step : {first_fail_step}, total step : {total_step}")
     
-    folder2 = Path.joinpath(script_dir, "20260722_AT1091742228CM")
+    folder2 = Path.joinpath(script_dir, "2026-08-20 AT1091742228CM")
     fail_step_result = fail_step_summary(folder2)
-    print("---Fail step summary---")
-    print(fail_step_result)
+    display_result(fail_step_result)
