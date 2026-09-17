@@ -104,6 +104,6 @@ if __name__ == "__main__":
     # last_pass_step, first_fail_step, total_step = find_fail_step(folder1)
     # print(f"last pass step : {last_pass_step}, first fail step : {first_fail_step}, total step : {total_step}")
     
-    folder2 = Path.joinpath(script_dir, "2026-08-20 AT1091742228CM")
+    folder2 = Path.joinpath(script_dir, "2026-09-16")
     fail_step_result = fail_step_summary(folder2)
     display_result(fail_step_result)

@@ -10,6 +10,8 @@ class TCPServer:
         self.__new_client_handler_thread = None
         self.__client_handler_threads = []
         self.__client_connections = []
+        self.__thread_lock = threading.Lock()
+        self.__connection_lock = threading.Lock()
         self.__server = None
         self.__server_stop_event = threading.Event()
         
@@ -32,14 +34,15 @@ class TCPServer:
     def start_server(self):
         try:
             if not self.__is_initialized:
-                self.__is_initialized = True
                 self.__server_stop_event.clear()
                 print("Server is being initialized")
                 self.__server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 self.__server.bind((self.ip_addr, self.port))
+                self.__server.settimeout(1)
                 self.__server.listen(1)
                 self.__new_client_handler_thread = threading.Thread(target=self.__new_client_handler, daemon=True)
                 self.__new_client_handler_thread.start()
+                self.__is_initialized = True
                 print("Server initialized successfully")
             else:
                 print("Server is already initialized")
@@ -80,30 +83,54 @@ class TCPServer:
     def get_number_of_clients(self):
         return len(self.__client_connections)
     
-    def get_connected_clients(self):
-        return self.__client_connections
+    def __add_connection(self, connection):
+        with self.__connection_lock:
+            self.__client_connections.append(connection)
+            print(f"Connection {connection} added successfully")
+            
+    def __remove_connection(self, connection):
+        with self.__connection_lock:
+            if connection in self.__client_connections:
+                self.__client_connections.remove(connection)
+                print(f"Connection {connection} removed successfully")
+            
+    def __add_thread(self, thread):
+        with self.__thread_lock:
+            self.__client_handler_threads.append(thread)
+            print(f"Thread {thread} added successfully")
+            
+    def __remove_thread(self, thread):
+        with self.__thread_lock:
+            if thread in self.__client_handler_threads:
+                self.__client_handler_threads.remove(thread)
+                print(f"Thread {thread} removed successfully")
     
     def __new_client_handler(self):
         try:
-            count = 0
             while not self.__server_stop_event.is_set():
-                count += 1
-                connection = self.__server.accept()
-                self.__client_connections.append(connection)
+                try:
+                    connection, addr = self.__server.accept()
+                except socket.timeout:
+                    continue
+                self.__add_connection(connection)
                 thread = threading.Thread(target=self.__client_handler, args=(connection,), daemon=True)
                 thread.start()
-                self.__client_handler_threads.append(thread)
+                self.__add_thread(thread)
                 print(f"A new client is added - {connection}")
         except Exception as e:
             print(f"New client handler failed - {e}")
         finally:
             print("New client handler finished")
     
-    def __client_handler(self, args):
+    def __client_handler(self, connection):
         try:
-            connection = args[0]
+            connection.settimeout(1)
             while not self.__server_stop_event.is_set():
-                data = connection.recv(64)
+                try:
+                    data = connection.recv(64)
+                except socket.timeout:
+                    continue
+                
                 if not data:
                     break
                 
@@ -113,6 +140,8 @@ class TCPServer:
             print(f"Client handler failed - {e}")
         finally:
             connection.close()
+            self.__remove_connection(connection)
+            self.__remove_thread(threading.current_thread())
             print("Client handler finished")
     
 if __name__ == "__main__":
@@ -122,17 +151,16 @@ if __name__ == "__main__":
         server.stop_server()
         server.start_server()
         server.start_server()
-        server.get_number_of_clients()
-        server.get_connected_clients()
-        count = 0
+        
         while True:
-            count += 1
             print(f"Process is running successfully")
-            command = input("Enter a server command to send >>")
-            match command.upper():
-                case "STOP":
-                    print("Stop command detected. Finishing main process")
-                    raise KeyboardInterrupt
+            print(f"Connection count - {server.get_number_of_clients()}")
+            time.sleep(1)
+            # command = input("Enter a server command to send >>")
+            # match command.upper():
+            #     case "STOP":
+            #         print("Stop command detected. Finishing main process")
+            #         raise KeyboardInterrupt
     except KeyboardInterrupt:
         print("Keyboard interruption happened. Closng the server")
         server.stop_server()

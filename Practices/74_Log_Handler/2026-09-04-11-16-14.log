@@ -1,0 +1,7 @@
+[INFO] [TestHandler] [2026-09-04 11:16:14] : process 2 started
+[WARNING] [TestHandler] [2026-09-04 11:16:14] : process 3 started
+[CRITICAL] [TestHandler] [2026-09-04 11:16:14] : process 4 started
+[ERROR] [TestHandler] [2026-09-04 11:16:14] : process 5 started
+[WARNING] [TestAnalysis] [2026-09-04 11:16:14] : analysis 3 started
+[CRITICAL] [TestAnalysis] [2026-09-04 11:16:14] : analysis 4 started
+[ERROR] [TestAnalysis] [2026-09-04 11:16:14] : analysis 5 started

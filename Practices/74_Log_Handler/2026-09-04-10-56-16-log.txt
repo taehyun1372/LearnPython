@@ -1,0 +1,6 @@
+[WARN] [TestHanlder] [2026-09-04 10:56:16] : Process 3 started..
+[ALARM] [TestHanlder] [2026-09-04 10:56:16] : Process 4 started..
+[ERROR] [TestHanlder] [2026-09-04 10:56:16] : Process 5 started..
+[WARN] [TestAnalysis] [2026-09-04 10:56:16] : Analysis 3 started
+[ALARM] [TestAnalysis] [2026-09-04 10:56:16] : Analysis 4 started
+[ERROR] [TestAnalysis] [2026-09-04 10:56:16] : Analysis 5 started
