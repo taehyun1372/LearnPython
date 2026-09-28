@@ -17,8 +17,8 @@ SAMBA_OP50_DEVICE = "Y:\\TestFiles\\OP50\\Device"
 SAMBA_OP50_NFC = "Y:\\TestFiles\\OP50\\NFC"
 SAMBA_OP60_DEVICE = "Y:\\TestFiles\\OP60\\Device"
 
-START_DATE = "2026-09-01"
-END_DATE = "2026-09-20"
+START_DATE = "2026-07-01"
+END_DATE = "2026-09-22"
 
 def check_date_elapsed(path, date):
     folder = Path(path)
@@ -133,6 +133,9 @@ def get_data_from_UAT(UAT: Path, device_name:str, test_date:datetime):
             }
     return test_data
 
+def find_specific_failure_from_dataframe(df:pd.DataFrame, step):
+    return df.loc[df["first fail step"] == step]
+
 def get_summary_from_dataframe(df:pd.DataFrame):
     device_summary = (
         df.groupby(["device", "passed"])
@@ -157,10 +160,13 @@ def get_test_summary(path, start_date, end_date):
     all_UATs = get_all_UAT_in_date_range(all_devices, start_date, end_date)
     test_result = [summary for UAT, device_name, test_date in all_UATs if (summary := get_data_from_UAT(UAT, device_name, test_date)) is not None]
     df = pd.DataFrame(test_result)
+    print(df.head(100))
     summary = get_summary_from_dataframe(df)
     summary.insert(0, "path", path)
     print(summary.head())
-    return summary
+
+    failure = find_specific_failure_from_dataframe(df, 5.5)
+    print(failure.head(100))
 
 if __name__ == "__main__":
     # result1 = check_date_elapsed(PATH1, START_DATE)
@@ -181,14 +187,14 @@ if __name__ == "__main__":
     # summary = get_summary_from_dataframe(df)
     # print(summary.head())
     
-    get_test_summary(SAMBA_OP00_ICP, START_DATE, END_DATE)
-    get_test_summary(SAMBA_OP00_SCB, START_DATE, END_DATE)
-    get_test_summary(SAMBA_OP20_SCB, START_DATE, END_DATE)
+    # get_test_summary(SAMBA_OP00_ICP, START_DATE, END_DATE)
+    # get_test_summary(SAMBA_OP00_SCB, START_DATE, END_DATE)
+    # get_test_summary(SAMBA_OP20_SCB, START_DATE, END_DATE)
     get_test_summary(SAMBA_OP30_SCB, START_DATE, END_DATE)
-    get_test_summary(SAMBA_OP30_DEVICE, START_DATE, END_DATE)
-    get_test_summary(SAMBA_OP40_BATTERY, START_DATE, END_DATE)
-    get_test_summary(SAMBA_OP50_DEVICE, START_DATE, END_DATE)
-    get_test_summary(SAMBA_OP50_NFC, START_DATE, END_DATE)
-    get_test_summary(SAMBA_OP60_DEVICE, START_DATE, END_DATE)
+    # get_test_summary(SAMBA_OP30_DEVICE, START_DATE, END_DATE)
+    # get_test_summary(SAMBA_OP40_BATTERY, START_DATE, END_DATE)
+    # get_test_summary(SAMBA_OP50_DEVICE, START_DATE, END_DATE)
+    # get_test_summary(SAMBA_OP50_NFC, START_DATE, END_DATE)
+    # get_test_summary(SAMBA_OP60_DEVICE, START_DATE, END_DATE)
     
     
